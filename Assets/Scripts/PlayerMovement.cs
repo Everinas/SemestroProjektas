@@ -9,9 +9,10 @@ public class PlayerMovement : MonoBehaviour
     public int forward = 100;
     public int side = 75;
     public int back = 50;
+    public int up = 500;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (Input.GetKey("w"))
         {
@@ -29,6 +30,9 @@ public class PlayerMovement : MonoBehaviour
         {
             rb.AddForce(0, 0,-side * Time.deltaTime);
         }
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(0, up, 0);
+        }
     }
 }
