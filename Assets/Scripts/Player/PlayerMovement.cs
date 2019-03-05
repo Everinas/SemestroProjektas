@@ -19,7 +19,7 @@ public class PlayerMovement : MonoBehaviour
     {
         controller = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>();
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
-        controller.attachedRigidbody.WakeUp();
+        controller.enabled = true;
     }
 
     // Update is called once per frame
@@ -34,13 +34,12 @@ public class PlayerMovement : MonoBehaviour
                 moveDirection.y = jumpForce;
             }
         }
-
         moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale);
         controller.Move(moveDirection * Time.deltaTime);
 
         if (playerHealth.currentHealth <= 0)
         {
-            controller.attachedRigidbody.Sleep();
+            controller.enabled = false;
         }
     }
 }

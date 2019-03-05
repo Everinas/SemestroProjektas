@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameOverManager : MonoBehaviour
 {
     public PlayerHealth playerHealth;
+    public Follow camera;
     Animator anim;
 
     private void Start()
