@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        controller.GetComponent<CharacterController>();
+        controller = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>();
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
         controller.attachedRigidbody.WakeUp();
     }
