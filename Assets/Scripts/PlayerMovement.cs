@@ -15,6 +15,7 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+        rb.WakeUp();
     }
 
     // Update is called once per frame
