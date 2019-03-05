@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovementV2 : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
+    public PlayerHealth playerHealth;
+
     public float moveSpeed;
     public float jumpForce;
 
@@ -16,6 +18,8 @@ public class PlayerMovementV2 : MonoBehaviour
     void Start()
     {
         controller.GetComponent<CharacterController>();
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+        controller.attachedRigidbody.WakeUp();
     }
 
     // Update is called once per frame
@@ -33,5 +37,10 @@ public class PlayerMovementV2 : MonoBehaviour
 
         moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale);
         controller.Move(moveDirection * Time.deltaTime);
+
+        if (playerHealth.currentHealth <= 0)
+        {
+            controller.attachedRigidbody.Sleep();
+        }
     }
 }
