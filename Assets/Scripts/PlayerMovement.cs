@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public PlayerHealth playerHealth;
     public Rigidbody rb;
     public Transform cube;
     public int forward = 100;
     public int side = 75;
     public int back = 50;
     public int up = 500;
+
+    private void Start()
+    {
+        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
+    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -33,6 +39,10 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             rb.AddForce(0, up, 0);
+        }
+        if (playerHealth.currentHealth <= 0)
+        {
+            rb.Sleep();
         }
     }
 }
