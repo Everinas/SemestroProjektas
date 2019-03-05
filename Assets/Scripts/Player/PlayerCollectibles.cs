@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerCollectibles : MonoBehaviour
 {
     private int collected = 0; //Set up a variable to store how many you've collected
-    //public AudioClip collectedSound;     //This is the sound that will play after you collect one
 
     //This is the text that displayed how many you've collected in the top left corner
     void OnGUI()
@@ -16,13 +15,12 @@ public class PlayerCollectibles : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     { //Checks to see if you've collided with another object
         if (other.CompareTag("collectable"))
-        { //checks to see if this object is tagged with "collectable"
-            
+        { //checks to see if this object is tagged with "collectable"     
             collected++; //adds a count of +1 to the collected variable
             Destroy(other.gameObject); //destroy's the collectable
         }
 
-        // Use this for initialization
+        // Use this for initializationasdef
         void Start()
         {
 
