@@ -4,21 +4,22 @@ using UnityEngine;
 
 public class GameOverManager : MonoBehaviour
 {
-    public PlayerHealth playerHealth;
-    public Follow camera;
+    public GameObject player;
     Animator anim;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
-        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();   
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void Update()
     {
-        if (playerHealth.currentHealth <= 0)
+        if (player.GetComponent<PlayerHealth>().currentHealth <= 0)
         {
             anim.SetTrigger("GameOver");
+            player.GetComponent<PlayerMovement>().enabled = false;
+            player.GetComponent<CharacterController>().enabled = false;
         }
     }
 }
