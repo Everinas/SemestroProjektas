@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public PlayerHealth playerHealth;
-
     public float moveSpeed;
     public float jumpForce;
 
