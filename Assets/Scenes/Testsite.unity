@@ -413,8 +413,8 @@ GameObject:
   - component: {fileID: 384920259}
   - component: {fileID: 384920260}
   m_Layer: 0
-  m_Name: Basic enemy
-  m_TagString: Enemy
+  m_Name: Capsule
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -502,7 +502,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 384920252}
   m_LocalRotation: {x: 0.10295973, y: -0.3348138, z: 0.19587898, w: 0.9159315}
-  m_LocalPosition: {x: 5.71, y: 6.48, z: -3.82}
+  m_LocalPosition: {x: 5.0622673, y: 9.74, z: -4.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -516,12 +516,32 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 384920252}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
+  m_IsTrigger: 0
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &384920259
+<<<<<<< HEAD
+=======
+CharacterController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384920252}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Height: 2.0000012
+  m_Radius: 0.5000001
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+>>>>>>> parent of f35d4a3... Revert "Bandyta ideti Everino commita"
 --- !u!114 &384920260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -529,7 +549,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 384920252}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee4e321b9775ae64796fe64000e25f3f, type: 3}
   m_Name: 
@@ -542,12 +562,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 534669909}
+  - component: {fileID: 534669905}
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
   - component: {fileID: 534669906}
   - component: {fileID: 534669907}
-  - component: {fileID: 534669908}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -605,6 +624,20 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!4 &534669905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 534669902}
+  m_LocalRotation: {x: 0.059725065, y: -0.017256439, z: -0.0028303335, w: 0.9980617}
+  m_LocalPosition: {x: 5.89, y: 5.43, z: -9.35}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 6.8410006, y: -2.0080001, z: -0.44500002}
 --- !u!114 &534669906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,6 +690,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &1296922225
 GameObject:
   m_ObjectHideFlags: 0
@@ -809,6 +843,8 @@ MonoBehaviour:
   m_Text: Game over - you touched an enemy
 --- !u!222 &1333728567
 CanvasRenderer:
+=======
+>>>>>>> parent of f35d4a3... Revert "Bandyta ideti Everino commita"
 --- !u!1001 &858113530
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1226,8 +1262,11 @@ GameObject:
   - component: {fileID: 1884056048}
   - component: {fileID: 1884056047}
   - component: {fileID: 1884056046}
+<<<<<<< HEAD
   - component: {fileID: 1884056052}
   - component: {fileID: 1884056053}
+=======
+>>>>>>> parent of f35d4a3... Revert "Bandyta ideti Everino commita"
   - component: {fileID: 1884056050}
   - component: {fileID: 1884056051}
   m_Layer: 0
