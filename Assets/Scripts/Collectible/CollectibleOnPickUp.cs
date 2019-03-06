@@ -14,12 +14,11 @@ public class CollectibleOnPickUp : MonoBehaviour
         playerScore = player.GetComponent<PlayerScore>();
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject == player)
+        if (other.gameObject == player)
         {
             Destroy(this.gameObject);
-            player.GetComponent<Renderer>().material.color = Color.green;
             playerScore.currentScore++;
         }
     }

@@ -15,11 +15,12 @@ public class LevelCompleteManager : MonoBehaviour
 
     private void Update()
     {
-        if (player.GetComponent<PlayerScore>().currentScore >= 1)
+        if (player.GetComponent<PlayerScore>().currentScore >= 15)
         {
             anim.SetTrigger("LevelComplete");
             player.GetComponent<PlayerMovement>().enabled = false;
             player.GetComponent<CharacterController>().enabled = false;
+            player.GetComponent<Renderer>().material.color = Color.green;
         }
     }
 }
