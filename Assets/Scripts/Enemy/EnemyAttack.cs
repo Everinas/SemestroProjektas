@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyAttack : MonoBehaviour
 {
-
     GameObject player;
     PlayerHealth playerHealth;
     bool isTouching;
