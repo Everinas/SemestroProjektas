@@ -20,6 +20,7 @@ public class CollectibleOnPickUp : MonoBehaviour
         {
             Destroy(this.gameObject);
             playerScore.currentScore++;
+            print("Veikia");
         }
     }
 }

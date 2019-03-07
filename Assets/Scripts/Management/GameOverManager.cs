@@ -12,14 +12,12 @@ public class GameOverManager : MonoBehaviour
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
-
     private void Update()
     {
         if (player.GetComponent<PlayerHealth>().currentHealth <= 0)
         {
             anim.SetTrigger("GameOver");
-            player.GetComponent<PlayerMovement>().enabled = false;
-            player.GetComponent<CharacterController>().enabled = false;
+            player.GetComponent<SimpleCharacterControl>().enabled = false;
         }
     }
 }
