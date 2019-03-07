@@ -5,12 +5,15 @@ using UnityEngine;
 public class GameOverManager : MonoBehaviour
 {
     public GameObject player;
+    public GameObject ragdollas;
     Animator anim;
 
     private void Start()
     {
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
+        ragdollas = GameObject.FindGameObjectWithTag("PlayerRagdoll");
+        ragdollas.SetActive(false);
     }
     private void Update()
     {
@@ -18,6 +21,8 @@ public class GameOverManager : MonoBehaviour
         {
             anim.SetTrigger("GameOver");
             player.GetComponent<SimpleCharacterControl>().enabled = false;
+            player.GetComponent<Animator>().enabled = false;
+            ragdollas.SetActive(true);
         }
     }
 }
