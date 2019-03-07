@@ -8,6 +8,7 @@ public class PlayerScore : MonoBehaviour
     //Set up a variable to store how many you've collected
     private int startScore = 0;
     public int currentScore;
+    public static int score; //Needed for NPC_dialogue
     public Text counter;
     private GameObject player;
 
@@ -21,5 +22,6 @@ public class PlayerScore : MonoBehaviour
     private void Update()
     {
         counter.text = "Score: " + currentScore.ToString();
+        score = currentScore;
     }
 }
