@@ -21,6 +21,7 @@ public class GameOverManager : MonoBehaviour
         if (player.GetComponent<PlayerHealth>().currentHealth <= 0)
         {
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
             anim.SetTrigger("GameOver");
             player.GetComponent<SimpleCharacterControl>().enabled = false;
             player.GetComponent<Animator>().enabled = false;
