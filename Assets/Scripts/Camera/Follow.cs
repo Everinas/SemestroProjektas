@@ -9,9 +9,12 @@ public class Follow : MonoBehaviour
 
     private Vector3 offset;
 
+
+
     void Start()
     {
         offset = new Vector3(player.position.x, player.position.y + 8.0f, player.position.z + 7.0f);
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     void LateUpdate()

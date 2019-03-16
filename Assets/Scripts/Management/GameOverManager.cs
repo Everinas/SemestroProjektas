@@ -14,15 +14,18 @@ public class GameOverManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         ragdollas = GameObject.FindGameObjectWithTag("PlayerRagdoll");
         ragdollas.SetActive(false);
+
     }
     private void Update()
     {
         if (player.GetComponent<PlayerHealth>().currentHealth <= 0)
         {
+            Cursor.lockState = CursorLockMode.None;
             anim.SetTrigger("GameOver");
             player.GetComponent<SimpleCharacterControl>().enabled = false;
             player.GetComponent<Animator>().enabled = false;
             ragdollas.SetActive(true);
+
         }
     }
 }
