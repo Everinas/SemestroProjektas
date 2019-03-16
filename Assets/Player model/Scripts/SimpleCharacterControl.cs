@@ -22,6 +22,7 @@ public class SimpleCharacterControl : MonoBehaviour {
 
     private readonly float m_interpolation = 10;
     private readonly float m_walkScale = 0.33f;
+    private readonly float m_runScale = 1.90f;
     private readonly float m_backwardsWalkScale = 0.16f;
     private readonly float m_backwardRunScale = 0.66f;
 
@@ -142,6 +143,11 @@ public class SimpleCharacterControl : MonoBehaviour {
         Transform camera = Camera.main.transform;
 
         if (Input.GetKey(KeyCode.LeftShift))
+        {
+            v *= m_runScale;
+            h *= m_runScale;
+        }
+        if (Input.GetKey(KeyCode.LeftControl))
         {
             v *= m_walkScale;
             h *= m_walkScale;
