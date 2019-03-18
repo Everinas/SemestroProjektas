@@ -7,9 +7,9 @@ public class Collectible_key : MonoBehaviour
     GameObject player;
     PlayerScore playerScore;
 
-    public float degreesPerSecond = 45.0f;
+    public float degreesPerSecond = 90.0f;
     public float amplitude = 0.1f;
-    public float frequency = 1f;
+    public float frequency = 0.1f;
 
     // Position Storage Variables
     Vector3 posOffset = new Vector3();

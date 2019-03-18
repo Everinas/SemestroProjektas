@@ -1058,9 +1058,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1584c7b6f7d194469e94cf69dc4f331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  degreesPerSecond: 45
+  degreesPerSecond: 90
   amplitude: 0.1
-  frequency: 5
+  frequency: 0.1
 --- !u!135 &436841514
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1329,7 +1329,6 @@ GameObject:
   - component: {fileID: 534669905}
   - component: {fileID: 534669904}
   - component: {fileID: 534669903}
-  - component: {fileID: 534669906}
   - component: {fileID: 534669907}
   m_Layer: 0
   m_Name: Main Camera
@@ -1402,18 +1401,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 6.8410006, y: -2.0080001, z: -0.44500002}
---- !u!114 &534669906
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 534669902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 68ec2fe99d1108b9d0006a298d76c639, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &534669907
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1426,7 +1413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7590279662ab70f409591eb1475ebf00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockCursor: 1
+  lockCursor: 0
   mouseSensitivity: 3
   target: {fileID: 1962024687}
   dstFromTarget: 3
