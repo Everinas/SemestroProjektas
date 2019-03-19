@@ -10,27 +10,39 @@ public class NPC_Dialogue : MonoBehaviour
     public string thirdStage;
     public Text dialogue;
     public static bool levelchange = false;
-    private void OnTriggerEnter(Collider other)
+    public static bool buttonPress = false;
+    private void OnTriggerStay(Collider other)
     {
-        if (PlayerScore.score >= 5)
+        if (Input.GetButtonDown("E") && buttonPress == false)
         {
-            if (PlayerScore.score >= 10)
+
+            buttonPress = true;
+            if (PlayerScore.score >= 5)
             {
-                dialogue.text = thirdStage;
-                levelchange = true;
+                if (PlayerScore.score >= 10)
+                {
+                    dialogue.text = thirdStage;
+                    levelchange = true;
+                }
+                else
+                    dialogue.text = secondStage;
             }
             else
-            dialogue.text = secondStage;
+            {
+                dialogue.text = firstStage;
+            }
         }
-        else
+        else if (Input.GetButtonDown("E") && buttonPress == true)
         {
-            dialogue.text = firstStage;
+            buttonPress = false;
+            dialogue.text = "";
         }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
+            buttonPress = false;
             dialogue.text = "";
         }
     }

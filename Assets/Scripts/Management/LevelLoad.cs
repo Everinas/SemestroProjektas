@@ -8,14 +8,15 @@ public class LevelLoad : MonoBehaviour
     
 
     
-    void OnTriggerEnter()
+    void OnTriggerStay()
     {
-        
-          if (NPC_Dialogue.levelchange == true)
-          {
-            SceneManager.LoadScene(1);
-          }
-      
+        if (Input.GetButtonDown("E"))
+        {
+            if (NPC_Dialogue.levelchange == true)
+            {
+                SceneManager.LoadScene(1);
+            }
+        }
     }
     
 }
