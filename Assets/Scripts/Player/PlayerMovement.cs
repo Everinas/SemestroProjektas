@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public PlayerHealth playerHealth;
-
     public float moveSpeed;
     public float jumpForce;
 
@@ -17,9 +15,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        controller.GetComponent<CharacterController>();
-        playerHealth = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerHealth>();
-        controller.attachedRigidbody.WakeUp();
+        controller = GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -34,13 +30,7 @@ public class PlayerMovement : MonoBehaviour
                 moveDirection.y = jumpForce;
             }
         }
-
         moveDirection.y = moveDirection.y + (Physics.gravity.y * gravityScale);
         controller.Move(moveDirection * Time.deltaTime);
-
-        if (playerHealth.currentHealth <= 0)
-        {
-            controller.attachedRigidbody.Sleep();
-        }
     }
 }
