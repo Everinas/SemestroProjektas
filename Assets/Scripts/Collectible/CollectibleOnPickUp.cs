@@ -6,7 +6,7 @@ public class CollectibleOnPickUp : MonoBehaviour
 {
     GameObject player;
     PlayerScore playerScore;
-
+    public GameObject effect;
     public float degreesPerSecond = 15.0f;
     public float amplitude = 0.1f;
     public float frequency = 1f;
@@ -29,9 +29,11 @@ public class CollectibleOnPickUp : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            Destroy(this.gameObject);
+            Instantiate(effect, transform.position, transform.rotation);
             playerScore.currentScore++;
             print("Veikia");
+            Destroy(gameObject);
+
         }
     }
     void Update()
