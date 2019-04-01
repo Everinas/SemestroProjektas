@@ -9,6 +9,8 @@ public class LevelCompleteManager : MonoBehaviour
 
     private void Start()
     {
+        // Hide the cursor while playing
+        Cursor.visible = false;
         anim = GetComponent<Animator>();
         player = GameObject.FindGameObjectWithTag("Player");
     }
@@ -17,9 +19,14 @@ public class LevelCompleteManager : MonoBehaviour
     {
         if (player.GetComponent<PlayerScore>().currentScore >= 15)
         {
+            // Turn the cursor back on when complete
+            Cursor.visible = true;
+
+            // Trigger the LevelComplete view
             anim.SetTrigger("LevelComplete");
+
+            // Maybe define our own character controller?
             player.GetComponent<SimpleCharacterControl>().enabled = false;
-            player.GetComponent<Renderer>().material.color = Color.green;
         }
     }
 }

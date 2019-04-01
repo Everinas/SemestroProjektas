@@ -22,19 +22,24 @@ public class chest_opening : MonoBehaviour
     {
         
     }
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject == player)
+        if (Input.GetButtonDown("E"))
         {
-            if (opened == false)
+            if (other.gameObject == player)
             {
-                anim.Play("Shake");
-                print("Veikia");
-                if (PlayerScore.keys > 0)
+                if (opened == false)
                 {
-                    playerScore.currentKeys--;
-                    anim.Play("Open");
-                    opened = true;
+                    anim.Play("Shake");
+                    anim.Play("New State");
+                    print("Veikia");
+                    if (PlayerScore.keys > 0)
+                    {
+                        playerScore.currentKeys--;
+                        anim.Play("Open");
+                        opened = true;
+
+                    }
                 }
             }
         }

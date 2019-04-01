@@ -28,10 +28,12 @@ public class SimpleCharacterControl : MonoBehaviour {
 
     private bool m_wasGrounded;
     private Vector3 m_currentDirection = Vector3.zero;
+    private Vector3 direction;
 
     private float m_jumpTimeStamp = 0;
     private float m_minJumpInterval = 0.25f;
 
+   
     private bool m_isGrounded;
     private List<Collider> m_collisions = new List<Collider>();
 
@@ -142,37 +144,39 @@ public class SimpleCharacterControl : MonoBehaviour {
 
         Transform camera = Camera.main.transform;
 
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            v *= m_runScale;
-            h *= m_runScale;
-        }
-        if (Input.GetKey(KeyCode.LeftControl))
-        {
-            v *= m_walkScale;
-            h *= m_walkScale;
-        }
+        
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                v *= m_runScale;
+                h *= m_runScale;
+            }
+            if (Input.GetKey(KeyCode.LeftControl))
+            {
+                v *= m_walkScale;
+                h *= m_walkScale;
+            }
 
-        m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);
-        m_currentH = Mathf.Lerp(m_currentH, h, Time.deltaTime * m_interpolation);
+            m_currentV = Mathf.Lerp(m_currentV, v, Time.deltaTime * m_interpolation);
+            m_currentH = Mathf.Lerp(m_currentH, h, Time.deltaTime * m_interpolation);
 
-        Vector3 direction = camera.forward * m_currentV + camera.right * m_currentH;
+            direction = camera.forward * m_currentV + camera.right * m_currentH;
 
-        float directionLength = direction.magnitude;
-        direction.y = 0;
-        direction = direction.normalized * directionLength;
+            float directionLength = direction.magnitude;
+            direction.y = 0;
+            direction = direction.normalized * directionLength;
 
-        if(direction != Vector3.zero)
-        {
-            m_currentDirection = Vector3.Slerp(m_currentDirection, direction, Time.deltaTime * m_interpolation);
+            if (direction != Vector3.zero)
+            {
+                m_currentDirection = Vector3.Slerp(m_currentDirection, direction, Time.deltaTime * m_interpolation);
 
-            transform.rotation = Quaternion.LookRotation(m_currentDirection);
-            transform.position += m_currentDirection * m_moveSpeed * Time.deltaTime;
+                transform.rotation = Quaternion.LookRotation(m_currentDirection);
+                transform.position += m_currentDirection * m_moveSpeed * Time.deltaTime;
 
-            m_animator.SetFloat("MoveSpeed", direction.magnitude);
-        }
+                m_animator.SetFloat("MoveSpeed", direction.magnitude);
+            }
 
-        JumpingAndLanding();
+            JumpingAndLanding();
+        
     }
 
     private void JumpingAndLanding()
@@ -195,4 +199,6 @@ public class SimpleCharacterControl : MonoBehaviour {
             m_animator.SetTrigger("Jump");
         }
     }
+
+   
 }

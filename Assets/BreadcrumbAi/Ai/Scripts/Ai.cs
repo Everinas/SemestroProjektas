@@ -25,11 +25,12 @@ namespace BreadcrumbAi{
 					 wanderTimeLimit, wanderTimeRate,
 					 hoverHeight, hoverForce,
 					 Health;
-		#endregion
-		
-		// States are used for adding actions, animations, sounds, etc to your Ai.
-		#region STATES
-		public enum LIFE_STATE{
+        GameObject player;
+        #endregion
+
+        // States are used for adding actions, animations, sounds, etc to your Ai.
+        #region STATES
+        public enum LIFE_STATE{
 			IsAlive,
 			IsDazed,	// coming soon
 			IsDead,
@@ -98,7 +99,8 @@ namespace BreadcrumbAi{
 		
 	
 		void Start(){
-			StartCoroutine(this.Ai_Lists());
+            player = GameObject.FindGameObjectWithTag("Player");
+            StartCoroutine(this.Ai_Lists());
 			StartCoroutine(this.Ai_Layers());
 		}
 	
@@ -371,7 +373,10 @@ namespace BreadcrumbAi{
 			} else {
 				if(Health <= 0.0f){
 					lifeState = LIFE_STATE.IsDead;
-				}
+                    GetComponent<EnemyAttack>().enabled = false;
+                    // GetComponent<DemoEnemyControls>().enabled = false;
+                    GetComponent<Ai>().enabled = false;
+                }
 			}
 		}
 		
@@ -416,5 +421,13 @@ namespace BreadcrumbAi{
 				}
 			}
 		}
+
+        public void OnTriggerEnter(Collider other)
+        {
+            if (other.gameObject == player)
+            {
+                Health--;
+            }
+        }
 	}
 }
