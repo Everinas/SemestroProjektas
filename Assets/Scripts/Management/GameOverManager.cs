@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using BayatGames.SaveGameFree;
 
 public class GameOverManager : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class GameOverManager : MonoBehaviour
     public GameObject ragdollas;
     public Follow cameraMovement;
     Animator anim;
+
 
     private void Start()
     {
@@ -42,6 +44,8 @@ public class GameOverManager : MonoBehaviour
             player.GetComponent<SimpleCharacterControl>().enabled = false;
             player.GetComponent<Animator>().enabled = false;
             ragdollas.SetActive(true);
+            SaveGame.Save<int>("Score", 0);
+            SaveGame.Save<int>("Health", 5);
         }
     }
 }

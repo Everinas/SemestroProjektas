@@ -7,6 +7,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public int startingHealth = 3;
     public int currentHealth;
+    public static int health; //Needed for saving state
     public int numberOfHearts;
 
     public Image[] hearts;
@@ -17,6 +18,7 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         currentHealth = startingHealth;
+        currentHealth = health;
         numberOfHearts = startingHealth;
 
     }
@@ -57,6 +59,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth = currentHealth - damage;
+        health = currentHealth;
     
     }
 }

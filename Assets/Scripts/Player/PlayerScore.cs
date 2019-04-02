@@ -23,6 +23,7 @@ public class PlayerScore : MonoBehaviour
         currentKeys = startKeys;
         counter.text = "Score: 0";
         Keys.text = "Keys: 0";
+        currentScore = score;
     }
 
     private void Update()
