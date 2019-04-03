@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int startingHealth = 3;
+    public int startingHealth = 5;
     public int currentHealth;
     public static int health; //Needed for saving state
     public int numberOfHearts;
@@ -18,9 +18,8 @@ public class PlayerHealth : MonoBehaviour
     void Start()
     {
         currentHealth = startingHealth;
-        currentHealth = health;
         numberOfHearts = startingHealth;
-
+        health = startingHealth;
     }
 
     // Update is called once per frame
@@ -51,8 +50,6 @@ public class PlayerHealth : MonoBehaviour
                 hearts[i].enabled = false;
             }
         }
-
-
         // somehow show that the damage is taken
     }
 
@@ -60,6 +57,5 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = currentHealth - damage;
         health = currentHealth;
-    
     }
 }

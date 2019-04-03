@@ -14,7 +14,7 @@ public class LevelLoad : MonoBehaviour
         {
             if (NPC_Dialogue.levelchange == true)
             {
-                SceneManager.LoadScene(1);
+                SceneManager.LoadScene("Level_2");
             }
         }
     }
