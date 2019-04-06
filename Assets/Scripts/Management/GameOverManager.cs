@@ -25,7 +25,6 @@ public class GameOverManager : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         ragdollas = GameObject.FindGameObjectWithTag("PlayerRagdoll");
         ragdollas.SetActive(false);
-
     }
     private void Update()
     {

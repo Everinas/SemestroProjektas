@@ -373,6 +373,9 @@ namespace BreadcrumbAi{
 					lifeState = LIFE_STATE.IsDead;
                     GetComponent<EnemyAttack>().enabled = false;
                     // GetComponent<DemoEnemyControls>().enabled = false;
+                    GetComponent<SphereCollider>().enabled = false;
+                    Physics.IgnoreCollision(player.GetComponent<Collider>(), GetComponent<Collider>());
+                    this.GetComponent<DestroyOverTime>().enabled = true;
                     GetComponent<Ai>().enabled = false;                  
                 }
 			}
@@ -424,22 +427,10 @@ namespace BreadcrumbAi{
         {   
             if (other.gameObject == player)
             {
-                Health--;
-                if (Health <= 0.0f)
-                {
-                    Physics.IgnoreCollision(player.GetComponent<Collider>(), GetComponent<Collider>());
-                    this.GetComponent<DestroyOverTime>().enabled = true;
-                }
-                ExecuteAfterTime(1);
-                Vector3 direction = new Vector3(0, 0.7f, 0);
-                player.GetComponent<Rigidbody>().AddForce(direction * 5 * 75);
+                    Health--;
+                    Vector3 direction = new Vector3(0, 0.7f, 0);
+                    player.GetComponent<Rigidbody>().AddForce(direction * 6 * 75);        
             }
-        }
-        IEnumerator ExecuteAfterTime(float time)
-        {
-            yield return new WaitForSeconds(time);
-
-            // Code to execute after the delay
         }
     }
 }
