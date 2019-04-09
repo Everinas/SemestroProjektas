@@ -29,7 +29,7 @@ public class House : MonoBehaviour
             {
                 if (Input.GetButtonDown("E"))
                 {
-                    SceneManager.LoadScene("Testsite");
+                    SceneManager.LoadScene("HomeForest");
                     inside = false;
                 }
             }
