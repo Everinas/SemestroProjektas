@@ -25,7 +25,9 @@ public class EnemyAttack : MonoBehaviour
         if (isTouching)
         {
             playerHealth.TakeDamage(1);
-            player.GetComponent<Rigidbody>().AddForce(hitDirection * pushBackForce * 75);
+
+            Vector3 direction = new Vector3(0.7f, 0.5f, 0.7f);
+            player.GetComponent<Rigidbody>().AddForce(direction * pushBackForce * 75);
             isTouching = false;
         }
     }
@@ -34,8 +36,9 @@ public class EnemyAttack : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            hitDirection = collision.transform.position - transform.position;
-            hitDirection = hitDirection.normalized;
+            //hitDirection = collision.transform.position - transform.position;
+            //hitDirection = hitDirection.normalized;
+            //Debug.Log("hitDir" + hitDirection);
             player.GetComponent<Renderer>().material.color = Color.red;
             isTouching = true;
         }

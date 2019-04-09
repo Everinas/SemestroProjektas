@@ -21,7 +21,6 @@ public class DemoEnemyControls : MonoBehaviour {
 	private Transform player;
 	
 	private Ai ai;
-    private bool dead;
 	
 	private bool _removeBody, _isHit, _animAttack;
 	private AudioSource audioSource;
@@ -48,14 +47,11 @@ public class DemoEnemyControls : MonoBehaviour {
 		if(go){
 			player = go.transform;
 		}
-        dead = false;
 	}
 	
 	void Update () {
-        if (dead != true)
-        {
-            CheckDeathZone();
-        }
+		CheckHealth();
+		CheckDeathZone();
 	}
 	
 	void FixedUpdate(){
@@ -141,8 +137,7 @@ public class DemoEnemyControls : MonoBehaviour {
 					audioSource.clip = audioClips.audio_dead_2;
 				}
 				audioSource.PlayOneShot(audioSource.clip);
-                dead = true;
-            }
+			}
 	        _isHit = false;
         }
         

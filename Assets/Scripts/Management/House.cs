@@ -21,7 +21,7 @@ public class House : MonoBehaviour
             {
                 if (Input.GetButtonDown("E"))
                 {
-                    SceneManager.LoadScene("House");
+                    SceneManager.LoadScene(2);
                     inside = true;
                 }
             }

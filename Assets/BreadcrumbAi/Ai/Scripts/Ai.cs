@@ -95,8 +95,10 @@ namespace BreadcrumbAi{
 		private Vector3 wanderPos;				// Sets next random wander position
 		private float wanderTimer, wanderNext;	// Used for timing the wander time limit
 		private RaycastHit hit;
-
-        void Start(){
+		
+		
+	
+		void Start(){
             player = GameObject.FindGameObjectWithTag("Player");
             StartCoroutine(this.Ai_Lists());
 			StartCoroutine(this.Ai_Layers());
@@ -373,10 +375,7 @@ namespace BreadcrumbAi{
 					lifeState = LIFE_STATE.IsDead;
                     GetComponent<EnemyAttack>().enabled = false;
                     // GetComponent<DemoEnemyControls>().enabled = false;
-                    GetComponent<SphereCollider>().enabled = false;
-                    Physics.IgnoreCollision(player.GetComponent<Collider>(), GetComponent<Collider>());
-                    this.GetComponent<DestroyOverTime>().enabled = true;
-                    GetComponent<Ai>().enabled = false;                  
+                    GetComponent<Ai>().enabled = false;
                 }
 			}
 		}
@@ -427,10 +426,9 @@ namespace BreadcrumbAi{
         {   
             if (other.gameObject == player)
             {
-                    Health--;
-                    Vector3 direction = new Vector3(0, 0.7f, 0);
-                    player.GetComponent<Rigidbody>().AddForce(direction * 6 * 75);        
+                Health--;
+                this.GetComponent<DestroyOverTime>().enabled = true;
             }
         }
-    }
+	}
 }
