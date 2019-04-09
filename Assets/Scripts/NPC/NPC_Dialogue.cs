@@ -11,11 +11,16 @@ public class NPC_Dialogue : MonoBehaviour
     public Text dialogue;
     public static bool levelchange = false;
     public static bool buttonPress = false;
+    public static bool wave = false;
     private void OnTriggerStay(Collider other)
     {
         if (Input.GetButtonDown("E") && buttonPress == false)
         {
-
+            if (wave == false)
+            {
+                wave = true;
+                other.GetComponent<Animator>().Play("wave");
+            }
             buttonPress = true;
             if (PlayerScore.score >= 5)
             {
@@ -44,6 +49,7 @@ public class NPC_Dialogue : MonoBehaviour
         {
             buttonPress = false;
             dialogue.text = "";
+            wave = false;
         }
     }
 }
