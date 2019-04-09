@@ -374,7 +374,9 @@ namespace BreadcrumbAi{
 				if(Health <= 0.0f){
 					lifeState = LIFE_STATE.IsDead;
                     GetComponent<EnemyAttack>().enabled = false;
-                    // GetComponent<DemoEnemyControls>().enabled = false;
+                    GetComponent<SphereCollider>().enabled = false;
+                    Physics.IgnoreCollision(player.GetComponent<Collider>(), GetComponent<Collider>());
+                    this.GetComponent<DestroyOverTime>().enabled = true;
                     GetComponent<Ai>().enabled = false;
                 }
 			}
@@ -428,6 +430,8 @@ namespace BreadcrumbAi{
             {
                 Health--;
                 this.GetComponent<DestroyOverTime>().enabled = true;
+                Vector3 direction = new Vector3(0, 0.7f, 0);
+                player.GetComponent<Rigidbody>().AddForce(direction * 6 * 75);
             }
         }
 	}

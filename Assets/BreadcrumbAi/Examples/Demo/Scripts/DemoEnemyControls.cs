@@ -50,7 +50,6 @@ public class DemoEnemyControls : MonoBehaviour {
 	}
 	
 	void Update () {
-		CheckHealth();
 		CheckDeathZone();
 	}
 	
