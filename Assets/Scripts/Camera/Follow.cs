@@ -28,7 +28,16 @@ public class Follow : MonoBehaviour
 
     void LateUpdate()
     {
-        yaw += Input.GetAxis("Mouse X") * mouseSensitivity;
+        var d = Input.GetAxis("Mouse ScrollWheel");
+        if (d > 0 && dstFromTarget > 1)
+        {
+            dstFromTarget = dstFromTarget - 1;
+        }
+        if (d < 0 && dstFromTarget < 5 )
+        {
+            dstFromTarget = dstFromTarget + 1;
+        }
+            yaw += Input.GetAxis("Mouse X") * mouseSensitivity;
         pitch -= Input.GetAxis("Mouse Y") * mouseSensitivity;
         pitch = Mathf.Clamp(pitch, pitchMinMax.x, pitchMinMax.y);
 

@@ -31,7 +31,7 @@ public class SimpleCharacterControl : MonoBehaviour {
     private Vector3 direction;
 
     private float m_jumpTimeStamp = 0;
-    private float m_minJumpInterval = 0.25f;
+    private float m_minJumpInterval = 0.4f;
 
    
     private bool m_isGrounded;
@@ -187,6 +187,7 @@ public class SimpleCharacterControl : MonoBehaviour {
         {
             m_jumpTimeStamp = Time.time;
             m_rigidBody.AddForce(Vector3.up * m_jumpForce, ForceMode.Impulse);
+            m_rigidBody.AddForce(m_currentDirection * m_jumpForce/4, ForceMode.Impulse);
         }
 
         if (!m_wasGrounded && m_isGrounded)
