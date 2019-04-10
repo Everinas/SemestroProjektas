@@ -33,7 +33,7 @@ public class SimpleCharacterControl : MonoBehaviour {
     private float m_jumpTimeStamp = 0;
     private float m_minJumpInterval = 0.4f;
 
-   
+
     private bool m_isGrounded;
     private List<Collider> m_collisions = new List<Collider>();
 

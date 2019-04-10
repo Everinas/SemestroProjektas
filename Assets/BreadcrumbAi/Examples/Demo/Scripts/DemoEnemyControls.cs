@@ -83,7 +83,7 @@ public class DemoEnemyControls : MonoBehaviour {
     }
 
     private void Attack(){
-        Vector3 ne = new Vector3(0, 1, 0);
+        Vector3 ne = new Vector3(0, 0, 0);
 
         if (player){
 	    	if(ai.lifeState == Ai.LIFE_STATE.IsAlive){
@@ -107,7 +107,8 @@ public class DemoEnemyControls : MonoBehaviour {
 					if(ai.attackState == Ai.ATTACK_STATE.CanAttackPlayer && Time.time > rangedAttackNext){
 						rangedAttackNext = Time.time + rangedAttackRate;
 						Rigidbody spit = Instantiate(rangedProjectilePrefab, (transform.position -ne) + transform.forward + transform.up, transform.rotation) as Rigidbody;
-						spit.AddForce(transform.forward * 200);
+                        
+                        spit.AddForce((player.transform.position - transform.position) * 50);
 						_animAttack = true;
 					} else {
 						_animAttack = false;
