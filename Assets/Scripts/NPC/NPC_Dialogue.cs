@@ -13,6 +13,8 @@ public class NPC_Dialogue : MonoBehaviour
     public static bool buttonPress = false;
     public static bool wave = false;
     Collider player;
+    public GameObject pedestal;
+    public GameObject effect;
     private void OnTriggerStay(Collider other)
     {
         if (Input.GetButtonDown("E") && buttonPress == false)
@@ -35,6 +37,7 @@ public class NPC_Dialogue : MonoBehaviour
                 {
                     dialogue.text = thirdStage;
                     levelchange = true;
+                    GameObject spit = Instantiate(effect, (pedestal.transform.position),transform.rotation) as GameObject;
                 }
                 else
                     dialogue.text = secondStage;

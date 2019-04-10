@@ -2269,15 +2269,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400094, guid: 013ee0a8b56bacd44b928eab033163af, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 387.224
+      value: 389.045
       objectReference: {fileID: 0}
     - target: {fileID: 400094, guid: 013ee0a8b56bacd44b928eab033163af, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -41.934647
+      value: -42.899
       objectReference: {fileID: 0}
     - target: {fileID: 400094, guid: 013ee0a8b56bacd44b928eab033163af, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -62.821922
+      value: -57.321
       objectReference: {fileID: 0}
     - target: {fileID: 400094, guid: 013ee0a8b56bacd44b928eab033163af, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2327,6 +2327,22 @@ PrefabInstance:
       propertyPath: m_Animation
       value: 
       objectReference: {fileID: 7400002, guid: 013ee0a8b56bacd44b928eab033163af, type: 3}
+    - target: {fileID: 400092, guid: 013ee0a8b56bacd44b928eab033163af, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.76604444
+      objectReference: {fileID: 0}
+    - target: {fileID: 400092, guid: 013ee0a8b56bacd44b928eab033163af, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400092, guid: 013ee0a8b56bacd44b928eab033163af, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.64278764
+      objectReference: {fileID: 0}
+    - target: {fileID: 400092, guid: 013ee0a8b56bacd44b928eab033163af, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 013ee0a8b56bacd44b928eab033163af, type: 3}
 --- !u!4 &604519501 stripped
@@ -2360,6 +2376,7 @@ MonoBehaviour:
   thirdStage: Nicely done! Now if you wish to be teleported step on that platform
     over there
   dialogue: {fileID: 1480718451}
+  pedestal: {fileID: 1406832584}
 --- !u!65 &604519504
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3292,7 +3309,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400048, guid: 7b93163bc7f906d438dfaf4c1e436d5b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.677002
+      value: -8.2
       objectReference: {fileID: 0}
     - target: {fileID: 400048, guid: 7b93163bc7f906d438dfaf4c1e436d5b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5146,15 +5163,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f59f0fd709b3ea54897cbff8e43a0eca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 384.61005
+      value: 390.27
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f59f0fd709b3ea54897cbff8e43a0eca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -41.899403
+      value: -43.19
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f59f0fd709b3ea54897cbff8e43a0eca, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -66.02448
+      value: -59.99
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f59f0fd709b3ea54897cbff8e43a0eca, type: 3}
       propertyPath: m_LocalRotation.x

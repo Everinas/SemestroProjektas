@@ -15,8 +15,9 @@ public class DemoEnemyControls : MonoBehaviour {
 	public bool _canDropPickUp;
 	public EnemyType enemyType;
 	public Rigidbody rangedProjectilePrefab;
-	
-	public GameObject bloodPrefab;
+    public Rigidbody effect;
+
+    public GameObject bloodPrefab;
 	public GameObject specialPrefab;
 	private Transform player;
 	
@@ -80,7 +81,7 @@ public class DemoEnemyControls : MonoBehaviour {
             anim.SetBool(animDeath1, true);
         }
     }
-    
+
     private void Attack(){
         Vector3 ne = new Vector3(0, 1, 0);
 
