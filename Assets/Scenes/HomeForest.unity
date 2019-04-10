@@ -4275,6 +4275,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.49999988
       objectReference: {fileID: 0}
+    - target: {fileID: 6411784, guid: 2cfb651bea8d26240aa4aa462de9d69f, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6411784, guid: 2cfb651bea8d26240aa4aa462de9d69f, type: 3}
+      propertyPath: m_CookingOptions
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cfb651bea8d26240aa4aa462de9d69f, type: 3}
 --- !u!4 &1151055182 stripped
@@ -4327,6 +4335,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.247181, y: 1.480636, z: 3.7712555}
   m_Center: {x: -0.03198141, y: -0.18303753, z: 1.6947283}
+--- !u!54 &1151055187
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1151055183}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 1
+  m_AngularDrag: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 2
 --- !u!1 &1174709689
 GameObject:
   m_ObjectHideFlags: 0
