@@ -22,22 +22,39 @@ public class EnemyAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Vector3 targetposition = new Vector3(transform.position.x,
+        //                                     player.transform.position.y,
+        //                                     transform.position.z);
         if (isTouching)
         {
-            playerHealth.TakeDamage(1);
-
-            player.GetComponent<Rigidbody>().AddForce(hitDirection * pushBackForce * 75);
+            //playerHealth.TakeDamage(1);
+            player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            player.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            funk();
+            player.transform.LookAt(transform.localPosition);
             isTouching = false;
         }
     }
+    void funk()
+    {
+        Vector3 toTarget = (transform.position - player.transform.position).normalized;
 
-    private void OnCollisionEnter(Collision collision)
+        if (Vector3.Dot(toTarget, player.transform.forward) > 0)
+        {
+
+            player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, -7, ForceMode.VelocityChange);
+        }
+        else
+        {
+            player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, 7, ForceMode.VelocityChange);
+        }
+    }
+private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             hitDirection = collision.transform.position - transform.position;
             hitDirection = hitDirection.normalized;
-            player.GetComponent<Renderer>().material.color = Color.red;
             isTouching = true;
         }
     }
