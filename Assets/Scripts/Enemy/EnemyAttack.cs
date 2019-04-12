@@ -27,11 +27,11 @@ public class EnemyAttack : MonoBehaviour
         //                                     transform.position.z);
         if (isTouching)
         {
-            //playerHealth.TakeDamage(1);
+            playerHealth.TakeDamage(1);
             player.GetComponent<Rigidbody>().velocity = Vector3.zero;
             player.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             funk();
-            player.transform.LookAt(transform.localPosition);
+            //player.transform.LookAt(transform.localPosition);
             isTouching = false;
         }
     }
