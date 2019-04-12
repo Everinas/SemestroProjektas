@@ -7,7 +7,7 @@ public class GameOverManager : MonoBehaviour
 {
     public GameObject player;
     public GameObject ragdollas;
-    public Follow cameraMovement;
+    public CameraFollow cameraMovement;
     Animator anim;
 
 
@@ -17,7 +17,7 @@ public class GameOverManager : MonoBehaviour
         Cursor.visible = false;
 
         // This stops the camera movement after dying
-        cameraMovement = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Follow>();
+        cameraMovement = GameObject.FindGameObjectWithTag("CameraFolder").GetComponent<CameraFollow>();
 
         // Init animator for endgame buttons
         anim = GetComponent<Animator>();

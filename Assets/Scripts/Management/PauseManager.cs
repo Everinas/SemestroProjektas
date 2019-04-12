@@ -5,14 +5,14 @@ using UnityEngine;
 public class PauseManager : MonoBehaviour
 {
     bool isToggled;
-    Follow cameraMovement;
+    CameraFollow cameraMovement;
     GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        cameraMovement = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Follow>();
+        cameraMovement = GameObject.FindGameObjectWithTag("CameraFolder").GetComponent<CameraFollow>();
         player.GetComponent<SimpleCharacterControl>().enabled = true;
         player.GetComponent<Animator>().enabled = true;
         //cameraMovement.enabled = true;
@@ -32,7 +32,7 @@ public class PauseManager : MonoBehaviour
         else
         {
             Cursor.visible = false;
-            //cameraMovement.enabled = true;
+            cameraMovement.enabled = true;
             player.GetComponent<SimpleCharacterControl>().enabled = true;
             player.GetComponent<Animator>().enabled = true;
 
