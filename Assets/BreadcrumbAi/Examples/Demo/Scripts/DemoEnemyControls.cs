@@ -15,8 +15,9 @@ public class DemoEnemyControls : MonoBehaviour {
 	public bool _canDropPickUp;
 	public EnemyType enemyType;
 	public Rigidbody rangedProjectilePrefab;
-	
-	public GameObject bloodPrefab;
+    public Rigidbody effect;
+
+    public GameObject bloodPrefab;
 	public GameObject specialPrefab;
 	private Transform player;
 	
@@ -50,7 +51,6 @@ public class DemoEnemyControls : MonoBehaviour {
 	}
 	
 	void Update () {
-		CheckHealth();
 		CheckDeathZone();
 	}
 	
@@ -81,9 +81,11 @@ public class DemoEnemyControls : MonoBehaviour {
             anim.SetBool(animDeath1, true);
         }
     }
-    
+
     private void Attack(){
-    	if(player){
+        Vector3 ne = new Vector3(0, 0, 0);
+
+        if (player){
 	    	if(ai.lifeState == Ai.LIFE_STATE.IsAlive){
 		    	if(enemyType != EnemyType.Ranged){
 					if(ai.attackState == Ai.ATTACK_STATE.CanAttackPlayer && Time.time > meleeAttackNext){
@@ -104,8 +106,9 @@ public class DemoEnemyControls : MonoBehaviour {
 		    	} else {
 					if(ai.attackState == Ai.ATTACK_STATE.CanAttackPlayer && Time.time > rangedAttackNext){
 						rangedAttackNext = Time.time + rangedAttackRate;
-						Rigidbody spit = Instantiate(rangedProjectilePrefab, transform.position + transform.forward + transform.up, transform.rotation) as Rigidbody;
-						spit.AddForce(transform.forward * 500);
+						Rigidbody spit = Instantiate(rangedProjectilePrefab, (transform.position -ne) + transform.forward + transform.up, transform.rotation) as Rigidbody;
+                        
+                        spit.AddForce((player.transform.position - transform.position) * 50);
 						_animAttack = true;
 					} else {
 						_animAttack = false;

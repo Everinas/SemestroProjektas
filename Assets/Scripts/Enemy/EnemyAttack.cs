@@ -6,6 +6,9 @@ public class EnemyAttack : MonoBehaviour
 {
     GameObject player;
     PlayerHealth playerHealth;
+    Vector3 hitDirection;
+    public float pushBackForce = 4;
+
     bool isTouching;
 
     // Start is called before the first frame update
@@ -19,18 +22,39 @@ public class EnemyAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Vector3 targetposition = new Vector3(transform.position.x,
+        //                                     player.transform.position.y,
+        //                                     transform.position.z);
         if (isTouching)
         {
             playerHealth.TakeDamage(1);
+            player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            player.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            funk();
+            //player.transform.LookAt(transform.localPosition);
             isTouching = false;
         }
     }
-
-    private void OnCollisionEnter(Collision collision)
+    void funk()
     {
-        if (collision.gameObject == player)
+        Vector3 toTarget = (transform.position - player.transform.position).normalized;
+
+        if (Vector3.Dot(toTarget, player.transform.forward) > 0)
         {
-            player.GetComponent<Renderer>().material.color = Color.red;
+
+            player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, -7, ForceMode.VelocityChange);
+        }
+        else
+        {
+            player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, 7, ForceMode.VelocityChange);
+        }
+    }
+private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            hitDirection = collision.transform.position - transform.position;
+            hitDirection = hitDirection.normalized;
             isTouching = true;
         }
     }

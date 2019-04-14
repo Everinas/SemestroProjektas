@@ -9,6 +9,8 @@ TagManager:
   - Destructible
   - Waypoint
   - PlayerRagdoll
+  - lb_bird
+  - CameraFolder
   layers:
   - Default
   - TransparentFX

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace BreadcrumbAi{
 	[System.Serializable]
 	public class Ai : MonoBehaviour {
-		
+        DestroyOverTime script;
 		#region Editor Variables
 		// *****EDITOR VARIABLES***** //
 		public bool _CanFollowPlayer, _CanFollowBreadcrumbs, _CanFollowAi, _CanWander, _CanPatrol,
@@ -18,6 +18,7 @@ namespace BreadcrumbAi{
 					_IsMelee, _IsRanged,
 					_IsGround, _IsAir,
 					_IsInvincible;
+
 					
 		public float followSpeed, wanderSpeed, patrolSpeed, rotationSpeed, avoidSpeed,
 					 jumpDistance, jumpForce, longJumpForce,
@@ -27,7 +28,6 @@ namespace BreadcrumbAi{
 					 Health;
         GameObject player;
         #endregion
-
         // States are used for adding actions, animations, sounds, etc to your Ai.
         #region STATES
         public enum LIFE_STATE{
@@ -374,7 +374,9 @@ namespace BreadcrumbAi{
 				if(Health <= 0.0f){
 					lifeState = LIFE_STATE.IsDead;
                     GetComponent<EnemyAttack>().enabled = false;
-                    // GetComponent<DemoEnemyControls>().enabled = false;
+                    GetComponent<SphereCollider>().enabled = false;
+                    Physics.IgnoreCollision(player.GetComponent<Collider>(), GetComponent<Collider>());
+                    this.GetComponent<DestroyOverTime>().enabled = true;
                     GetComponent<Ai>().enabled = false;
                 }
 			}
@@ -423,10 +425,15 @@ namespace BreadcrumbAi{
 		}
 
         public void OnTriggerEnter(Collider other)
-        {
+        {   
             if (other.gameObject == player)
             {
                 Health--;
+                this.GetComponent<DestroyOverTime>().enabled = true;
+                player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                player.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+                Vector3 direction = new Vector3(0, 0.7f, 0);
+                player.GetComponent<Rigidbody>().AddForce(direction * 6 * 75);
             }
         }
 	}

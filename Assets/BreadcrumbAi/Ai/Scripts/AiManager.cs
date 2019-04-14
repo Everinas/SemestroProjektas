@@ -22,7 +22,7 @@ namespace BreadcrumbAi{
 			while(ai.enabled){
 				try{
 				players = GameObject.FindGameObjectsWithTag(playerString);
-				breadcrumbs = GameObject.FindGameObjectsWithTag(breadcrumbString);
+				//breadcrumbs = GameObject.FindGameObjectsWithTag(breadcrumbString);
 				waypoints = GameObject.FindGameObjectsWithTag(waypointString);
 				} catch(UnityException ex){
 					Debug.Log(ex.Message + "\n" +
