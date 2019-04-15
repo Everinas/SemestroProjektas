@@ -27,7 +27,6 @@ public class EnemyAttack : MonoBehaviour
         //                                     transform.position.z);
         if (isTouching)
         {
-            playerHealth.TakeDamage(1);
             player.GetComponent<Rigidbody>().velocity = Vector3.zero;
             player.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
             funk();
@@ -41,12 +40,16 @@ public class EnemyAttack : MonoBehaviour
 
         if (Vector3.Dot(toTarget, player.transform.forward) > 0)
         {
-
+            playerHealth.TakeDamage(1);
             player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, -7, ForceMode.VelocityChange);
         }
         else
         {
-            player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, 7, ForceMode.VelocityChange);
+            // if(has a shield)
+            player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, 4, ForceMode.VelocityChange);
+            //else
+            //playerHealth.TakeDamage(1);
+            //player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, 7, ForceMode.VelocityChange);
         }
     }
 private void OnCollisionEnter(Collision collision)
