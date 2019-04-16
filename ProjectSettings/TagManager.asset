@@ -11,7 +11,6 @@ TagManager:
   - PlayerRagdoll
   - lb_bird
   - CameraFolder
-  - Traps
   layers:
   - Default
   - TransparentFX
