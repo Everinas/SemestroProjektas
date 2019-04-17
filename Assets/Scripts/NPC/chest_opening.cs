@@ -38,7 +38,7 @@ public class chest_opening : MonoBehaviour
                         playerScore.currentKeys--;
                         anim.Play("Open");
                         opened = true;
-
+                        player.GetComponent<Animator>().Play("pickup");
                     }
                 }
             }
