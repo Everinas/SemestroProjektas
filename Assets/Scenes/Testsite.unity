@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.6132941, g: 0.64921284, b: 0.58911365, a: 1}
+  m_IndirectSpecularColor: {r: 0.6139961, g: 0.6493492, b: 0.5891064, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2111,12 +2111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7590279662ab70f409591eb1475ebf00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockCursor: 0
-  mouseSensitivity: 3
-  target: {fileID: 1962024687}
-  dstFromTarget: 4
-  pitchMinMax: {x: -10, y: 80}
-  rotationSmoothTime: 0
 --- !u!1001 &541359580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6775,6 +6769,8 @@ MonoBehaviour:
   thirdStage: Nicely done! Now if you wish to be teleported step on that platform
     over there
   dialogue: {fileID: 1719191361}
+  pedestal: {fileID: 0}
+  effect: {fileID: 0}
 --- !u!1 &1743152367 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1064268953378300, guid: 0e74cf81e6fd82546b4797f71ceffb81,
@@ -7159,7 +7155,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844021159}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bedec068a3a7a24fb4096ec67fa0dff, type: 3}
   m_Name: 
@@ -7193,7 +7189,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844021159}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 485623f6e017ae444a31e5c80d545477, type: 3}
   m_Name: 
@@ -7219,7 +7215,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844021159}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2929606d698a60d4d9f955181ad7b991, type: 3}
   m_Name: 

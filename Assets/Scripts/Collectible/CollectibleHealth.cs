@@ -29,7 +29,7 @@ public class CollectibleHealth : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            Destroy(this.gameObject);
+            gameObject.SetActive(false);
             if (playerHealth.currentHealth != playerHealth.startingHealth)
             {
                 playerHealth.currentHealth++;
