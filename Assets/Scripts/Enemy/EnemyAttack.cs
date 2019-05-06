@@ -52,7 +52,7 @@ public class EnemyAttack : MonoBehaviour
             //player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, 7, ForceMode.VelocityChange);
         }
     }
-private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
@@ -60,6 +60,16 @@ private void OnCollisionEnter(Collision collision)
             hitDirection = hitDirection.normalized;
             isTouching = true;
         }
+        //if (this.gameObject.tag == "Spit")
+        //{
+        //    if (collider.gameObject.tag == "Enemy")
+        //    {
+        //        hitDirection = collider.transform.position - transform.position;
+        //        hitDirection = hitDirection.normalized;
+        //        collider.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        //        collider.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        //        collider.GetComponent<Rigidbody>().AddRelativeForce(0, 3, -7, ForceMode.VelocityChange);
+        //    }
+        //}
     }
-
 }

@@ -4696,7 +4696,7 @@ GameObject:
   - component: {fileID: 11400000}
   m_Layer: 13
   m_Name: Spit
-  m_TagString: Enemy
+  m_TagString: Spit
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4855,7 +4855,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caa8c17ad765f4c4b9621773fb3bb373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushBackForce: 0
+  pushBackForce: 4
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

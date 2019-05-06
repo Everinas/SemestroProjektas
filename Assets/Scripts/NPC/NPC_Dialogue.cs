@@ -33,6 +33,7 @@ public class NPC_Dialogue : MonoBehaviour
                 {
                     wave = true;
                     other.GetComponent<Animator>().Play("wave");
+                    this.GetComponent<Animation>().Play("Up");
                 }
                 buttonPress = true;
                 if (score.currentScore >= 5)
@@ -64,8 +65,13 @@ public class NPC_Dialogue : MonoBehaviour
         {
             buttonPress = false;
             dialogue.text = "";
+            if (wave == true)
+            {
+                this.GetComponent<Animation>().Play("Take");
+            }
             wave = false;
         }
+        
     }
     void start()
     {

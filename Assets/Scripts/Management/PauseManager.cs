@@ -15,7 +15,7 @@ public class PauseManager : MonoBehaviour
         cameraMovement = GameObject.FindGameObjectWithTag("CameraFolder").GetComponent<CameraFollow>();
         player.GetComponent<SimpleCharacterControl>().enabled = true;
         player.GetComponent<Animator>().enabled = true;
-        //cameraMovement.enabled = true;
+        cameraMovement.enabled = true;
         isToggled = true;
         Cursor.visible = false;
     }
