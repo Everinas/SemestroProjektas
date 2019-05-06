@@ -11,6 +11,10 @@ TagManager:
   - PlayerRagdoll
   - lb_bird
   - CameraFolder
+  - lb_groundTarget
+  - lb_perchTarget
+  - Spit
+  - Trap
   layers:
   - Default
   - TransparentFX

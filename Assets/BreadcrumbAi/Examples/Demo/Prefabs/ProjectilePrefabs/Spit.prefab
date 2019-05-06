@@ -4694,6 +4694,7 @@ GameObject:
   - component: {fileID: 8200000}
   - component: {fileID: 800850401769341636}
   - component: {fileID: 11400000}
+  - component: {fileID: 7031467278105335243}
   m_Layer: 13
   m_Name: Spit
   m_TagString: Spit
@@ -4869,6 +4870,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explodePrefab: {fileID: 100000, guid: 1bc9c8850ef77c945a413e8584722f25, type: 3}
+--- !u!135 &7031467278105335243
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100002}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &100004
 GameObject:
   m_ObjectHideFlags: 0

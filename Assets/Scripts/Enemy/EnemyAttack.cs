@@ -72,4 +72,40 @@ public class EnemyAttack : MonoBehaviour
         //    }
         //}
     }
+    private void OnTriggerEnter(Collider collision)
+    {
+
+        if (this.gameObject.tag == "Trap")
+        {
+            if (collision.gameObject.tag == "Enemy")
+            {
+                hitDirection = collision.transform.position - transform.position;
+                hitDirection = hitDirection.normalized;
+                collision.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                collision.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+                collision.GetComponent<Rigidbody>().AddRelativeForce(0, 3, -7, ForceMode.VelocityChange);
+                collision.GetComponent<BreadcrumbAi.Ai>().Health--;
+            }
+        }
+        if (this.gameObject.tag == "Spit")
+        {
+            if (collision.gameObject.tag == "Enemy")
+            {
+                hitDirection = collision.transform.position - transform.position;
+                hitDirection = hitDirection.normalized;
+                collision.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                collision.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+                Vector3 toTarget = (transform.position - player.transform.position).normalized;
+
+                if (Vector3.Dot(toTarget, collision.transform.forward) > 0)
+                {
+                    collision.GetComponent<Rigidbody>().AddRelativeForce(0, 3, -7, ForceMode.VelocityChange);
+                }
+                else
+                {
+                    collision.GetComponent<Rigidbody>().AddRelativeForce(0, 3, 7, ForceMode.VelocityChange);
+                }
+            }
+        }
+    }
 }
