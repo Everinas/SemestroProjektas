@@ -33,7 +33,7 @@ public class chest_opening : MonoBehaviour
                     anim.Play("Shake");
                     anim.Play("New State");
                     print("Veikia");
-                    if (PlayerScore.keys > 0)
+                    if (playerScore.currentKeys > 0)
                     {
                         playerScore.currentKeys--;
                         anim.Play("Open");
