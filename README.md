@@ -21,6 +21,7 @@ Realus žaidimas prasideda pradinėje lygio zonoje, iš kurios galite pasiekti v
 ### Naujas funkcionalumas
 - Pridėtas naujas lygis (miestelis)
 - Pridėtas naujas lygis (laukai)
+- Galima pasikalbėti su NPC ir persikelti į kitą zoną
 ### Ištaisytos klaidos
 
 ## 2 sprintas
@@ -28,6 +29,9 @@ Realus žaidimas prasideda pradinėje lygio zonoje, iš kurios galite pasiekti v
 - Pridėtas escape menu
 - Galima žaidimą pradėti iš naujo (continue)
 - Pridėtas žaidėjo modelis
+- Pridėta žaidėjo sveikata
+- Pridėtas žaidėjo modelis
+- Pridėti priešai 
 ### Ištaisytos klaidos
 
 
@@ -37,3 +41,4 @@ Realus žaidimas prasideda pradinėje lygio zonoje, iš kurios galite pasiekti v
 - Sukurtas žaidėjo objektas
 - Sukurtas pirmas priešo objektas
 - Galima žaidimą laimėti arba pralaimėti
+- Galima rinkti taškus
