@@ -3289,6 +3289,7 @@ MonoBehaviour:
   dialogue: {fileID: 1480718451}
   pedestal: {fileID: 1406832584}
   effect: {fileID: 1223526616464650, guid: c590b17884b119046bc6412066500b7d, type: 3}
+  score: {fileID: 1890999553}
 --- !u!65 &604519504
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11827,6 +11828,8 @@ MonoBehaviour:
   - {fileID: 462460162}
   - {fileID: 1707840203}
   - {fileID: 667562086}
+  - {fileID: 100812596}
+  - {fileID: 1942836122}
   playerScore: {fileID: 1890999553}
   playerHealth: {fileID: 1890999551}
 --- !u!1 &2128809562

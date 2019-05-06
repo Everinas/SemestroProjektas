@@ -31,6 +31,7 @@ public class Saving2 : MonoBehaviour
         {
             SaveGame.Save<bool>(collectible.GetInstanceID().ToString(), collectible.activeInHierarchy);
         }
+       // SaveGame.Save<bool>("Levelchange", NPC_Dialogue.levelchange);
 
     }
     void Load()
@@ -47,6 +48,7 @@ public class Saving2 : MonoBehaviour
         {
             collectible.SetActive(SaveGame.Load<bool>(collectible.GetInstanceID().ToString()));
         }
+        //NPC_Dialogue.levelchange = SaveGame.Load<bool>("Levelchange");
     }
 
     // Update is called once per frame
