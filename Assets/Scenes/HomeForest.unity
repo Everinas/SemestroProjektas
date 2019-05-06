@@ -3011,6 +3011,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 100092, guid: 013ee0a8b56bacd44b928eab033163af, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 013ee0a8b56bacd44b928eab033163af, type: 3}
       propertyPath: m_Layer
       value: 2
@@ -3184,10 +3188,6 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 100088, guid: 013ee0a8b56bacd44b928eab033163af, type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 100092, guid: 013ee0a8b56bacd44b928eab033163af, type: 3}
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
@@ -4059,7 +4059,7 @@ MonoBehaviour:
   clampAngle: 66
   inputSensitivity: 150
   CameraObj: {fileID: 1865718887}
-  PlayerObj: {fileID: 1890999514}
+  PlayerObj: {fileID: 918585244}
   camDistanceXToPlayer: 0
   camDistanceYToPlayer: 0
   camDistanceZToPlayer: 0
@@ -7420,6 +7420,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: 1db38da97b6ad094dbca967f13dd370f, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 1db38da97b6ad094dbca967f13dd370f, type: 3}
       propertyPath: m_Layer
       value: 2
@@ -7441,10 +7445,6 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 100012, guid: 1db38da97b6ad094dbca967f13dd370f, type: 3}
-      propertyPath: m_Layer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 100016, guid: 1db38da97b6ad094dbca967f13dd370f, type: 3}
       propertyPath: m_Layer
       value: 2
       objectReference: {fileID: 0}
@@ -7495,7 +7495,7 @@ PrefabInstance:
     - target: {fileID: 9500000, guid: 1db38da97b6ad094dbca967f13dd370f, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: b40d52859dc2a24409e89637b193d6e5, type: 2}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1db38da97b6ad094dbca967f13dd370f, type: 3}
 --- !u!1 &1527316848
@@ -8359,7 +8359,7 @@ BoxCollider:
   m_GameObject: {fileID: 1770969328}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 2.402089, y: 0.5067889, z: 2.3614154}
   m_Center: {x: 0.0000000064771206, y: 0.0021669944, z: 0.051571984}
@@ -10759,6 +10759,22 @@ CapsuleCollider:
   m_Height: 1.9086348
   m_Direction: 1
   m_Center: {x: 0.03847863, y: -0.27587074, z: 0.08810861}
+--- !u!111 &1940416283
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940416273}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 87aca181203408543942305a65e47c0b, type: 3}
+  m_Animations:
+  - {fileID: 7400000, guid: 87aca181203408543942305a65e47c0b, type: 3}
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1001 &1942836120
 PrefabInstance:
   m_ObjectHideFlags: 0
