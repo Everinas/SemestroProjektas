@@ -1,6 +1,9 @@
-# BoxBox - Semestro Projektas
+# BoxBox - Semestro projektas - platforminis žaidimas
 
 ## Aprašymas
+3D platforminis žaidimas ­fantasy tematika, Jūsų tikslas yra atlikti minimalių misijų kiekį per lygį, kad atsirakintumėte kitą lygį ir pereitumėte žaidimo istoriją.
+Lygis - tai pradine zona, iš kurios pasirenkamos to lygio misijos.
+Realus žaidimas prasideda pradinėje lygio zonoje, iš kurios galite pasiekti visus kitus lygius pakalbėjus su tam tikru NPC.
 
 ## 4 sprintas
 ### Naujas funkcionalumas
