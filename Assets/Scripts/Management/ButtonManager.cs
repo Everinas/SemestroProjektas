@@ -1,23 +1,23 @@
-﻿using BayatGames.SaveGameFree;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.SceneManagement;
+﻿using UnityEngine;
 
 public class ButtonManager : MonoBehaviour
 {
-    public static void doRestartCurrentLevel()
+    public EscMenuManager escMenu;
+    public LevelRestart levelRestart;
+
+    public void doRestartCurrentLevel()
     {
-        LevelRestart.doRestartCurrentLevel();
+        escMenu.Continue();
+        levelRestart.doRestartCurrentLevel();
     }
 
-    public static void doExitGame()
+    public void doExitGame()
     {
         Application.Quit();
     }
 
-    public static void doContinue()
-    {       
-        
+    public void doContinue()
+    {
+        escMenu.Continue();
     }
 }

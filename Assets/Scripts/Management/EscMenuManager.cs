@@ -4,30 +4,31 @@ using UnityEngine;
 
 public class EscMenuManager : MonoBehaviour
 {
-    bool isPaused;
-    public EscMenuManager menu;
+    public GameObject menu;
     public PauseManager pause;
+    bool isPaused;
 
     // Start is called before the first frame update
     void Start()
     {
+        pause = gameObject.GetComponent<PauseManager>();
         isPaused = false;
-        //menu.gameObject.SetActive(false);
+        menu.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         // Pause the game
-        if (Input.GetKeyDown(KeyCode.Escape) && isPaused == false)
-        {
-            pause.Toggle();
+        if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
+        {         
             menu.gameObject.SetActive(true);
+            pause.Toggle();
             setPause();
         }
 
         // Unpause the game
-        else if (Input.GetKeyDown(KeyCode.Escape) && isPaused == true)
+        else if (Input.GetKeyDown(KeyCode.Escape) && isPaused)
         {
             menu.gameObject.SetActive(false);
             pause.Toggle(); 
@@ -44,9 +45,8 @@ public class EscMenuManager : MonoBehaviour
     // Continue button trigger
     public void Continue()
     {
-        setPause();
-        Time.timeScale = 1;
         menu.gameObject.SetActive(false);
         pause.Toggle();
+        setPause();     
     }
 }

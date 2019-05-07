@@ -14,8 +14,7 @@ public class PauseManager : MonoBehaviour
         cameraMovement = GameObject.FindGameObjectWithTag("CameraFolder").GetComponent<CameraFollow>();
         player.GetComponent<SimpleCharacterControl>().enabled = true;
         player.GetComponent<Animator>().enabled = true;
-        cameraMovement.enabled = true;
-        isToggled = true;
+        isToggled = false;
         Cursor.visible = false;
     }
 
@@ -24,7 +23,7 @@ public class PauseManager : MonoBehaviour
         if (!isToggled)
         {
             Cursor.visible = true;
-            //cameraMovement.enabled = false;
+            cameraMovement.enabled = false;
             player.GetComponent<SimpleCharacterControl>().enabled = false;
             player.GetComponent<Animator>().enabled = false;
             Time.timeScale = 0;
@@ -32,7 +31,7 @@ public class PauseManager : MonoBehaviour
         else
         {
             Cursor.visible = false;
-            //cameraMovement.enabled = true;
+            cameraMovement.enabled = true;
             player.GetComponent<SimpleCharacterControl>().enabled = true;
             player.GetComponent<Animator>().enabled = true;
             Time.timeScale = 1;
