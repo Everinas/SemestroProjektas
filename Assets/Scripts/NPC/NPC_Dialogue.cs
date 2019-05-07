@@ -19,40 +19,44 @@ public class NPC_Dialogue : MonoBehaviour
     public PlayerScore score;
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetButtonDown("E") && buttonPress == false)
+        if (other.gameObject.tag == "Player")
         {
-            player = other;
-            //Vector3 targetPostition = new Vector3(other.transform.position.x,
-            //                           this.transform.position.y,
-            //                           other.transform.position.z);
-            //this.transform.LookAt(targetPostition);
-            
-            if (wave == false)
+            if (Input.GetButtonDown("E") && buttonPress == false)
             {
-                wave = true;
-                other.GetComponent<Animator>().Play("wave");
-            }
-            buttonPress = true;
-            if (score.currentScore >= 5)
-            {
-                if (score.currentScore >= 10)
+                player = other;
+                //Vector3 targetPostition = new Vector3(other.transform.position.x,
+                //                           this.transform.position.y,
+                //                           other.transform.position.z);
+                //this.transform.LookAt(targetPostition);
+
+                if (wave == false)
                 {
-                    dialogue.text = thirdStage;
-                    levelchange = true;
-                    GameObject spit = Instantiate(effect, (pedestal.transform.position),transform.rotation) as GameObject;
+                    wave = true;
+                    other.GetComponent<Animator>().Play("wave");
+                    this.GetComponent<Animation>().Play("Up");
+                }
+                buttonPress = true;
+                if (score.currentScore >= 5)
+                {
+                    if (score.currentScore >= 10)
+                    {
+                        dialogue.text = thirdStage;
+                        levelchange = true;
+                        GameObject spit = Instantiate(effect, (pedestal.transform.position), transform.rotation) as GameObject;
+                    }
+                    else
+                        dialogue.text = secondStage;
                 }
                 else
-                    dialogue.text = secondStage;
+                {
+                    dialogue.text = firstStage;
+                }
             }
-            else
+            else if (Input.GetButtonDown("E") && buttonPress == true)
             {
-                dialogue.text = firstStage;
+                buttonPress = false;
+                dialogue.text = "";
             }
-        }
-        else if (Input.GetButtonDown("E") && buttonPress == true)
-        {
-            buttonPress = false;
-            dialogue.text = "";
         }
     }
     private void OnTriggerExit(Collider other)
@@ -61,8 +65,13 @@ public class NPC_Dialogue : MonoBehaviour
         {
             buttonPress = false;
             dialogue.text = "";
+            if (wave == true)
+            {
+                this.GetComponent<Animation>().Play("Take");
+            }
             wave = false;
         }
+        
     }
     void start()
     {

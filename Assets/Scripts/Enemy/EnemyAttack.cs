@@ -52,7 +52,7 @@ public class EnemyAttack : MonoBehaviour
             //player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, 7, ForceMode.VelocityChange);
         }
     }
-private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player")
         {
@@ -60,6 +60,52 @@ private void OnCollisionEnter(Collision collision)
             hitDirection = hitDirection.normalized;
             isTouching = true;
         }
+        //if (this.gameObject.tag == "Spit")
+        //{
+        //    if (collider.gameObject.tag == "Enemy")
+        //    {
+        //        hitDirection = collider.transform.position - transform.position;
+        //        hitDirection = hitDirection.normalized;
+        //        collider.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        //        collider.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+        //        collider.GetComponent<Rigidbody>().AddRelativeForce(0, 3, -7, ForceMode.VelocityChange);
+        //    }
+        //}
     }
+    private void OnTriggerEnter(Collider collision)
+    {
 
+        if (this.gameObject.tag == "Trap")
+        {
+            if (collision.gameObject.tag == "Enemy")
+            {
+                hitDirection = collision.transform.position - transform.position;
+                hitDirection = hitDirection.normalized;
+                collision.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                collision.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+                collision.GetComponent<Rigidbody>().AddRelativeForce(0, 3, -7, ForceMode.VelocityChange);
+                collision.GetComponent<BreadcrumbAi.Ai>().Health--;
+            }
+        }
+        if (this.gameObject.tag == "Spit")
+        {
+            if (collision.gameObject.tag == "Enemy")
+            {
+                hitDirection = collision.transform.position - transform.position;
+                hitDirection = hitDirection.normalized;
+                collision.GetComponent<Rigidbody>().velocity = Vector3.zero;
+                collision.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+                Vector3 toTarget = (transform.position - player.transform.position).normalized;
+
+                if (Vector3.Dot(toTarget, collision.transform.forward) > 0)
+                {
+                    collision.GetComponent<Rigidbody>().AddRelativeForce(0, 3, -7, ForceMode.VelocityChange);
+                }
+                else
+                {
+                    collision.GetComponent<Rigidbody>().AddRelativeForce(0, 3, 7, ForceMode.VelocityChange);
+                }
+            }
+        }
+    }
 }

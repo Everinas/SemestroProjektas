@@ -375,7 +375,7 @@ namespace BreadcrumbAi{
 					lifeState = LIFE_STATE.IsDead;
                     GetComponent<EnemyAttack>().enabled = false;
                     GetComponent<SphereCollider>().enabled = false;
-                    Physics.IgnoreCollision(player.GetComponent<Collider>(), GetComponent<Collider>());
+                    Physics.IgnoreCollision(player.GetComponent<BoxCollider>(), this.GetComponent<CapsuleCollider>(), true);
                     this.GetComponent<DestroyOverTime>().enabled = true;
                     GetComponent<Ai>().enabled = false;
                 }
