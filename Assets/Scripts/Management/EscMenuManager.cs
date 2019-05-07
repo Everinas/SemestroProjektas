@@ -5,14 +5,14 @@ using UnityEngine;
 public class EscMenuManager : MonoBehaviour
 {
     bool isPaused;
-    Animator anim;
+    public EscMenuManager menu;
     public PauseManager pause;
 
     // Start is called before the first frame update
     void Start()
     {
         isPaused = false;
-        anim = GetComponent<Animator>();
+        //menu.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,17 +22,15 @@ public class EscMenuManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape) && isPaused == false)
         {
             pause.Toggle();
-            // Show the esc menu
-            anim.SetTrigger("ShowEscMenu");
+            menu.gameObject.SetActive(true);
             setPause();
         }
 
         // Unpause the game
         else if (Input.GetKeyDown(KeyCode.Escape) && isPaused == true)
         {
-            pause.Toggle();
-            // Hide the esc menu
-            anim.SetTrigger("HideEscMenu");
+            menu.gameObject.SetActive(false);
+            pause.Toggle(); 
             setPause();
         }
     }
@@ -46,9 +44,9 @@ public class EscMenuManager : MonoBehaviour
     // Continue button trigger
     public void Continue()
     {
-        pause.Toggle();
-        // Hide the esc menu
-        anim.SetTrigger("HideEscMenu");
         setPause();
+        Time.timeScale = 1;
+        menu.gameObject.SetActive(false);
+        pause.Toggle();
     }
 }

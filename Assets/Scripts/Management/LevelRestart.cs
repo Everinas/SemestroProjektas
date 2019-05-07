@@ -6,11 +6,10 @@ using BayatGames.SaveGameFree;
 
 public class LevelRestart : MonoBehaviour
 {
-    public void doRestartCurrentLevel()
+    public static void doRestartCurrentLevel()
     {
         SaveGame.Save<int>("Score", 0);
         SaveGame.Save<int>("Health", 5);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
-        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene     
     }
 }

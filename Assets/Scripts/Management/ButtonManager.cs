@@ -6,22 +6,17 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
-    EscMenuManager manager;
-
-    public void doRestartCurrentLevel()
+    public static void doRestartCurrentLevel()
     {
-
-        SaveGame.Save<int>("Score", 0);
-        SaveGame.Save<int>("Health", 5);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
+        LevelRestart.doRestartCurrentLevel();
     }
 
-    public void doExitGame()
+    public static void doExitGame()
     {
         Application.Quit();
     }
 
-    public void doContinue()
+    public static void doContinue()
     {       
         
     }
