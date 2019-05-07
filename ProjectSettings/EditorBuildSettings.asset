@@ -12,15 +12,18 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 0
-    path: Assets/Scenes/Testsite2.unity
-    guid: 00bcad8ad497878409546b675e18e3e8
-  - enabled: 1
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
     path: Assets/Scenes/House.unity
     guid: a18822a9f454a314c9e54b8e5373cbf6
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Testsite.unity
     guid: 479f6c63fab6f774e83aad9907c844bd
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/Level_2.unity
-    guid: fed25ab4ff569df458c2cf13081aed3b
+    path: Assets/Scenes/HomeForest.unity
+    guid: 275a29409308e634aa2aae331e6db8ba
   m_configObjects: {}

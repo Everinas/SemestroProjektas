@@ -160,9 +160,9 @@ public class DemoEnemyControls : MonoBehaviour {
 				}
 				_canDropPickUp = false;
 			}
-			Destroy(GetComponent<Rigidbody>());
+            Destroy(GetComponent<Rigidbody>());
 			Destroy(GetComponent<Collider>());
-			Destroy(GetComponent<Ai>());		
+			Destroy(GetComponent<Ai>());	
 			if(!_removeBody){
 				StartCoroutine(DestroyBody());		
 			} else {
@@ -173,7 +173,7 @@ public class DemoEnemyControls : MonoBehaviour {
     
     IEnumerator DestroyBody(){
 		if(enemyType == EnemyType.Special){
-			Destroy(specialPrefab);
+            Destroy(specialPrefab);
 		}
 		yield return new WaitForSeconds(2);
 
@@ -186,7 +186,7 @@ public class DemoEnemyControls : MonoBehaviour {
 			GameObject.Find("Spawners").GetComponent<DemoSpawnerControl>().specialEnemyCount--;
 		}
 		GameObject.Find("Spawners").GetComponent<DemoSpawnerControl>().enemyCount--;
-		Destroy(gameObject);
+        Destroy(gameObject);
 	}
 	
 	void OnCollisionEnter(Collision col){

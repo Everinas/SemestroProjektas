@@ -29,7 +29,7 @@ public class Collectible_Secret : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            Destroy(this.gameObject);
+            gameObject.SetActive(false);
             print("Veikia");
         }
     }

@@ -15,6 +15,8 @@ public class NPC_Dialogue : MonoBehaviour
     Collider player;
     public GameObject pedestal;
     public GameObject effect;
+    GameObject spit;
+    public PlayerScore score;
     private void OnTriggerStay(Collider other)
     {
         if (Input.GetButtonDown("E") && buttonPress == false)
@@ -31,9 +33,9 @@ public class NPC_Dialogue : MonoBehaviour
                 other.GetComponent<Animator>().Play("wave");
             }
             buttonPress = true;
-            if (PlayerScore.score >= 5)
+            if (score.currentScore >= 5)
             {
-                if (PlayerScore.score >= 10)
+                if (score.currentScore >= 10)
                 {
                     dialogue.text = thirdStage;
                     levelchange = true;

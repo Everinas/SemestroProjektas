@@ -5,9 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoad : MonoBehaviour
 {
-    
-
-    
     void OnTriggerStay()
     {
         if (Input.GetButtonDown("E"))

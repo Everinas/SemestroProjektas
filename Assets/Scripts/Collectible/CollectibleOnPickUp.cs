@@ -32,7 +32,7 @@ public class CollectibleOnPickUp : MonoBehaviour
             Instantiate(effect, transform.position, transform.rotation);
             playerScore.currentScore++;
             print("Veikia");
-            Destroy(gameObject);
+            gameObject.SetActive(false);
 
         }
     }
@@ -44,7 +44,8 @@ public class CollectibleOnPickUp : MonoBehaviour
         // Float up/down with a Sin()
         tempPos = posOffset;
         tempPos.y += Mathf.Sin(Time.fixedTime * Mathf.PI * frequency) * amplitude;
-
         transform.position = tempPos;
+
+
     }
 }
