@@ -150,9 +150,7 @@ public class Dialogues : MonoBehaviour {
         {
             Current = Set[CurrentSet].GetWindow(Current.Connections[0]);
             return 0;
-            Cursor.visible = false;
-            cameraMovement.enabled = true;
-            Cursor.lockState = CursorLockMode.Locked;
+
 
         }
     }

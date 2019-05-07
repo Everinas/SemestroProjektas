@@ -3397,6 +3397,7 @@ MonoBehaviour:
   middleText: {fileID: 79216617}
   backPanel: {fileID: 1430833964}
   nextTreeButton: {fileID: 737757542}
+  score: {fileID: 0}
 --- !u!114 &594148442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3831,12 +3832,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ec34382c4071b04ca19d64d7e46b8ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstStage: Hey bruda, come back when you have AT LEAST 5 points and I'll give you
-    something cool
-  secondStage: Oh impressive... But I'm not sure you're worthy come back when you
-    have AT LEAST 10 points
-  thirdStage: Nicely done! Now if you wish to be teleported step on that platform
-    over there
+  firstStage: 
+  secondStage: 
+  thirdStage: The portal is activated
   dialogue: {fileID: 1480718451}
   pedestal: {fileID: 1406832584}
   effect: {fileID: 1223526616464650, guid: c590b17884b119046bc6412066500b7d, type: 3}
@@ -3880,7 +3878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Set:
-  - CurrentId: 15
+  - CurrentId: 17
     NewWindowOpen: 0
     FirstWindow: 0
     Windows:
@@ -3891,7 +3889,7 @@ MonoBehaviour:
         y: 244
         width: 150
         height: 125
-      Text: Hello!
+      Text: Hello young man
       Type: 0
       NodeType: 0
       Parent: -1
@@ -3947,7 +3945,7 @@ MonoBehaviour:
         y: 272
         width: 150
         height: 125
-      Text: '[Say Nothing]'
+      Text: Everin
       Type: 2
       NodeType: 1
       Parent: 7
@@ -3957,17 +3955,17 @@ MonoBehaviour:
     - ID: 10
       Size:
         serializedVersion: 2
-        x: 705
-        y: 448
+        x: 613
+        y: 449
         width: 150
         height: 125
-      Text: None ya
+      Text: None of your business
       Type: 2
       NodeType: 1
       Parent: 7
       Trigger: 0
       TriggerText: 
-      Connections: 0c000000
+      Connections: 0f000000
     - ID: 11
       Size:
         serializedVersion: 2
@@ -3975,7 +3973,7 @@ MonoBehaviour:
         y: 260
         width: 150
         height: 125
-      Text: Uhhh, okay?
+      Text: What a unique name
       Type: 0
       NodeType: 1
       Parent: 9
@@ -3989,13 +3987,13 @@ MonoBehaviour:
         y: 464
         width: 150
         height: 125
-      Text: Well I guess it's nice to meet you
+      Text: Say, do you want a quest?
       Type: 0
       NodeType: 1
       Parent: 10
       Trigger: 0
       TriggerText: 
-      Connections: 0e000000
+      Connections: 10000000
     - ID: 13
       Size:
         serializedVersion: 2
@@ -4013,109 +4011,49 @@ MonoBehaviour:
     - ID: 14
       Size:
         serializedVersion: 2
-        x: 1117
-        y: 464
+        x: 1138
+        y: 516
         width: 150
         height: 125
-      Text: Well, anyway, goodbye!
+      Text: Good luck, young man.
       Type: 0
       NodeType: 2
       Parent: 12
       Trigger: 0
       TriggerText: 
       Connections: 
-  - CurrentId: 6
-    NewWindowOpen: 0
-    FirstWindow: 0
-    Windows:
-    - ID: 0
+    - ID: 15
       Size:
         serializedVersion: 2
-        x: 304
-        y: 251
+        x: 787
+        y: 471
         width: 150
         height: 125
-      Text: You again?
-      Type: 0
-      NodeType: 0
-      Parent: -1
-      Trigger: 0
-      TriggerText: 
-      Connections: 01000000
-    - ID: 1
-      Size:
-        serializedVersion: 2
-        x: 464
-        y: 251
-        width: 150
-        height: 125
-      Text: What's up?
-      Type: 1
-      NodeType: 1
-      Parent: 0
-      Trigger: 0
-      TriggerText: 
-      Connections: 0200000003000000
-    - ID: 2
-      Size:
-        serializedVersion: 2
-        x: 726
-        y: 135
-        width: 150
-        height: 125
-      Text: '[Say Nothing]'
-      Type: 2
-      NodeType: 1
-      Parent: 1
-      Trigger: 0
-      TriggerText: 
-      Connections: 05000000
-    - ID: 3
-      Size:
-        serializedVersion: 2
-        x: 722
-        y: 333
-        width: 150
-        height: 125
-      Text: Help
-      Type: 2
-      NodeType: 1
-      Parent: 1
-      Trigger: 0
-      TriggerText: 
-      Connections: 04000000
-    - ID: 4
-      Size:
-        serializedVersion: 2
-        x: 969
-        y: 330
-        width: 150
-        height: 125
-      Text: Nah, I'm good
+      Text: Mysterious hey? I like that
       Type: 0
       NodeType: 1
-      Parent: 3
+      Parent: 10
       Trigger: 0
       TriggerText: 
-      Connections: 05000000
-    - ID: 5
+      Connections: 0c000000
+    - ID: 16
       Size:
         serializedVersion: 2
-        x: 1195
-        y: 260
+        x: 1170
+        y: 326
         width: 150
         height: 125
-      Text: See ya
+      Text: Collect 10 apples and a portal to another dimmension will open right next
+        to me.
       Type: 0
-      NodeType: 2
-      Parent: 4
+      NodeType: 1
+      Parent: 12
       Trigger: 0
       TriggerText: 
-      Connections: 
+      Connections: 0e000000
   CurrentSet: 0
   TabList:
   - FirstMeeting
-  - TalkAgain
 --- !u!1 &615351507
 GameObject:
   m_ObjectHideFlags: 0
@@ -8572,7 +8510,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1572000963
 Transform:
   m_ObjectHideFlags: 0
@@ -10837,6 +10775,7 @@ MonoBehaviour:
   currentKeys: 0
   counter: {fileID: 1266250705}
   Keys: {fileID: 0}
+  kazkas: 0
 --- !u!114 &1890999517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11693,6 +11632,7 @@ MonoBehaviour:
   currentKeys: 0
   counter: {fileID: 1266250705}
   Keys: {fileID: 857046711}
+  kazkas: 0
 --- !u!114 &1890999554
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13059,7 +12999,7 @@ GameObject:
   - component: {fileID: 2113956918}
   m_Layer: 5
   m_Name: HUDCanvas
-  m_TagString: Dialogue
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
