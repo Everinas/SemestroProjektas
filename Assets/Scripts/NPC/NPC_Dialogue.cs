@@ -17,8 +17,6 @@ public class NPC_Dialogue : MonoBehaviour
     public GameObject effect;
     GameObject spit;
     public PlayerScore score;
-    DialogueInteraction dialogas;
-
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -30,7 +28,6 @@ public class NPC_Dialogue : MonoBehaviour
                 //                           this.transform.position.y,
                 //                           other.transform.position.z);
                 //this.transform.LookAt(targetPostition);
-                score.kazkas = 0;
 
                 if (wave == false)
                 {
@@ -82,9 +79,6 @@ public class NPC_Dialogue : MonoBehaviour
         mm_Rigidbody = GetComponent<Rigidbody>();
         //This locks the RigidBody so that it does not move or rotate in the Z axis.
         mm_Rigidbody.constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationZ;
-
-        dialogas = GameObject.FindGameObjectWithTag("Dialogue").GetComponent<DialogueInteraction>();
-        print(dialogas);
     }
      void Update()
     {
