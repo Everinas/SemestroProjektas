@@ -15,6 +15,7 @@ public class PlayerScore : MonoBehaviour
     public Text counter;
     public Text Keys;
     private GameObject player;
+    public int kazkas;
 
     private void Start()
     {
@@ -23,8 +24,10 @@ public class PlayerScore : MonoBehaviour
         currentKeys = startKeys;
         counter.text = "Score: 0";
         Keys.text = "Keys: 0";
-        
+        kazkas = 1;
     }
+
+
 
     private void Update()
     {
