@@ -8,9 +8,8 @@ public class LevelRestart : MonoBehaviour
 {
     public void doRestartCurrentLevel()
     {
-        SaveGame.Save<int>("Score", 0);
-        SaveGame.Save<int>("Health", 5);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
-        
+        //SaveGame.Save<int>("Score", 0);
+        //SaveGame.Save<int>("Health", 5);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene     
     }
 }

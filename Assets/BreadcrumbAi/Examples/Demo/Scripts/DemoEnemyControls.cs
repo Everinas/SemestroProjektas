@@ -15,8 +15,9 @@ public class DemoEnemyControls : MonoBehaviour {
 	public bool _canDropPickUp;
 	public EnemyType enemyType;
 	public Rigidbody rangedProjectilePrefab;
-	
-	public GameObject bloodPrefab;
+    public Rigidbody effect;
+
+    public GameObject bloodPrefab;
 	public GameObject specialPrefab;
 	private Transform player;
 	
@@ -50,7 +51,6 @@ public class DemoEnemyControls : MonoBehaviour {
 	}
 	
 	void Update () {
-		CheckHealth();
 		CheckDeathZone();
 	}
 	
@@ -81,9 +81,9 @@ public class DemoEnemyControls : MonoBehaviour {
             anim.SetBool(animDeath1, true);
         }
     }
-    
+
     private void Attack(){
-        Vector3 ne = new Vector3(0, 1, 0);
+        Vector3 ne = new Vector3(0, 0, 0);
 
         if (player){
 	    	if(ai.lifeState == Ai.LIFE_STATE.IsAlive){
@@ -107,7 +107,8 @@ public class DemoEnemyControls : MonoBehaviour {
 					if(ai.attackState == Ai.ATTACK_STATE.CanAttackPlayer && Time.time > rangedAttackNext){
 						rangedAttackNext = Time.time + rangedAttackRate;
 						Rigidbody spit = Instantiate(rangedProjectilePrefab, (transform.position -ne) + transform.forward + transform.up, transform.rotation) as Rigidbody;
-						spit.AddForce(transform.forward * 200);
+                        
+                        spit.AddForce((player.transform.position - transform.position) * 50);
 						_animAttack = true;
 					} else {
 						_animAttack = false;
@@ -159,9 +160,9 @@ public class DemoEnemyControls : MonoBehaviour {
 				}
 				_canDropPickUp = false;
 			}
-			Destroy(GetComponent<Rigidbody>());
+            Destroy(GetComponent<Rigidbody>());
 			Destroy(GetComponent<Collider>());
-			Destroy(GetComponent<Ai>());		
+			Destroy(GetComponent<Ai>());	
 			if(!_removeBody){
 				StartCoroutine(DestroyBody());		
 			} else {
@@ -172,7 +173,7 @@ public class DemoEnemyControls : MonoBehaviour {
     
     IEnumerator DestroyBody(){
 		if(enemyType == EnemyType.Special){
-			Destroy(specialPrefab);
+            Destroy(specialPrefab);
 		}
 		yield return new WaitForSeconds(2);
 
@@ -185,7 +186,7 @@ public class DemoEnemyControls : MonoBehaviour {
 			GameObject.Find("Spawners").GetComponent<DemoSpawnerControl>().specialEnemyCount--;
 		}
 		GameObject.Find("Spawners").GetComponent<DemoSpawnerControl>().enemyCount--;
-		Destroy(gameObject);
+        Destroy(gameObject);
 	}
 	
 	void OnCollisionEnter(Collision col){

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.6141217, g: 0.64933634, b: 0.58910424, a: 1}
+  m_IndirectSpecularColor: {r: 0.6139961, g: 0.6493492, b: 0.5891064, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -126,14 +126,14 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1619461}
   serializedVersion: 2
-  m_Mass: 2.34375
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!65 &1619464
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2111,12 +2111,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7590279662ab70f409591eb1475ebf00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lockCursor: 0
-  mouseSensitivity: 3
-  target: {fileID: 1962024687}
-  dstFromTarget: 4
-  pitchMinMax: {x: -10, y: 80}
-  rotationSmoothTime: 0
 --- !u!1001 &541359580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4101,7 +4095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caa8c17ad765f4c4b9621773fb3bb373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pushBackForce: 4
+  pushBackForce: 6
 --- !u!1 &1166150864 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 8db774d63ffa4304fb8dddd6116ead54,
@@ -4493,10 +4487,6 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 129936, guid: 7769a5ff77d804234bfa1b1a22904922, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 436912, guid: 7769a5ff77d804234bfa1b1a22904922, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.872818
@@ -4552,6 +4542,10 @@ PrefabInstance:
     - target: {fileID: 436912, guid: 7769a5ff77d804234bfa1b1a22904922, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.16644509
+      objectReference: {fileID: 0}
+    - target: {fileID: 129936, guid: 7769a5ff77d804234bfa1b1a22904922, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7769a5ff77d804234bfa1b1a22904922, type: 3}
@@ -6775,6 +6769,8 @@ MonoBehaviour:
   thirdStage: Nicely done! Now if you wish to be teleported step on that platform
     over there
   dialogue: {fileID: 1719191361}
+  pedestal: {fileID: 0}
+  effect: {fileID: 0}
 --- !u!1 &1743152367 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1064268953378300, guid: 0e74cf81e6fd82546b4797f71ceffb81,
@@ -7159,7 +7155,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844021159}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bedec068a3a7a24fb4096ec67fa0dff, type: 3}
   m_Name: 
@@ -7193,7 +7189,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844021159}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 485623f6e017ae444a31e5c80d545477, type: 3}
   m_Name: 
@@ -7219,7 +7215,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1844021159}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2929606d698a60d4d9f955181ad7b991, type: 3}
   m_Name: 
@@ -8311,3 +8307,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 4
+--- !u!114 &2144249378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2144249369}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7b9a3de0187a5040a619a57b35a41c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifetime: 3

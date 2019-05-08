@@ -31,9 +31,9 @@ public class SimpleCharacterControl : MonoBehaviour {
     private Vector3 direction;
 
     private float m_jumpTimeStamp = 0;
-    private float m_minJumpInterval = 0.25f;
+    private float m_minJumpInterval = 0.4f;
 
-   
+
     private bool m_isGrounded;
     private List<Collider> m_collisions = new List<Collider>();
 
@@ -164,12 +164,13 @@ public class SimpleCharacterControl : MonoBehaviour {
             float directionLength = direction.magnitude;
             direction.y = 0;
             direction = direction.normalized * directionLength;
+            direction = Vector3.ClampMagnitude(direction, 1);
 
             if (direction != Vector3.zero)
             {
                 m_currentDirection = Vector3.Slerp(m_currentDirection, direction, Time.deltaTime * m_interpolation);
-
-                transform.rotation = Quaternion.LookRotation(m_currentDirection);
+            m_currentDirection = Vector3.ClampMagnitude(m_currentDirection, 1);
+            transform.rotation = Quaternion.LookRotation(m_currentDirection);
                 transform.position += m_currentDirection * m_moveSpeed * Time.deltaTime;
 
                 m_animator.SetFloat("MoveSpeed", direction.magnitude);
@@ -187,6 +188,7 @@ public class SimpleCharacterControl : MonoBehaviour {
         {
             m_jumpTimeStamp = Time.time;
             m_rigidBody.AddForce(Vector3.up * m_jumpForce, ForceMode.Impulse);
+            m_rigidBody.AddForce(m_currentDirection * m_jumpForce/4, ForceMode.Impulse);
         }
 
         if (!m_wasGrounded && m_isGrounded)

@@ -1,19 +1,15 @@
-﻿using BayatGames.SaveGameFree;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
-    EscMenuManager manager;
+    public EscMenuManager escMenu;
+    public LevelRestart levelRestart;
 
     public void doRestartCurrentLevel()
     {
-
-        SaveGame.Save<int>("Score", 0);
-        SaveGame.Save<int>("Health", 5);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); // loads current scene
+        escMenu.Continue();
+        levelRestart.doRestartCurrentLevel();
     }
 
     public void doExitGame()
@@ -22,7 +18,17 @@ public class ButtonManager : MonoBehaviour
     }
 
     public void doContinue()
-    {       
-        
+    {
+        escMenu.Continue();
+    }
+
+    public void doStartNewGame()
+    {
+        SceneManager.LoadScene("HomeForest");
+    }
+
+    public void doGoToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }

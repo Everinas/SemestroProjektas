@@ -4,35 +4,34 @@ using UnityEngine;
 
 public class EscMenuManager : MonoBehaviour
 {
-    bool isPaused;
-    Animator anim;
+    public GameObject menu;
     public PauseManager pause;
+    bool isPaused;
 
     // Start is called before the first frame update
     void Start()
     {
+        pause = gameObject.GetComponent<PauseManager>();
         isPaused = false;
-        anim = GetComponent<Animator>();
+        menu.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
         // Pause the game
-        if (Input.GetKeyDown(KeyCode.Escape) && isPaused == false)
-        {
+        if (Input.GetKeyDown(KeyCode.Escape) && !isPaused)
+        {         
+            menu.gameObject.SetActive(true);
             pause.Toggle();
-            // Show the esc menu
-            anim.SetTrigger("ShowEscMenu");
             setPause();
         }
 
         // Unpause the game
-        else if (Input.GetKeyDown(KeyCode.Escape) && isPaused == true)
+        else if (Input.GetKeyDown(KeyCode.Escape) && isPaused)
         {
-            pause.Toggle();
-            // Hide the esc menu
-            anim.SetTrigger("HideEscMenu");
+            menu.gameObject.SetActive(false);
+            pause.Toggle(); 
             setPause();
         }
     }
@@ -46,9 +45,8 @@ public class EscMenuManager : MonoBehaviour
     // Continue button trigger
     public void Continue()
     {
+        menu.gameObject.SetActive(false);
         pause.Toggle();
-        // Hide the esc menu
-        anim.SetTrigger("HideEscMenu");
-        setPause();
+        setPause();     
     }
 }
