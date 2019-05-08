@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HomeForest.unity
     guid: 275a29409308e634aa2aae331e6db8ba
+  - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 0ff40d1d79fb34143b12694e609b3d6e
   m_configObjects: {}

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ButtonManager : MonoBehaviour
 {
@@ -19,5 +20,15 @@ public class ButtonManager : MonoBehaviour
     public void doContinue()
     {
         escMenu.Continue();
+    }
+
+    public void doStartNewGame()
+    {
+        SceneManager.LoadScene("HomeForest");
+    }
+
+    public void doGoToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 }
