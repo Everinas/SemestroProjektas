@@ -15,6 +15,7 @@ TagManager:
   - lb_perchTarget
   - Spit
   - Trap
+  - Dialogue
   layers:
   - Default
   - TransparentFX
