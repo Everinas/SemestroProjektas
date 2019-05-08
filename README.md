@@ -7,21 +7,22 @@ Realus žaidimas prasideda pradinėje lygio zonoje, iš kurios galite pasiekti v
 
 ## 5 sprintas
 ### Naujas funkcionalumas
-- Pridėta dialogo sistema
-- Pridėtas užduočių UI
-- Nekalbant su juo, NPC sėdi
-- Spąstai dabar daro žalą priešams
-- Priešų šoviniai atmuša kitus priešus
-- Pridėtas pagrindinis meniu
+- Pridėta dialogo sistema;
+- Pridėtas užduočių UI;
+- Nekalbant su juo, NPC sėdi;
+- Pridėta primityvi žaidimo būsenos išsaugojimo mechanika - ties ja dar bus dirbama;
+- Spąstai dabar daro žalą priešams;
+- Priešų šoviniai atmuša kitus priešus;
+- Pridėtas pagrindinis meniu;
 - Pridėtas gameplay scenarijus nuo pradžios (pagrindinio meniu) iki 2 lygio.
 ### Ištaisytos klaidos
-- Kursorius esant pauzei išsicentruoja
-- Dabar continue mygtukas veikia
-- Dabar žaidimas paspaudus esc sustoja visiškai
+- Kursorius esant pauzei išsicentruoja;
+- Dabar continue mygtukas veikia;
+- Dabar žaidimas paspaudus esc sustoja visiškai;
 - Ištaisytos klaidos su kamera:
-  - Kamera nebeįeina į žaidėją
-  - Paleidus lygį kamera "nevaikšto"
-  - Zoom in/out dabar švelnesnis
+  - Kamera nebeįeina į žaidėją;
+  - Paleidus lygį kamera "nevaikšto";
+  - Zoom in/out dabar švelnesnis.
 
 ## 4 sprintas
 ### Naujas funkcionalumas
