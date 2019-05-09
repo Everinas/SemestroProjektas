@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoad : MonoBehaviour
 {
+    public CameraFollow cameraMovement;
     void OnTriggerStay()
     {
         if (Input.GetButtonDown("E"))
@@ -12,6 +13,9 @@ public class LevelLoad : MonoBehaviour
             if (NPC_Dialogue.levelchange == true)
             {
                 SceneManager.LoadScene("HomeVillage");
+                cameraMovement = GameObject.FindGameObjectWithTag("CameraFolder").GetComponent<CameraFollow>();
+                cameraMovement.enabled = false;
+                cameraMovement.enabled = true;
             }
         }
     }

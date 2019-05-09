@@ -40,6 +40,8 @@ public class PauseManager : MonoBehaviour
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.lockState = CursorLockMode.None;
+        cameraMovement.enabled = false;
+        cameraMovement.enabled = true;
     }
 
     public void Reset()

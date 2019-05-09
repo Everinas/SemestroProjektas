@@ -37,6 +37,10 @@ public class NPC_Dialogue : MonoBehaviour
                     wave = true;
                     other.GetComponent<Animator>().Play("wave");
                     this.GetComponent<Animation>().Play("Up");
+                    if (!this.GetComponent<Animation>().IsPlaying("Up"))
+                    {
+                        this.GetComponent<Animation>().Play("Idle1");
+                    }
                 }
                 buttonPress = true;
                 if (score.currentScore >= 5)
@@ -98,6 +102,10 @@ public class NPC_Dialogue : MonoBehaviour
             Debug.DrawRay(transform.position, newDir, Color.red);
 
             transform.rotation = Quaternion.LookRotation(newDir);
+            if (!this.GetComponent<Animation>().IsPlaying("Up"))
+            {
+                this.GetComponent<Animation>().Play("Idle1");
+            }
         }
     }
 }
