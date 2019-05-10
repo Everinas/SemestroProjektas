@@ -30,27 +30,28 @@ public class DialogueInteraction : MonoBehaviour {
     // This is a basic example of how you can use the dialogue system. //
 
     
-	void Start() {
+	public void Start() {
         player = GameObject.FindGameObjectWithTag("Player");
         playerScore = player.GetComponent<PlayerScore>();
         cameraMovement = GameObject.FindGameObjectWithTag("CameraFolder").GetComponent<CameraFollow>();
         npc.SetTree("FirstMeeting"); //This sets the current tree to be used. Resets to the first node when called.
-        Display();
         Hide();
         //backPanel.SetActive(false);
         //nextTreeButton.SetActive(false);
 
     }
 
-    public void Update()
+    public void Show()
     {
-        if(playerScore.kazkas == 0)
-        {
-            Cursor.visible = true;
-            cameraMovement.enabled = false;
-            Cursor.lockState = CursorLockMode.None;
-            Display();
-        }
+        npc.SetTree("FirstMeeting"); //This sets the current tree to be used. Resets to the first node when called.
+        nextEnd = false;
+        Cursor.visible = true;
+        cameraMovement.enabled = false;
+        Cursor.lockState = CursorLockMode.None;
+        player.GetComponent<SimpleCharacterControl>().enabled = false;
+        backPanel.SetActive(true);
+        nextTreeButton.SetActive(false);
+        Display();
     }
 
     public void Choice(int index)
@@ -63,18 +64,13 @@ public class DialogueInteraction : MonoBehaviour {
         }
         else
         {
-            Cursor.visible = false;
-            cameraMovement.enabled = true;
-            Cursor.lockState = CursorLockMode.Locked;
             Progress();
         }
     }
 
     public void TalkAgain()
     {
-        npc.SetTree("TalkAgain");
-        nextEnd = false;
-        Display();
+        Show();
     }
 
     public void Progress()
@@ -138,8 +134,9 @@ public class DialogueInteraction : MonoBehaviour {
         {
             nextEnd = true;
             Cursor.visible = false;
-            cameraMovement.enabled = true;
             Cursor.lockState = CursorLockMode.Locked;
+            player.GetComponent<SimpleCharacterControl>().enabled = true;
+            cameraMovement.enabled = true;
             playerScore.kazkas = 1;
             Hide();
         }
