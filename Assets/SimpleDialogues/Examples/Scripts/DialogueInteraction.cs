@@ -43,7 +43,10 @@ public class DialogueInteraction : MonoBehaviour {
 
     public void Show()
     {
-        npc.SetTree("FirstMeeting"); //This sets the current tree to be used. Resets to the first node when called.
+        if (npc.GetCurrentTree() == "SecondTalk")
+        {
+            npc.SetTree("SecondTalk"); //This sets the current tree to be used. Resets to the first node when called.
+        }
         nextEnd = false;
         Cursor.visible = true;
         cameraMovement.enabled = false;
@@ -103,25 +106,32 @@ public class DialogueInteraction : MonoBehaviour {
         if (npc.HasTrigger())
             Debug.Log("Triggered: "+npc.GetTrigger());
         //This checks if there are any choices to be made
-        if (npc.GetChoices().Length != 0)
+        if (npc.GetChoices().Length == 1)
         {
             //Setting the text's of the buttons to the choices text, in my case I know I'll always have a max of three choices for this example.
             leftText.text = npc.GetChoices()[0];
+            leftText.transform.parent.gameObject.SetActive(true);
+            rightText.transform.parent.gameObject.SetActive(false);
+            middleText.transform.parent.gameObject.SetActive(false);
+        }
+        if (npc.GetChoices().Length == 2)
+        {
+            leftText.text = npc.GetChoices()[0];
             middleText.text = npc.GetChoices()[1];
-            //If we only have two choices, adjust accordingly
-            if (npc.GetChoices().Length > 2)
-                rightText.text = npc.GetChoices()[2];
-            else
-                rightText.text = npc.GetChoices()[1];
-            //Setting the appropriate buttons visability
+            leftText.transform.parent.gameObject.SetActive(true);
+            rightText.transform.parent.gameObject.SetActive(false);
+            middleText.transform.parent.gameObject.SetActive(true);
+        }
+        if (npc.GetChoices().Length == 3)
+        {
+            leftText.text = npc.GetChoices()[0];
+            middleText.text = npc.GetChoices()[1];
+            rightText.text = npc.GetChoices()[2];
             leftText.transform.parent.gameObject.SetActive(true);
             rightText.transform.parent.gameObject.SetActive(true);
-            if(npc.GetChoices().Length > 2)
-                middleText.transform.parent.gameObject.SetActive(true);
-            else
-                middleText.transform.parent.gameObject.SetActive(false);
+            middleText.transform.parent.gameObject.SetActive(true);
         }
-        else
+        if (npc.GetChoices().Length == 0)
         {
             middleText.text = "Continue";
             //Setting the appropriate buttons visability
@@ -138,6 +148,10 @@ public class DialogueInteraction : MonoBehaviour {
             player.GetComponent<SimpleCharacterControl>().enabled = true;
             cameraMovement.enabled = true;
             playerScore.kazkas = 1;
+                        if (npc.GetCurrentTree() == "FirstMeeting")
+            {
+                npc.SetTree("SecondTalk"); //This sets the current tree to be used. Resets to the first node when called.
+            }
             Hide();
         }
 

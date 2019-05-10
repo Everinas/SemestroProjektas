@@ -4062,8 +4062,8 @@ MonoBehaviour:
     - ID: 32
       Size:
         serializedVersion: 2
-        x: 281
-        y: 1677
+        x: 447
+        y: 1828
         width: 150
         height: 125
       Text: 
@@ -4136,7 +4136,7 @@ MonoBehaviour:
         y: 721
         width: 150
         height: 125
-      Text: Unfortunately no. Many sunsets have passed. I am no more of a puny old
+      Text: Unfortunately no. Many sunsets have passed. I am no more than a puny old
         wizard now and my powers are mere. I've barely managed to get away from his
         minions and I am so exhausted.
       Type: 0
@@ -4194,7 +4194,7 @@ MonoBehaviour:
       Size:
         serializedVersion: 2
         x: 279
-        y: 1401
+        y: 1410
         width: 150
         height: 125
       Text: I'm on it!
@@ -4204,20 +4204,6 @@ MonoBehaviour:
       Trigger: 0
       TriggerText: 
       Connections: 40000000
-    - ID: 58
-      Size:
-        serializedVersion: 2
-        x: 446
-        y: 1677
-        width: 150
-        height: 125
-      Text: 
-      Type: 0
-      NodeType: 2
-      Parent: 56
-      Trigger: 0
-      TriggerText: 
-      Connections: 
     - ID: 59
       Size:
         serializedVersion: 2
@@ -4235,8 +4221,8 @@ MonoBehaviour:
     - ID: 60
       Size:
         serializedVersion: 2
-        x: 448
-        y: 1540
+        x: 453
+        y: 1544
         width: 150
         height: 125
       Text: Tell him Arqo The Wizard has sent you. He won't mind to help me.
@@ -4245,21 +4231,7 @@ MonoBehaviour:
       Parent: 59
       Trigger: 0
       TriggerText: 
-      Connections: 3a000000
-    - ID: 61
-      Size:
-        serializedVersion: 2
-        x: 620
-        y: 1682
-        width: 150
-        height: 125
-      Text: 
-      Type: 0
-      NodeType: 2
-      Parent: 56
-      Trigger: 0
-      TriggerText: 
-      Connections: 
+      Connections: 40000000
     - ID: 62
       Size:
         serializedVersion: 2
@@ -4288,12 +4260,12 @@ MonoBehaviour:
       Parent: 62
       Trigger: 0
       TriggerText: 
-      Connections: 3d000000
+      Connections: 40000000
     - ID: 64
       Size:
         serializedVersion: 2
-        x: 282
-        y: 1541
+        x: 449
+        y: 1688
         width: 150
         height: 125
       Text: Stay safe! I will rest here for a while.
@@ -4303,9 +4275,272 @@ MonoBehaviour:
       Trigger: 0
       TriggerText: 
       Connections: 20000000
-  CurrentSet: 0
+  - CurrentId: 21
+    NewWindowOpen: 0
+    FirstWindow: 0
+    Windows:
+    - ID: 0
+      Size:
+        serializedVersion: 2
+        x: 72
+        y: 132
+        width: 150
+        height: 125
+      Text: Hey! How is the search for the apples going?
+      Type: 1
+      NodeType: 0
+      Parent: -1
+      Trigger: 0
+      TriggerText: 
+      Connections: 020000000400000008000000
+    - ID: 2
+      Size:
+        serializedVersion: 2
+        x: 72
+        y: 278
+        width: 150
+        height: 125
+      Text: I have some questions.
+      Type: 2
+      NodeType: 1
+      Parent: 0
+      Trigger: 0
+      TriggerText: 
+      Connections: 06000000
+    - ID: 3
+      Size:
+        serializedVersion: 2
+        x: 620
+        y: 123
+        width: 150
+        height: 125
+      Text: 
+      Type: 0
+      NodeType: 2
+      Parent: 0
+      Trigger: 0
+      TriggerText: 
+      Connections: 
+    - ID: 4
+      Size:
+        serializedVersion: 2
+        x: 273
+        y: 122
+        width: 150
+        height: 125
+      Text: 'I''m on it. '
+      Type: 2
+      NodeType: 1
+      Parent: 0
+      Trigger: 0
+      TriggerText: 
+      Connections: 05000000
+    - ID: 5
+      Size:
+        serializedVersion: 2
+        x: 439
+        y: 122
+        width: 150
+        height: 125
+      Text: Great. I hope you find them soon. Time is at hand!
+      Type: 0
+      NodeType: 1
+      Parent: 4
+      Trigger: 0
+      TriggerText: 
+      Connections: 03000000
+    - ID: 6
+      Size:
+        serializedVersion: 2
+        x: 73
+        y: 420
+        width: 150
+        height: 125
+      Text: What would you like to know?
+      Type: 1
+      NodeType: 1
+      Parent: 2
+      Trigger: 0
+      TriggerText: 
+      Connections: 1000000013000000
+    - ID: 8
+      Size:
+        serializedVersion: 2
+        x: 270
+        y: 281
+        width: 150
+        height: 125
+      Text: What is your name?
+      Type: 2
+      NodeType: 1
+      Parent: 0
+      Trigger: 0
+      TriggerText: 
+      Connections: 09000000
+    - ID: 9
+      Size:
+        serializedVersion: 2
+        x: 433
+        y: 418
+        width: 150
+        height: 125
+      Text: 'I am the formerly-great arcane master Arqo.
+
+
+        What about you, young man?'
+      Type: 1
+      NodeType: 1
+      Parent: 8
+      Trigger: 0
+      TriggerText: 
+      Connections: 0b0000000e000000
+    - ID: 10
+      Size:
+        serializedVersion: 2
+        x: 935
+        y: 417
+        width: 150
+        height: 125
+      Text: 
+      Type: 0
+      NodeType: 2
+      Parent: 9
+      Trigger: 0
+      TriggerText: 
+      Connections: 
+    - ID: 11
+      Size:
+        serializedVersion: 2
+        x: 606
+        y: 417
+        width: 150
+        height: 125
+      Text: I am Everin.
+      Type: 2
+      NodeType: 1
+      Parent: 9
+      Trigger: 0
+      TriggerText: 
+      Connections: 0c000000
+    - ID: 12
+      Size:
+        serializedVersion: 2
+        x: 766
+        y: 417
+        width: 150
+        height: 125
+      Text: I've never heard such a unique name in my life. And that's something for
+        being 174 years old!
+      Type: 0
+      NodeType: 1
+      Parent: 11
+      Trigger: 0
+      TriggerText: 
+      Connections: 0a000000
+    - ID: 14
+      Size:
+        serializedVersion: 2
+        x: 824
+        y: 585
+        width: 150
+        height: 125
+      Text: 
+      Type: 2
+      NodeType: 2
+      Parent: 9
+      Trigger: 0
+      TriggerText: 
+      Connections: 
+    - ID: 15
+      Size:
+        serializedVersion: 2
+        x: 17
+        y: 944
+        width: 150
+        height: 125
+      Text: 
+      Type: 0
+      NodeType: 2
+      Parent: 6
+      Trigger: 0
+      TriggerText: 
+      Connections: 
+    - ID: 16
+      Size:
+        serializedVersion: 2
+        x: 22
+        y: 585
+        width: 150
+        height: 125
+      Text: Tell me more about the monster wizard.
+      Type: 2
+      NodeType: 1
+      Parent: 6
+      Trigger: 0
+      TriggerText: 
+      Connections: 11000000
+    - ID: 17
+      Size:
+        serializedVersion: 2
+        x: 23
+        y: 731
+        width: 150
+        height: 125
+      Text: Monster wizard is   a terrifying zombie like creature with magical powers.
+        He is capable of raising his brethren from the dead!
+      Type: 0
+      NodeType: 1
+      Parent: 16
+      Trigger: 0
+      TriggerText: 
+      Connections: 0f000000
+    - ID: 18
+      Size:
+        serializedVersion: 2
+        x: 191
+        y: 941
+        width: 150
+        height: 125
+      Text: 
+      Type: 0
+      NodeType: 2
+      Parent: 6
+      Trigger: 0
+      TriggerText: 
+      Connections: 
+    - ID: 19
+      Size:
+        serializedVersion: 2
+        x: 182
+        y: 585
+        width: 150
+        height: 125
+      Text: Apples can restore your power?
+      Type: 2
+      NodeType: 1
+      Parent: 6
+      Trigger: 0
+      TriggerText: 
+      Connections: 14000000
+    - ID: 20
+      Size:
+        serializedVersion: 2
+        x: 187
+        y: 731
+        width: 150
+        height: 125
+      Text: Indeed! I will brew myself a potion to restore my mana. Then I will be
+        able to help you find the cause of monster's ressurection.
+      Type: 0
+      NodeType: 1
+      Parent: 19
+      Trigger: 0
+      TriggerText: 
+      Connections: 12000000
+  CurrentSet: 1
   TabList:
   - FirstMeeting
+  - SecondTalk
 --- !u!1 &615351507
 GameObject:
   m_ObjectHideFlags: 0
