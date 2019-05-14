@@ -12,11 +12,17 @@ public class QuestGiver : MonoBehaviour
     public Text questPanelTitle;
     public Text questPanelDescription;
     public Text questPanelReward;
+    public Text questProgress;
 
-    void Start()
+
+    void Update()
     {
-        questPanelTitle.text = quest.questTitle;
-        questPanelDescription.text = quest.questDescription;
-        questPanelReward.text = "Reward: " + quest.reward;
+        if (quest.isActive)
+        {
+            //player.GetComponent<PlayerScore>()
+            questPanelTitle.text = quest.questTitle;
+            questPanelDescription.text = quest.questDescription;
+            questPanelReward.text = "Reward: " + quest.reward;
+        }
     }
 }
