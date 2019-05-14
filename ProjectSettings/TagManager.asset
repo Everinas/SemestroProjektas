@@ -16,6 +16,9 @@ TagManager:
   - Spit
   - Trap
   - Dialogue
+  - QuestPanel
+  - QuestReward
+  - QuestProgress
   layers:
   - Default
   - TransparentFX

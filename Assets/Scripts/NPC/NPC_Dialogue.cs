@@ -18,6 +18,8 @@ public class NPC_Dialogue : MonoBehaviour
     GameObject spit;
     public PlayerScore score;
     DialogueInteraction dialogas;
+    [SerializeField]
+    QuestGiver startingQuest;
 
     private void OnTriggerStay(Collider other)
     {
@@ -49,6 +51,7 @@ public class NPC_Dialogue : MonoBehaviour
                     if (score.currentScore >= 10)
                     {
                         dialogue.text = thirdStage;
+                        startingQuest.quest.isActive = false;
                         levelchange = true;
                         GameObject spit = Instantiate(effect, (pedestal.transform.position), transform.rotation) as GameObject;
                     }

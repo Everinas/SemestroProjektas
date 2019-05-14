@@ -24,6 +24,8 @@ public class DialogueInteraction : MonoBehaviour {
     CameraFollow cameraMovement;
     [SerializeField]
     QuestGiver startingQuest;
+    
+
 
 
     bool nextEnd = false;
