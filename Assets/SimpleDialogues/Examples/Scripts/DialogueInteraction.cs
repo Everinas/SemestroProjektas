@@ -51,6 +51,14 @@ public class DialogueInteraction : MonoBehaviour {
         {
             npc.SetTree("SecondTalk"); //This sets the current tree to be used. Resets to the first node when called.
         }
+        if (npc.GetCurrentTree() == "1QuestDone")
+        {
+            npc.SetTree("1QuestDone"); //This sets the current tree to be used. Resets to the first node when called.
+        }
+        if (playerScore.currentScore == 10)
+        {
+            npc.SetTree("1QuestDone"); //This sets the current tree to be used. Resets to the first node when called.
+        }
         nextEnd = false;
         Cursor.visible = true;
         cameraMovement.enabled = false;
@@ -152,7 +160,7 @@ public class DialogueInteraction : MonoBehaviour {
             player.GetComponent<SimpleCharacterControl>().enabled = true;
             cameraMovement.enabled = true;
             playerScore.kazkas = 1;
-                        if (npc.GetCurrentTree() == "FirstMeeting")
+            if (npc.GetCurrentTree() == "FirstMeeting")
             {
                 
                 startingQuest.quest.isActive = true;

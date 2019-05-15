@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2003931976}
-  m_IndirectSpecularColor: {r: 0.613694, g: 0.6492894, b: 0.58910877, a: 1}
+  m_IndirectSpecularColor: {r: 0.61432475, g: 0.6493726, b: 0.5891064, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3882,7 +3882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstStage: 
   secondStage: 
-  thirdStage: The portal is activated
+  thirdStage: 
   dialogue: {fileID: 1480718451}
   pedestal: {fileID: 1406832584}
   effect: {fileID: 1223526616464650, guid: c590b17884b119046bc6412066500b7d, type: 3}
@@ -4539,10 +4539,128 @@ MonoBehaviour:
       Trigger: 0
       TriggerText: 
       Connections: 12000000
-  CurrentSet: 1
+  - CurrentId: 8
+    NewWindowOpen: 0
+    FirstWindow: 0
+    Windows:
+    - ID: 0
+      Size:
+        serializedVersion: 2
+        x: 106
+        y: 137
+        width: 150
+        height: 125
+      Text: How is the search going?
+      Type: 1
+      NodeType: 0
+      Parent: -1
+      Trigger: 0
+      TriggerText: 
+      Connections: 02000000
+    - ID: 1
+      Size:
+        serializedVersion: 2
+        x: 1237
+        y: 136
+        width: 150
+        height: 125
+      Text: 
+      Type: 0
+      NodeType: 2
+      Parent: 0
+      Trigger: 0
+      TriggerText: 
+      Connections: 
+    - ID: 2
+      Size:
+        serializedVersion: 2
+        x: 268
+        y: 137
+        width: 150
+        height: 125
+      Text: I've got the apples
+      Type: 2
+      NodeType: 1
+      Parent: 0
+      Trigger: 0
+      TriggerText: 
+      Connections: 03000000
+    - ID: 3
+      Size:
+        serializedVersion: 2
+        x: 428
+        y: 138
+        width: 150
+        height: 125
+      Text: Excellent! Soon I will be able to restore my powers.
+      Type: 0
+      NodeType: 1
+      Parent: 2
+      Trigger: 0
+      TriggerText: 
+      Connections: 04000000
+    - ID: 4
+      Size:
+        serializedVersion: 2
+        x: 588
+        y: 138
+        width: 150
+        height: 125
+      Text: In the meantime, we have to arm you for a battle. I can sense evil wizard's
+        army approaching.
+      Type: 0
+      NodeType: 1
+      Parent: 3
+      Trigger: 0
+      TriggerText: 
+      Connections: 05000000
+    - ID: 5
+      Size:
+        serializedVersion: 2
+        x: 748
+        y: 138
+        width: 150
+        height: 125
+      Text: There is a magical chest hidden somewhere in the forest.
+      Type: 0
+      NodeType: 1
+      Parent: 4
+      Trigger: 0
+      TriggerText: 
+      Connections: 06000000
+    - ID: 6
+      Size:
+        serializedVersion: 2
+        x: 908
+        y: 138
+        width: 150
+        height: 125
+      Text: It contains armour that will help you in your adventure!
+      Type: 0
+      NodeType: 1
+      Parent: 5
+      Trigger: 0
+      TriggerText: 
+      Connections: 07000000
+    - ID: 7
+      Size:
+        serializedVersion: 2
+        x: 1068
+        y: 138
+        width: 150
+        height: 125
+      Text: But first, you have to find the key to the chest. Rumour has it, it is....
+      Type: 0
+      NodeType: 1
+      Parent: 6
+      Trigger: 0
+      TriggerText: 
+      Connections: 01000000
+  CurrentSet: 2
   TabList:
   - FirstMeeting
   - SecondTalk
+  - 1QuestDone
 --- !u!114 &604519508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6600,7 +6718,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -217}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1004875772
