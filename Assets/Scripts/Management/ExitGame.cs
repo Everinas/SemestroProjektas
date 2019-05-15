@@ -8,4 +8,9 @@ public class ExitGame : MonoBehaviour
     {
         Application.Quit();
     }
+    void Start()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+    }
 }
