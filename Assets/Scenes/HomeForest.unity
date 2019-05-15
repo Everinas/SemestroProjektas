@@ -12483,6 +12483,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1890999514}
+  playerShield: {fileID: 0}
+  RagdollShield: {fileID: 0}
   ragdollas: {fileID: 1890999514}
   cameraMovement: {fileID: 0}
 --- !u!114 &1890999553
@@ -12502,18 +12504,6 @@ MonoBehaviour:
   counter: {fileID: 1266250705}
   Keys: {fileID: 857046711}
   kazkas: 0
---- !u!114 &1890999554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1890999514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 154c55f04a1e62948810cef90242f0a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!65 &1890999555
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13942,6 +13932,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  playerShield: {fileID: 0}
+  RagdollShield: {fileID: 0}
   ragdollas: {fileID: 0}
   cameraMovement: {fileID: 0}
 --- !u!95 &2113956914

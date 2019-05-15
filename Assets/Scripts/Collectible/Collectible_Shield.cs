@@ -5,7 +5,6 @@ using UnityEngine;
 public class Collectible_Shield : MonoBehaviour
 {
     GameObject player;
-    public GameObject playerShield;
     PlayerScore playerScore;
 
     public float degreesPerSecond = 45.0f;
@@ -22,8 +21,6 @@ public class Collectible_Shield : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        playerShield = GameObject.FindGameObjectWithTag("PlayerShield");
-        playerShield.SetActive(false);
         playerScore = player.GetComponent<PlayerScore>();
         posOffset = transform.position;
     }
@@ -33,7 +30,7 @@ public class Collectible_Shield : MonoBehaviour
         if (other.gameObject == player)
         {
             gameObject.SetActive(false);
-            playerShield.SetActive(true);
+            PlayerScore.PlayerShield.SetActive(true);
             PlayerScore.Shield = true;
             print("Veikia");
         }
