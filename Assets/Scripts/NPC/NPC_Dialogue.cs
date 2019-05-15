@@ -13,6 +13,7 @@ public class NPC_Dialogue : MonoBehaviour
     public static bool buttonPress = false;
     public static bool wave = false;
     Collider player;
+    GameObject playeris;
     public GameObject pedestal;
     public GameObject effect;
     GameObject spit;
@@ -20,12 +21,14 @@ public class NPC_Dialogue : MonoBehaviour
     DialogueInteraction dialogas;
     [SerializeField]
     QuestGiver startingQuest;
-
+    Vector3 curpos;
+    Vector3 lastpos;
+    bool talking = false;
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")
-        {
-            if (Input.GetButtonDown("E") && buttonPress == false)
+        {        
+            if (Input.GetButtonDown("E") && buttonPress == false && talking == true)
             {
                 player = other;
                 //Vector3 targetPostition = new Vector3(other.transform.position.x,
@@ -93,6 +96,17 @@ public class NPC_Dialogue : MonoBehaviour
     }
      void Update()
     {
+        playeris = GameObject.FindGameObjectWithTag("Player");
+        curpos = playeris.transform.position;
+        if (curpos == lastpos)
+        {
+            talking = true;
+        }
+        else
+        {
+            talking = false;
+        }
+        lastpos = curpos;
         if (wave == true)
         {
             Vector3 targetDir = player.transform.position - transform.position;

@@ -55,7 +55,7 @@ public class DialogueInteraction : MonoBehaviour {
         {
             npc.SetTree("1QuestDone"); //This sets the current tree to be used. Resets to the first node when called.
         }
-        if (playerScore.currentScore == 10)
+        if (playerScore.currentScore >= 10)
         {
             npc.SetTree("1QuestDone"); //This sets the current tree to be used. Resets to the first node when called.
         }
