@@ -41,6 +41,12 @@ public class EnemyAttack : MonoBehaviour
         if (Vector3.Dot(toTarget, player.transform.forward) > 0)
         {
             playerHealth.TakeDamage(1);
+            if(this.gameObject.tag == "Spit")
+            {
+                player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, 0, ForceMode.VelocityChange);
+                this.GetComponent<DemoTidySpit>().Explode();
+            }
+            else
             player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, -7, ForceMode.VelocityChange);
         }
         else
@@ -52,7 +58,7 @@ public class EnemyAttack : MonoBehaviour
             //player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, 7, ForceMode.VelocityChange);
         }
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.tag == "Player")
         {
@@ -71,10 +77,6 @@ public class EnemyAttack : MonoBehaviour
         //        collider.GetComponent<Rigidbody>().AddRelativeForce(0, 3, -7, ForceMode.VelocityChange);
         //    }
         //}
-    }
-    private void OnTriggerEnter(Collider collision)
-    {
-
         if (this.gameObject.tag == "Trap")
         {
             if (collision.gameObject.tag == "Enemy")
