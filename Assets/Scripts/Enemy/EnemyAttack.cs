@@ -53,11 +53,13 @@ public class EnemyAttack : MonoBehaviour
         }
         else
         {
-            // if(has a shield)
-            player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, 4, ForceMode.VelocityChange);
-            //else
-            //playerHealth.TakeDamage(1);
-            //player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, 7, ForceMode.VelocityChange);
+            if (PlayerScore.Shield == true)
+                player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, 4, ForceMode.VelocityChange);
+            else
+            {
+                playerHealth.TakeDamage(1);
+                player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, 7, ForceMode.VelocityChange);
+            }
         }
     }
     private void OnCollisionEnter(Collision collision)

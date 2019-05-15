@@ -12,6 +12,7 @@ public class PlayerScore : MonoBehaviour
     public int currentKeys;
     public static int score; //Needed for NPC_dialogue
     public static int keys; //Needed for NPC_dialogue
+    public static bool Shield;
     public Text counter;
     public Text Keys;
     private GameObject player;
@@ -25,6 +26,7 @@ public class PlayerScore : MonoBehaviour
         counter.text = "Score: 0";
         Keys.text = "Keys: 0";
         kazkas = 1;
+        Shield = false;
     }
 
 

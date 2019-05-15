@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Collectible_Secret : MonoBehaviour
+public class Collectible_Shield : MonoBehaviour
 {
     GameObject player;
+    public GameObject playerShield;
     PlayerScore playerScore;
 
     public float degreesPerSecond = 45.0f;
     public float amplitude = 0.1f;
-    public float frequency = 5f;
+    public float frequency = 0.5f;
 
     // Position Storage Variables
     Vector3 posOffset = new Vector3();
@@ -21,6 +22,8 @@ public class Collectible_Secret : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        playerShield = GameObject.FindGameObjectWithTag("PlayerShield");
+        playerShield.SetActive(false);
         playerScore = player.GetComponent<PlayerScore>();
         posOffset = transform.position;
     }
@@ -30,6 +33,8 @@ public class Collectible_Secret : MonoBehaviour
         if (other.gameObject == player)
         {
             gameObject.SetActive(false);
+            playerShield.SetActive(true);
+            PlayerScore.Shield = true;
             print("Veikia");
         }
     }

@@ -19,6 +19,9 @@ TagManager:
   - QuestPanel
   - QuestReward
   - QuestProgress
+  - Shield
+  - PlayerShield
+  - RagdollShield
   layers:
   - Default
   - TransparentFX
