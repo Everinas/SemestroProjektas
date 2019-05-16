@@ -22,6 +22,8 @@ TagManager:
   - Shield
   - PlayerShield
   - RagdollShield
+  - Targetas
+  - Manas
   layers:
   - Default
   - TransparentFX

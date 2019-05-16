@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public int currentHealth;
     public static int health; //Needed for saving state
     public int numberOfHearts;
+    public bool invincibility;
 
     public Image[] hearts;
     public Sprite fullHeart;
@@ -20,6 +21,7 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = startingHealth;
         numberOfHearts = startingHealth;
         health = startingHealth;
+        invincibility = false;
     }
 
     // Update is called once per frame

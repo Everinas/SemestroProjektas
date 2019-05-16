@@ -797,6 +797,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 10
+  invincibility: 0
 --- !u!114 &110690730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1238,6 +1239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 6
+  invincibility: 0
 --- !u!65 &191552577
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2229,6 +2231,12 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.34047562, y: 0.37079924, z: 0.36437774}
   m_Center: {x: 0.00000014156103, y: -0.000000007450581, z: 0.000000014901161}
+--- !u!4 &337209289 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4742318452996994, guid: 0e74cf81e6fd82546b4797f71ceffb81,
+    type: 3}
+  m_PrefabInstance: {fileID: 1890999500}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &342748549 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4243724423293762, guid: c07f24e35f07ce74ba43afa35d48adf7,
@@ -5300,7 +5308,7 @@ Transform:
   m_Children:
   - {fileID: 1865718888}
   m_Father: {fileID: 1890999501}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &809318437
 MonoBehaviour:
@@ -5319,7 +5327,7 @@ MonoBehaviour:
   clampAngle: 66
   inputSensitivity: 150
   CameraObj: {fileID: 1865718887}
-  PlayerObj: {fileID: 918585244}
+  PlayerObj: {fileID: 1890999514}
   camDistanceXToPlayer: 0
   camDistanceYToPlayer: 0
   camDistanceZToPlayer: 0
@@ -5678,7 +5686,7 @@ GameObject:
   - component: {fileID: 918585245}
   m_Layer: 2
   m_Name: Target
-  m_TagString: Untagged
+  m_TagString: Targetas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5690,12 +5698,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918585244}
-  m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: -0.011001587, y: 0.6670003, z: 0.005001068}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0.4999997, y: -0.50000036, z: -0.50000036, w: -0.4999997}
+  m_LocalPosition: {x: -0.0008743475, y: 0.001098627, z: 0.038707204}
+  m_LocalScale: {x: 0.10000018, y: 0.10000009, z: 0.100000195}
   m_Children: []
-  m_Father: {fileID: 1890999501}
-  m_RootOrder: 3
+  m_Father: {fileID: 337209289}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &919567577
 PrefabInstance:
@@ -5959,6 +5967,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 6
+  invincibility: 0
 --- !u!114 &919567581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6239,6 +6248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 4
+  invincibility: 0
 --- !u!65 &937309126
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6533,6 +6543,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 10
+  invincibility: 0
 --- !u!114 &986022485
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10321,6 +10332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 10
+  invincibility: 0
 --- !u!135 &1749206655
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -11264,7 +11276,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1832070036456120, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: Manas
       objectReference: {fileID: 0}
     - target: {fileID: 1832070036456120, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}
       propertyPath: m_Layer
@@ -11625,6 +11637,7 @@ MonoBehaviour:
   startingHealth: 1
   currentHealth: 0
   numberOfHearts: 0
+  invincibility: 0
   hearts: []
   fullHeart: {fileID: 0}
   emptyHeart: {fileID: 0}
@@ -12462,6 +12475,7 @@ MonoBehaviour:
   startingHealth: 5
   currentHealth: 0
   numberOfHearts: 5
+  invincibility: 0
   hearts:
   - {fileID: 1020743217}
   - {fileID: 1401620046}
@@ -12592,6 +12606,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 10
+  invincibility: 0
 --- !u!114 &1932248498
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12643,6 +12658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 10
+  invincibility: 0
 --- !u!114 &1940416277
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12966,6 +12982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 10
+  invincibility: 0
 --- !u!114 &1951977323
 MonoBehaviour:
   m_ObjectHideFlags: 0

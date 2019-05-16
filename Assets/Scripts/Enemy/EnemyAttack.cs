@@ -8,6 +8,8 @@ public class EnemyAttack : MonoBehaviour
     PlayerHealth playerHealth;
     Vector3 hitDirection;
     public float pushBackForce = 4;
+    public bool invincibility;
+    Material m_Material;
 
     bool isTouching;
 
@@ -17,6 +19,7 @@ public class EnemyAttack : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
         isTouching = false;
+        invincibility = false;
     }
 
     // Update is called once per frame
@@ -32,6 +35,7 @@ public class EnemyAttack : MonoBehaviour
             funk();
             //player.transform.LookAt(transform.localPosition);
             isTouching = false;
+            
         }
     }
     void funk()
@@ -41,7 +45,7 @@ public class EnemyAttack : MonoBehaviour
         if (Vector3.Dot(toTarget, player.transform.forward) > 0)
         {
             playerHealth.TakeDamage(1);
-            if (this.gameObject.tag == "Spit")
+            if (this.gameObject.tag == "Spit" && playerHealth.invincibility == false)
             {
                 player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, 0, ForceMode.VelocityChange);
                 this.GetComponent<DemoTidySpit>().Explode();
@@ -54,7 +58,9 @@ public class EnemyAttack : MonoBehaviour
         else
         {
             if (PlayerScore.Shield == true)
+            {
                 player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, 4, ForceMode.VelocityChange);
+            }
             else
             {
                 playerHealth.TakeDamage(1);
@@ -62,18 +68,35 @@ public class EnemyAttack : MonoBehaviour
             }
         }
     }
-    private void OnCollisionEnter(Collision collision)
+    IEnumerator Example()
     {
-        if (collision.gameObject.tag == "Player")
+        if (playerHealth.invincibility == true)
         {
+            print(Time.time);
+            m_Material.color = Color.red;
+            yield return new WaitForSeconds(2);
+            print(Time.time);
+            m_Material.color = Color.white;
+            playerHealth.invincibility = false;
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player" && playerHealth.invincibility == false)
+        {
+            
             hitDirection = collision.transform.position - transform.position;
             hitDirection = hitDirection.normalized;
             isTouching = true;
+            playerHealth.invincibility = true;
+            m_Material = GameObject.FindGameObjectWithTag("Manas").GetComponent<Renderer>().material;
+            StartCoroutine(Example());
         }
     }
     private void OnTriggerEnter(Collider collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && playerHealth.invincibility == false)
         {
             hitDirection = collision.transform.position - transform.position;
             hitDirection = hitDirection.normalized;
