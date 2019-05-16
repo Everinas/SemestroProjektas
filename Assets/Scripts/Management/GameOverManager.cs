@@ -55,7 +55,8 @@ public class GameOverManager : MonoBehaviour
 
             // Show the endgame buttons
             anim.SetTrigger("GameOver");
-
+            player.GetComponent<Rigidbody>().isKinematic = true;
+            player.GetComponent<BoxCollider>().enabled = false;
             player.GetComponent<SimpleCharacterControl>().enabled = false;
             player.GetComponent<Animator>().enabled = false;
             SaveGame.Save<int>("Score", 0);
