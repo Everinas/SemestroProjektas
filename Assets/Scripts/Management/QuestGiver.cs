@@ -6,7 +6,9 @@ using UnityEngine.UI;
 
 public class QuestGiver : MonoBehaviour
 {
-    public Quest quest;
+
+    
+    //public Quest quest;
     public GameObject player;
 
     public Text questPanelTitle;
@@ -14,39 +16,50 @@ public class QuestGiver : MonoBehaviour
     public Text questPanelReward;
     public Text questPanelProgress;
 
+  
     int score;
 
-
-    Color green = new Color(0F, 0.6F, 0F, 1F);
-
+    
     void Update()
     {
-        if (quest.isActive)
+        if (player.GetComponent<CurrentQuest>().friendlyChat == true)
         {
 
-            questPanelReward.gameObject.SetActive(true);
-            questPanelProgress.gameObject.SetActive(true);
-            score = player.GetComponent<PlayerScore>().currentScore;
-            questPanelTitle.text = quest.questTitle;
-            questPanelDescription.text = quest.questDescription;
-            questPanelReward.text = "Reward: " + quest.reward;
+            questPanelTitle.text = "Friendly Chat";
+            questPanelDescription.text = "Find an old wizard and have a friendly chat with him";
 
-            if (score >= 10)
-            {
-                score = 10;
-                questPanelProgress.color = green;
-            }
-
-            questPanelProgress.text = "Progress: (" + score.ToString() + "/10)";
         }
-        else
+
+        if (player.GetComponent<CurrentQuest>().lookingForApples == true)
         {
-            questPanelTitle.text = "Quest";
-            questPanelDescription.text = "You currently don't have an active quest";
-            questPanelReward.text = "Reward:";
-            questPanelProgress.text = "Progress";
+            
+                questPanelReward.gameObject.SetActive(true);
+                questPanelProgress.gameObject.SetActive(true);
+                score = player.GetComponent<PlayerScore>().currentScore;
+                questPanelTitle.text = "Looking For Apples";
+                questPanelDescription.text = "Venture out into the wild and collect 10 apples";
+                questPanelReward.text = "Reward: Talk with Wizard Arqo about that";
+
+                if (score >= 10)
+                {
+                    score = 10;
+                    Color green = new Color(0F, 0.6F, 0F, 1F);
+                    questPanelProgress.color = green;
+                }
+
+                questPanelProgress.text = "Progress: (" + score.ToString() + "/10)";
+           
+        }
+
+       
+        if (player.GetComponent<CurrentQuest>().arqosMagic == true)
+        {
+            
+            questPanelTitle.text = "Arqo's Magic";
+            questPanelDescription.text = "Find a portal, step on it and see what happens";
             questPanelReward.gameObject.SetActive(false);
             questPanelProgress.gameObject.SetActive(false);
+
         }
     }
 }

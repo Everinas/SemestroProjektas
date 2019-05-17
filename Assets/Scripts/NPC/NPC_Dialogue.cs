@@ -54,7 +54,8 @@ public class NPC_Dialogue : MonoBehaviour
                     if (score.currentScore >= 10)
                     {
                         dialogue.text = thirdStage;
-                        startingQuest.quest.isActive = false;
+                        playeris.GetComponent<CurrentQuest>().lookingForApples = false;
+                        playeris.GetComponent<CurrentQuest>().arqosMagic = true;
                         levelchange = true;
                         GameObject spit = Instantiate(effect, (pedestal.transform.position), transform.rotation) as GameObject;
                     }

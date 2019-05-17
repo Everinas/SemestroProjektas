@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2003931976}
-  m_IndirectSpecularColor: {r: 0.61432475, g: 0.6493726, b: 0.5891064, a: 1}
+  m_IndirectSpecularColor: {r: 0.613694, g: 0.6492894, b: 0.58910877, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3453,7 +3453,6 @@ MonoBehaviour:
   backPanel: {fileID: 1430833964}
   nextTreeButton: {fileID: 737757542}
   score: {fileID: 0}
-  startingQuest: {fileID: 604519508}
 --- !u!114 &594148442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4667,11 +4666,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44bc7f2f66d3e7844bb6b2b8e0e6c14a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quest:
-    isActive: 0
-    questTitle: Looking For Apples
-    questDescription: Venture out into the wild and collect 10 apples
-    reward: Talk with NPC about that
   player: {fileID: 1890999514}
   questPanelTitle: {fileID: 271055545}
   questPanelDescription: {fileID: 863464316}
@@ -8767,6 +8761,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.11616966, y: 0.12108337, z: 0.054292947}
   m_Center: {x: 0.0020796147, y: 0.0016913243, z: 0.025255937}
+--- !u!114 &1406832591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1406832584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bc7f2f66d3e7844bb6b2b8e0e6c14a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1890999514}
+  questPanelTitle: {fileID: 271055545}
+  questPanelDescription: {fileID: 863464316}
+  questPanelReward: {fileID: 2091529244}
+  questPanelProgress: {fileID: 2110387708}
 --- !u!1 &1414326515
 GameObject:
   m_ObjectHideFlags: 0
@@ -9468,7 +9479,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1572000963
 Transform:
   m_ObjectHideFlags: 0
@@ -12581,6 +12592,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   questPanel: {fileID: 1790519700}
+--- !u!114 &1890999573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890999514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44bc7f2f66d3e7844bb6b2b8e0e6c14a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1890999514}
+  questPanelTitle: {fileID: 271055545}
+  questPanelDescription: {fileID: 863464316}
+  questPanelReward: {fileID: 2091529244}
+  questPanelProgress: {fileID: 2110387708}
+--- !u!114 &1890999574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1890999514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 211edf96445a7bf4daf1b0b83838d48f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  friendlyChat: 1
+  lookingForApples: 0
+  arqosMagic: 0
 --- !u!1 &1932248495 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: fc597c58eb91b384aa04ee2d82bcdd1b,

@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465782, g: 0.49641252, b: 0.5748167, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -2310,6 +2310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 10
+  invincibility: 0
 --- !u!135 &254943343
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2654,6 +2655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 10
+  invincibility: 0
 --- !u!111 &292571018
 Animation:
   m_ObjectHideFlags: 0
@@ -3772,6 +3774,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 10
+  invincibility: 0
 --- !u!135 &437004532
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4779,6 +4782,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2befc8cab4330ef448f0334364712007, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraMovement: {fileID: 0}
 --- !u!114 &587835998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5639,6 +5643,7 @@ MonoBehaviour:
   currentKeys: 0
   counter: {fileID: 292666003}
   Keys: {fileID: 1721063972}
+  kazkas: 0
 --- !u!114 &678419360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5652,6 +5657,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 678419344}
+  playerShield: {fileID: 0}
+  RagdollShield: {fileID: 0}
   ragdollas: {fileID: 678419344}
   cameraMovement: {fileID: 0}
 --- !u!114 &678419361
@@ -5669,6 +5676,7 @@ MonoBehaviour:
   startingHealth: 5
   currentHealth: 0
   numberOfHearts: 5
+  invincibility: 0
   hearts:
   - {fileID: 1854840968}
   - {fileID: 1382038471}
@@ -5768,6 +5776,7 @@ MonoBehaviour:
   currentKeys: 0
   counter: {fileID: 292666003}
   Keys: {fileID: 0}
+  kazkas: 0
 --- !u!114 &678419367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5783,6 +5792,7 @@ MonoBehaviour:
   startingHealth: 1
   currentHealth: 0
   numberOfHearts: 0
+  invincibility: 0
   hearts: []
   fullHeart: {fileID: 0}
   emptyHeart: {fileID: 0}
@@ -7484,6 +7494,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 6
+  invincibility: 0
 --- !u!65 &874085809
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8704,6 +8715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 10
+  invincibility: 0
 --- !u!135 &1076956924
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9219,6 +9231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 10
+  invincibility: 0
 --- !u!114 &1104972292
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9288,6 +9301,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44bc7f2f66d3e7844bb6b2b8e0e6c14a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  friendlyChat: 0
+  lookingForApples: 0
+  arqosMagic: 0
   quest:
     isActive: 0
     questTitle: Looking For Apples
@@ -9297,6 +9313,8 @@ MonoBehaviour:
   questPanelTitle: {fileID: 1161902895}
   questPanelDescription: {fileID: 967216954}
   questPanelReward: {fileID: 2051406446}
+  questPanelProgress: {fileID: 0}
+  portal: {fileID: 0}
 --- !u!1001 &1130167861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12437,6 +12455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6831d4712d1bf5c4591c1042b8ddd40a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraMovement: {fileID: 0}
 --- !u!65 &1624866756
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12740,6 +12759,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
+  playerShield: {fileID: 0}
+  RagdollShield: {fileID: 0}
   ragdollas: {fileID: 0}
   cameraMovement: {fileID: 0}
 --- !u!95 &1628683306
@@ -13043,6 +13064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6831d4712d1bf5c4591c1042b8ddd40a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraMovement: {fileID: 0}
 --- !u!65 &1687677475
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13597,6 +13619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 4
+  invincibility: 0
 --- !u!65 &1784452913
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14111,6 +14134,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 10
+  invincibility: 0
 --- !u!135 &1819607170
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -14565,6 +14589,7 @@ MonoBehaviour:
   pedestal: {fileID: 1687677473}
   effect: {fileID: 1223526616464650, guid: c590b17884b119046bc6412066500b7d, type: 3}
   score: {fileID: 678419359}
+  startingQuest: {fileID: 0}
 --- !u!65 &1862703674
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15677,6 +15702,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 6
+  invincibility: 0
 --- !u!135 &2126327422
 SphereCollider:
   m_ObjectHideFlags: 0

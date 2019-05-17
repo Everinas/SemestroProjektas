@@ -22,8 +22,7 @@ public class DialogueInteraction : MonoBehaviour {
     PlayerScore playerScore;
     private GameObject player;
     CameraFollow cameraMovement;
-    [SerializeField]
-    QuestGiver startingQuest;
+    
     
 
 
@@ -162,8 +161,8 @@ public class DialogueInteraction : MonoBehaviour {
             playerScore.kazkas = 1;
             if (npc.GetCurrentTree() == "FirstMeeting")
             {
-                
-                startingQuest.quest.isActive = true;
+                player.GetComponent<CurrentQuest>().friendlyChat = false;
+                player.GetComponent<CurrentQuest>().lookingForApples = true;
                 npc.SetTree("SecondTalk"); //This sets the current tree to be used. Resets to the first node when called.
             }
             Hide();
