@@ -13,6 +13,10 @@ public class Saving2 : MonoBehaviour
     public GameObject[] colectibles; 
     public PlayerScore playerScore;
     public PlayerHealth playerHealth;
+
+    public GameObject gameSavePanel;
+    public GameObject gameLoadPanel;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -31,7 +35,13 @@ public class Saving2 : MonoBehaviour
         {
             SaveGame.Save<bool>(collectible.GetInstanceID().ToString(), collectible.activeInHierarchy);
         }
-       // SaveGame.Save<bool>("Levelchange", NPC_Dialogue.levelchange);
+        Animator animator = gameSavePanel.GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.Play("ActivateMessage");
+        }
+        
+        // SaveGame.Save<bool>("Levelchange", NPC_Dialogue.levelchange);
 
     }
     void Load()
@@ -47,6 +57,11 @@ public class Saving2 : MonoBehaviour
         foreach (GameObject collectible in colectibles)
         {
             collectible.SetActive(SaveGame.Load<bool>(collectible.GetInstanceID().ToString()));
+        }
+        Animator animator = gameLoadPanel.GetComponent<Animator>();
+        if (animator != null)
+        {
+            animator.Play("ActivateMessage");
         }
         //NPC_Dialogue.levelchange = SaveGame.Load<bool>("Levelchange");
     }
