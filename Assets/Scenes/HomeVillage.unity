@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.61332166, g: 0.6492296, b: 0.58911234, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -4918,9 +4918,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d49e188086c3794c902eaad9b26ccf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  degreesPerSecond: 45
-  amplitude: 0.1
-  frequency: 5
 --- !u!135 &605353589
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -9301,20 +9298,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44bc7f2f66d3e7844bb6b2b8e0e6c14a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  friendlyChat: 0
-  lookingForApples: 0
-  arqosMagic: 0
-  quest:
-    isActive: 0
-    questTitle: Looking For Apples
-    questDescription: Venture out into the wild and collect 10 big juicy apples
-    reward: Talk with NPC about that
   player: {fileID: 678419344}
   questPanelTitle: {fileID: 1161902895}
   questPanelDescription: {fileID: 967216954}
   questPanelReward: {fileID: 2051406446}
   questPanelProgress: {fileID: 0}
-  portal: {fileID: 0}
 --- !u!1001 &1130167861
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13374,9 +13362,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d49e188086c3794c902eaad9b26ccf7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  degreesPerSecond: 45
-  amplitude: 0.1
-  frequency: 5
 --- !u!135 &1748876520
 SphereCollider:
   m_ObjectHideFlags: 0

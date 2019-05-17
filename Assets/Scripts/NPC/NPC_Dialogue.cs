@@ -24,6 +24,7 @@ public class NPC_Dialogue : MonoBehaviour
     Vector3 curpos;
     Vector3 lastpos;
     bool talking = false;
+    
     private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.tag == "Player")

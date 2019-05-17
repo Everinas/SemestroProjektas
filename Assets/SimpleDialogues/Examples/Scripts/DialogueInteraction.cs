@@ -22,8 +22,8 @@ public class DialogueInteraction : MonoBehaviour {
     PlayerScore playerScore;
     private GameObject player;
     CameraFollow cameraMovement;
-    
-    
+
+    public GameObject portalActivationPanel;
 
 
 
@@ -165,7 +165,15 @@ public class DialogueInteraction : MonoBehaviour {
                 player.GetComponent<CurrentQuest>().lookingForApples = true;
                 npc.SetTree("SecondTalk"); //This sets the current tree to be used. Resets to the first node when called.
             }
-            Hide();
+            if (npc.GetCurrentTree() == "1QuestDone")
+            {
+                Animator animator = portalActivationPanel.GetComponent<Animator>();
+                if (animator != null)
+                {
+                    animator.SetBool("PortalIsActive", true);
+                }
+            }
+                Hide();
         }
 
     }
