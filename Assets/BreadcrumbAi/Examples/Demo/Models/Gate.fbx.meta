@@ -17,9 +17,21 @@ ModelImporter:
     3300004: Gate_001
     4300000: Gate
     4300002: Gate_001
+    6400000: Gate
+    6400002: Gate_001
     7400000: Default Take
     9500000: //RootNode
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chain
+    second: {fileID: 2100000, guid: d7d6b6ca1ec9fa84c9e1b995301ee870, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gate
+    second: {fileID: 2100000, guid: bf3b66412e33969499bf42942c44f7b6, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -52,7 +64,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     useSRGBMaterialColor: 1
     importVisibility: 0
     importBlendShapes: 1
