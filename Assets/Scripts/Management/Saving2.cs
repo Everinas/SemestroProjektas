@@ -35,6 +35,7 @@ public class Saving2 : MonoBehaviour
         {
             SaveGame.Save<bool>(collectible.GetInstanceID().ToString(), collectible.activeInHierarchy);
         }
+
         Animator animator = gameSavePanel.GetComponent<Animator>();
         if (animator != null)
         {
