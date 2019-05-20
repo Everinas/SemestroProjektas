@@ -8,6 +8,8 @@ public class EnemyAttack : MonoBehaviour
     PlayerHealth playerHealth;
     Vector3 hitDirection;
     public float pushBackForce = 4;
+    public bool invincibility;
+    Material m_Material;
 
     bool isTouching;
 
@@ -17,6 +19,7 @@ public class EnemyAttack : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerHealth = player.GetComponent<PlayerHealth>();
         isTouching = false;
+        invincibility = false;
     }
 
     // Update is called once per frame
@@ -32,6 +35,7 @@ public class EnemyAttack : MonoBehaviour
             funk();
             //player.transform.LookAt(transform.localPosition);
             isTouching = false;
+            
         }
     }
     void funk()
@@ -41,20 +45,58 @@ public class EnemyAttack : MonoBehaviour
         if (Vector3.Dot(toTarget, player.transform.forward) > 0)
         {
             playerHealth.TakeDamage(1);
-            player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, -7, ForceMode.VelocityChange);
+            if (this.gameObject.tag == "Spit" && playerHealth.invincibility == false)
+            {
+                player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, 0, ForceMode.VelocityChange);
+                this.GetComponent<DemoTidySpit>().Explode();
+            }
+            else
+            {
+                player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, -7, ForceMode.VelocityChange);
+            }
         }
         else
         {
-            // if(has a shield)
-            player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, 4, ForceMode.VelocityChange);
-            //else
-            //playerHealth.TakeDamage(1);
-            //player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, 7, ForceMode.VelocityChange);
+            if (PlayerScore.Shield == true)
+            {
+                player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, 4, ForceMode.VelocityChange);
+            }
+            else
+            {
+                playerHealth.TakeDamage(1);
+                player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, 7, ForceMode.VelocityChange);
+            }
         }
     }
-    private void OnCollisionEnter(Collision collision)
+    IEnumerator Example()
     {
-        if (collision.gameObject.tag == "Player")
+        if (playerHealth.invincibility == true)
+        {
+            print(Time.time);
+            m_Material.color = Color.red;
+            yield return new WaitForSeconds(2);
+            print(Time.time);
+            m_Material.color = Color.white;
+            playerHealth.invincibility = false;
+        }
+    }
+
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player" && playerHealth.invincibility == false)
+        {
+            
+            hitDirection = collision.transform.position - transform.position;
+            hitDirection = hitDirection.normalized;
+            isTouching = true;
+            playerHealth.invincibility = true;
+            m_Material = GameObject.FindGameObjectWithTag("Manas").GetComponent<Renderer>().material;
+            StartCoroutine(Example());
+        }
+    }
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "Player" && playerHealth.invincibility == false)
         {
             hitDirection = collision.transform.position - transform.position;
             hitDirection = hitDirection.normalized;
@@ -71,10 +113,6 @@ public class EnemyAttack : MonoBehaviour
         //        collider.GetComponent<Rigidbody>().AddRelativeForce(0, 3, -7, ForceMode.VelocityChange);
         //    }
         //}
-    }
-    private void OnTriggerEnter(Collider collision)
-    {
-
         if (this.gameObject.tag == "Trap")
         {
             if (collision.gameObject.tag == "Enemy")

@@ -945,6 +945,7 @@ MonoBehaviour:
   enemyType: 1
   rangedProjectilePrefab: {fileID: 5400000, guid: be253b20856b13f4f929eccaedac0db3,
     type: 3}
+  effect: {fileID: 0}
   bloodPrefab: {fileID: 100002, guid: 17ea22ea8413fb448a0d2edccb9329c5, type: 3}
   specialPrefab: {fileID: 0}
 --- !u!114 &11400002

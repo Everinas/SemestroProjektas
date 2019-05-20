@@ -23,6 +23,9 @@ public class DialogueInteraction : MonoBehaviour {
     private GameObject player;
     CameraFollow cameraMovement;
 
+    public GameObject portalActivationPanel;
+
+
 
     bool nextEnd = false;
 
@@ -30,27 +33,39 @@ public class DialogueInteraction : MonoBehaviour {
     // This is a basic example of how you can use the dialogue system. //
 
     
-	void Start() {
+	public void Start() {
         player = GameObject.FindGameObjectWithTag("Player");
         playerScore = player.GetComponent<PlayerScore>();
         cameraMovement = GameObject.FindGameObjectWithTag("CameraFolder").GetComponent<CameraFollow>();
         npc.SetTree("FirstMeeting"); //This sets the current tree to be used. Resets to the first node when called.
-        Display();
         Hide();
         //backPanel.SetActive(false);
         //nextTreeButton.SetActive(false);
 
     }
 
-    public void Update()
+    public void Show()
     {
-        if(playerScore.kazkas == 0)
+        if (npc.GetCurrentTree() == "SecondTalk")
         {
-            Cursor.visible = true;
-            cameraMovement.enabled = false;
-            Cursor.lockState = CursorLockMode.None;
-            Display();
+            npc.SetTree("SecondTalk"); //This sets the current tree to be used. Resets to the first node when called.
         }
+        if (npc.GetCurrentTree() == "1QuestDone")
+        {
+            npc.SetTree("1QuestDone"); //This sets the current tree to be used. Resets to the first node when called.
+        }
+        if (playerScore.currentScore >= 10)
+        {
+            npc.SetTree("1QuestDone"); //This sets the current tree to be used. Resets to the first node when called.
+        }
+        nextEnd = false;
+        Cursor.visible = true;
+        cameraMovement.enabled = false;
+        Cursor.lockState = CursorLockMode.None;
+        player.GetComponent<SimpleCharacterControl>().enabled = false;
+        backPanel.SetActive(true);
+        nextTreeButton.SetActive(false);
+        Display();
     }
 
     public void Choice(int index)
@@ -63,18 +78,13 @@ public class DialogueInteraction : MonoBehaviour {
         }
         else
         {
-            Cursor.visible = false;
-            cameraMovement.enabled = true;
-            Cursor.lockState = CursorLockMode.Locked;
             Progress();
         }
     }
 
     public void TalkAgain()
     {
-        npc.SetTree("TalkAgain");
-        nextEnd = false;
-        Display();
+        Show();
     }
 
     public void Progress()
@@ -107,25 +117,32 @@ public class DialogueInteraction : MonoBehaviour {
         if (npc.HasTrigger())
             Debug.Log("Triggered: "+npc.GetTrigger());
         //This checks if there are any choices to be made
-        if (npc.GetChoices().Length != 0)
+        if (npc.GetChoices().Length == 1)
         {
             //Setting the text's of the buttons to the choices text, in my case I know I'll always have a max of three choices for this example.
             leftText.text = npc.GetChoices()[0];
+            leftText.transform.parent.gameObject.SetActive(true);
+            rightText.transform.parent.gameObject.SetActive(false);
+            middleText.transform.parent.gameObject.SetActive(false);
+        }
+        if (npc.GetChoices().Length == 2)
+        {
+            leftText.text = npc.GetChoices()[0];
             middleText.text = npc.GetChoices()[1];
-            //If we only have two choices, adjust accordingly
-            if (npc.GetChoices().Length > 2)
-                rightText.text = npc.GetChoices()[2];
-            else
-                rightText.text = npc.GetChoices()[1];
-            //Setting the appropriate buttons visability
+            leftText.transform.parent.gameObject.SetActive(true);
+            rightText.transform.parent.gameObject.SetActive(false);
+            middleText.transform.parent.gameObject.SetActive(true);
+        }
+        if (npc.GetChoices().Length == 3)
+        {
+            leftText.text = npc.GetChoices()[0];
+            middleText.text = npc.GetChoices()[1];
+            rightText.text = npc.GetChoices()[2];
             leftText.transform.parent.gameObject.SetActive(true);
             rightText.transform.parent.gameObject.SetActive(true);
-            if(npc.GetChoices().Length > 2)
-                middleText.transform.parent.gameObject.SetActive(true);
-            else
-                middleText.transform.parent.gameObject.SetActive(false);
+            middleText.transform.parent.gameObject.SetActive(true);
         }
-        else
+        if (npc.GetChoices().Length == 0)
         {
             middleText.text = "Continue";
             //Setting the appropriate buttons visability
@@ -138,10 +155,25 @@ public class DialogueInteraction : MonoBehaviour {
         {
             nextEnd = true;
             Cursor.visible = false;
-            cameraMovement.enabled = true;
             Cursor.lockState = CursorLockMode.Locked;
+            player.GetComponent<SimpleCharacterControl>().enabled = true;
+            cameraMovement.enabled = true;
             playerScore.kazkas = 1;
-            Hide();
+            if (npc.GetCurrentTree() == "FirstMeeting")
+            {
+                player.GetComponent<CurrentQuest>().friendlyChat = false;
+                player.GetComponent<CurrentQuest>().lookingForApples = true;
+                npc.SetTree("SecondTalk"); //This sets the current tree to be used. Resets to the first node when called.
+            }
+            if (npc.GetCurrentTree() == "1QuestDone")
+            {
+                Animator animator = portalActivationPanel.GetComponent<Animator>();
+                if (animator != null)
+                {
+                    animator.SetBool("PortalIsActive", true);
+                }
+            }
+                Hide();
         }
 
     }

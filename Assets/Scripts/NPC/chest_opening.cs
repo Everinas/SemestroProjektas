@@ -5,6 +5,7 @@ using UnityEngine;
 public class chest_opening : MonoBehaviour
 {
     GameObject player;
+    GameObject shield;
     Animator anim;
     PlayerScore playerScore;
     private bool opened;
@@ -12,6 +13,8 @@ public class chest_opening : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        shield = GameObject.FindGameObjectWithTag("Shield");
+        shield.SetActive(false);
         anim = GetComponent<Animator>();
         playerScore = player.GetComponent<PlayerScore>();
         opened = false;
@@ -36,6 +39,7 @@ public class chest_opening : MonoBehaviour
                     
                     if (playerScore.currentKeys > 0)
                     {
+                        shield.SetActive(true);
                         playerScore.currentKeys--;
                         anim.Play("Open");
                         opened = true;

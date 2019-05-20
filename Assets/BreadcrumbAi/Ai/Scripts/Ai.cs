@@ -433,7 +433,7 @@ namespace BreadcrumbAi{
                 player.GetComponent<Rigidbody>().velocity = Vector3.zero;
                 player.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
                 Vector3 direction = new Vector3(0, 0.7f, 0);
-                player.GetComponent<Rigidbody>().AddForce(direction * 6 * 75);
+                player.GetComponent<Rigidbody>().AddForce(direction * 22 * 75);
             }
         }
 	}

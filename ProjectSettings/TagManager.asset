@@ -16,6 +16,14 @@ TagManager:
   - Spit
   - Trap
   - Dialogue
+  - QuestPanel
+  - QuestReward
+  - QuestProgress
+  - Shield
+  - PlayerShield
+  - RagdollShield
+  - Targetas
+  - Manas
   layers:
   - Default
   - TransparentFX

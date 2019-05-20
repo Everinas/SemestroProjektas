@@ -14,13 +14,13 @@ public class DemoTidySpit : MonoBehaviour {
 		}
 	}
 	
-	private void Explode(){
+	public void Explode(){
 		Destroy(gameObject);
 		GameObject explode = Instantiate(explodePrefab,transform.position,transform.rotation) as GameObject;
 		Destroy(explode,3);
 	}
 	
-	void OnCollisionEnter(Collision col){
+	void OntTriggerEnter(Collision col){
 		_destroy = true;
 	}
 }
