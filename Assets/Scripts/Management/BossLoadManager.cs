@@ -8,6 +8,7 @@ public class BossLoadManager : MonoBehaviour
     public CameraFollow cameraMovement;
     public GameObject player;
     public GameObject teleportPoint;
+    public BossFightManager fight;
 
     void OnTriggerStay()
     {
@@ -20,7 +21,7 @@ public class BossLoadManager : MonoBehaviour
                 cameraMovement = GameObject.FindGameObjectWithTag("CameraFolder").GetComponent<CameraFollow>();
                 cameraMovement.enabled = false;
                 cameraMovement.enabled = true;
-
+                fight.StartBossFight();
                 // Change the lighting and enable the boss
             }
         }
