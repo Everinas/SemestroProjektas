@@ -9,6 +9,7 @@ public class BossLoadManager : MonoBehaviour
     public GameObject player;
     public GameObject teleportPoint;
     public BossFightManager fight;
+    public GameObject proTipPanel;
 
     void OnTriggerStay()
     {
@@ -17,11 +18,16 @@ public class BossLoadManager : MonoBehaviour
             if (NPC_Dialogue.levelchange == true)
             {
                 // Teleport the player to the boss zone
+                Animator animator = proTipPanel.GetComponent<Animator>();
+                if (animator != null)
+                {
+                    animator.Play("ProTip");
+                }
                 player.transform.position = teleportPoint.transform.position;
                 cameraMovement = GameObject.FindGameObjectWithTag("CameraFolder").GetComponent<CameraFollow>();
                 cameraMovement.enabled = false;
                 cameraMovement.enabled = true;
-                fight.StartBossFight();
+                //fight.StartBossFight();
                 // Change the lighting and enable the boss
             }
         }
