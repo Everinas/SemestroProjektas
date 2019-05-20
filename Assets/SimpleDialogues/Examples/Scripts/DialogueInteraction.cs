@@ -167,13 +167,10 @@ public class DialogueInteraction : MonoBehaviour {
             }
             if (npc.GetCurrentTree() == "1QuestDone")
             {
-                Animator animator = portalActivationPanel.GetComponent<Animator>();
-                if (animator != null)
-                {
-                    animator.SetBool("PortalIsActive", true);
-                }
+                player.GetComponent<CurrentQuest>().lookingForApples = false;
+                player.GetComponent<CurrentQuest>().keyToSuccess = true;
             }
-                Hide();
+            Hide();
         }
 
     }

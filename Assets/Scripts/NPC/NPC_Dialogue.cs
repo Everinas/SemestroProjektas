@@ -20,7 +20,6 @@ public class NPC_Dialogue : MonoBehaviour
     public PlayerScore score;
     DialogueInteraction dialogas;
     [SerializeField]
-    QuestGiver startingQuest;
     Vector3 curpos;
     Vector3 lastpos;
     bool talking = false;
@@ -55,8 +54,6 @@ public class NPC_Dialogue : MonoBehaviour
                     if (score.currentScore >= 10)
                     {
                         dialogue.text = thirdStage;
-                        playeris.GetComponent<CurrentQuest>().lookingForApples = false;
-                        playeris.GetComponent<CurrentQuest>().arqosMagic = true;
                         levelchange = true;
                         GameObject spit = Instantiate(effect, (pedestal.transform.position), transform.rotation) as GameObject;
                     }

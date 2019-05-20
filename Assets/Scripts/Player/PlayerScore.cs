@@ -38,5 +38,11 @@ public class PlayerScore : MonoBehaviour
     {
         counter.text = "Score: " + currentScore.ToString();
         Keys.text = "Keys: " + currentKeys.ToString();
+
+        if (currentKeys >= 1 && player.GetComponent<CurrentQuest>().keyToSuccess == true)
+        {
+            player.GetComponent<CurrentQuest>().keyToSuccess = false;
+            player.GetComponent<CurrentQuest>().whatsInTheBox = true;
+        }
     }
 }
