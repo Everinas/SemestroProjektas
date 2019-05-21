@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class DialogueInteraction : MonoBehaviour {
 
     [SerializeField]
-    Dialogues npc;
+    public Dialogues npc;
 
     [SerializeField]
     Text dialogueText;

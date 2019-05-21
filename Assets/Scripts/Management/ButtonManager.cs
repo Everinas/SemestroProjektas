@@ -19,7 +19,8 @@ public class ButtonManager : MonoBehaviour
 
     public void doContinue()
     {
-        escMenu.Continue();
+        MainMenuLoading.loading = true;
+        SceneManager.LoadScene("HomeForest");
     }
 
     public void doStartNewGame()

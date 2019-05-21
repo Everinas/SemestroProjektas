@@ -16,45 +16,103 @@ public class Saving2 : MonoBehaviour
 
     public GameObject gameSavePanel;
     public GameObject gameLoadPanel;
+    GameObject playeris;
 
     // Start is called before the first frame update
     void Start()
     {
+        playeris = GameObject.FindGameObjectWithTag("Player");
+        if (MainMenuLoading.loading == true)
+        {
+            Load();
+        }
     }
-    void Save()
+    public void Save()
     {
         SaveGame.Save<Vector3>("Player", player.position);
         SaveGame.Save<int>("Health", playerHealth.currentHealth);
         SaveGame.Save<int>("Score", playerScore.currentScore);
         SaveGame.Save<int>("Keys", playerScore.currentKeys);
-        foreach(Transform enemy in enemies)
-        {
-            SaveGame.Save<Vector3>(enemy.GetInstanceID().ToString(), enemy.position);
-        }
+        SaveGame.Save<bool>("Shield", PlayerScore.Shield);
+
+        enemySave();
         foreach(GameObject collectible in colectibles)
         {
             SaveGame.Save<bool>(collectible.GetInstanceID().ToString(), collectible.activeInHierarchy);
         }
-
         Animator animator = gameSavePanel.GetComponent<Animator>();
         if (animator != null)
         {
             animator.Play("ActivateMessage");
         }
-        
+        questsave();
         // SaveGame.Save<bool>("Levelchange", NPC_Dialogue.levelchange);
 
     }
-    void Load()
+   
+    void enemySave()
+    {
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            if (enemies[i] != null)
+            {
+                SaveGame.Save<Vector3>(enemies[i].GetInstanceID().ToString(), enemies[i].position);
+            }
+        }
+    }
+    void enemyLoad()
+    {
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            if (enemies[i] != null)
+            {
+                enemies[i].position = SaveGame.Load<Vector3>(enemies[i].GetInstanceID().ToString(), enemies[i].position);
+            }
+        }
+    }
+    void questsave()
+    {
+        SaveGame.Save<bool>("FC", playeris.GetComponent<CurrentQuest>().friendlyChat);
+        SaveGame.Save<bool>("LA", playeris.GetComponent<CurrentQuest>().lookingForApples);
+        SaveGame.Save<bool>("KS", playeris.GetComponent<CurrentQuest>().keyToSuccess);
+        SaveGame.Save<bool>("WB", playeris.GetComponent<CurrentQuest>().whatsInTheBox);
+        SaveGame.Save<bool>("AM", playeris.GetComponent<CurrentQuest>().arqosMagic);
+        /*SaveGame.Save<bool>("SH", playeris.GetComponent<CurrentQuest>().shoeHunt);
+        SaveGame.Save<bool>("FP", playeris.GetComponent<CurrentQuest>().findThePortal);
+        SaveGame.Save<bool>("ICF", playeris.GetComponent<CurrentQuest>().iceCreamFlavor);
+        SaveGame.Save<bool>("TF", playeris.GetComponent<CurrentQuest>().theFinale);*/
+    }
+    void questload()
+    {
+        playeris.GetComponent<CurrentQuest>().friendlyChat = SaveGame.Load<bool>("FC");
+        playeris.GetComponent<CurrentQuest>().lookingForApples = SaveGame.Load<bool>("LA");
+        playeris.GetComponent<CurrentQuest>().keyToSuccess = SaveGame.Load<bool>("KS");
+        playeris.GetComponent<CurrentQuest>().whatsInTheBox = SaveGame.Load<bool>("WB");
+        playeris.GetComponent<CurrentQuest>().arqosMagic = SaveGame.Load<bool>("AM");
+       /* playeris.GetComponent<CurrentQuest>().shoeHunt = SaveGame.Load<bool>("SH");
+        playeris.GetComponent<CurrentQuest>().findThePortal = SaveGame.Load<bool>("FP");
+        playeris.GetComponent<CurrentQuest>().iceCreamFlavor = SaveGame.Load<bool>("ICF");
+        playeris.GetComponent<CurrentQuest>().theFinale = SaveGame.Load<bool>("TF");*/
+        if (playeris.GetComponent<CurrentQuest>().friendlyChat == true)
+        {
+            GameObject.FindGameObjectWithTag("Dialogue").GetComponent<DialogueInteraction>().npc.SetTree("FirstMeeting");
+        }
+        if (playeris.GetComponent<CurrentQuest>().lookingForApples == true)
+        {
+            GameObject.FindGameObjectWithTag("Dialogue").GetComponent<DialogueInteraction>().npc.SetTree("SecondTalk");
+        }
+    }
+    public void Load()
     {
         player.position = SaveGame.Load<Vector3>("Player");
         playerHealth.currentHealth = SaveGame.Load<int>("Health");
         playerScore.currentScore = SaveGame.Load<int>("Score");
         playerScore.currentKeys = SaveGame.Load<int>("Keys");
-        foreach (Transform enemy in enemies)
-        {
-            enemy.position = SaveGame.Load<Vector3>(enemy.GetInstanceID().ToString(), enemy.position);
-        }
+        PlayerScore.Shield = (SaveGame.Load<bool>("Shield"));
+
+
+        enemyLoad();
+
         foreach (GameObject collectible in colectibles)
         {
             collectible.SetActive(SaveGame.Load<bool>(collectible.GetInstanceID().ToString()));
@@ -64,6 +122,7 @@ public class Saving2 : MonoBehaviour
         {
             animator.Play("ActivateMessage");
         }
+        questload();
         //NPC_Dialogue.levelchange = SaveGame.Load<bool>("Levelchange");
     }
 

@@ -29,7 +29,7 @@ public class Collectible_key : MonoBehaviour
     {
         if (other.gameObject == player)
         {
-            Destroy(this.gameObject);
+            gameObject.SetActive(false);
             playerScore.currentKeys++;
             print("Veikia");
         }

@@ -492,6 +492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 6
+  invincibility: 0
 --- !u!135 &22370444
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -802,7 +803,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1927817036}
-        m_MethodName: doRestartCurrentLevel
+        m_MethodName: doContinue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1141,6 +1142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 10
+  invincibility: 0
 --- !u!114 &220222705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1250,6 +1252,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400092, guid: d8d99f64bd34ecd4b83a752e630e4ba5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: d8d99f64bd34ecd4b83a752e630e4ba5, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1557,6 +1563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 10
+  invincibility: 0
 --- !u!135 &333038863
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1818,7 +1825,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 462543710}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2befc8cab4330ef448f0334364712007, type: 3}
   m_Name: 
@@ -1831,7 +1838,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 462543710}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc9d1c3dbf1dce34dbf523e812b6d818, type: 3}
   m_Name: 
@@ -2690,6 +2697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 10
+  invincibility: 0
 --- !u!111 &860519855
 Animation:
   m_ObjectHideFlags: 0
@@ -3097,6 +3105,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraMovement: {fileID: 0}
+  player: {fileID: 0}
+  teleportPoint: {fileID: 0}
+  fight: {fileID: 0}
+  proTipPanel: {fileID: 0}
 --- !u!65 &931336224
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3577,6 +3589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 10
+  invincibility: 0
 --- !u!135 &1007864925
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3890,7 +3903,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1260645679}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ca87832ffb68583489ff76d05336b690, type: 3}
   m_Name: 
@@ -4291,6 +4304,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 10
+  invincibility: 0
 --- !u!135 &1337978650
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4426,6 +4440,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 7d394b5ffd1a15943aae17fcdd87bea9, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d394b5ffd1a15943aae17fcdd87bea9, type: 3}
 --- !u!1 &1531105370
@@ -4510,7 +4528,6 @@ GameObject:
   - component: {fileID: 1538786941}
   - component: {fileID: 1538786940}
   - component: {fileID: 1538786939}
-  - component: {fileID: 1538786935}
   m_Layer: 5
   m_Name: HUDCanvas
   m_TagString: Untagged
@@ -4539,45 +4556,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1538786935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1538786932}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ea3ca6766a505884d99f18f5ef2b8a0e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  enemies:
-  - {fileID: 860519849}
-  - {fileID: 220222702}
-  - {fileID: 22370440}
-  - {fileID: 1007864921}
-  - {fileID: 333038859}
-  - {fileID: 1337978646}
-  - {fileID: 2085080388}
-  colectibles:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  playerScore: {fileID: 0}
-  playerHealth: {fileID: 0}
 --- !u!95 &1538786939
 Animator:
   serializedVersion: 3
@@ -5734,6 +5712,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pushBackForce: 10
+  invincibility: 0
 --- !u!135 &2085080392
 SphereCollider:
   m_ObjectHideFlags: 0

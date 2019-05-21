@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2003931976}
-  m_IndirectSpecularColor: {r: 0.613694, g: 0.6492894, b: 0.58910877, a: 1}
+  m_IndirectSpecularColor: {r: 0.6136467, g: 0.6492838, b: 0.5891091, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -20743,7 +20743,29 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 507276905}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 725858660}
+        m_MethodName: doContinue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2113956918}
+        m_MethodName: Load
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &507276905
@@ -24857,12 +24879,23 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_MethodName: 
+      - m_Target: {fileID: 725858660}
+        m_MethodName: doContinue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2113956918}
+        m_MethodName: Save
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -35425,7 +35458,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1294014860}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2113956918}
+        m_MethodName: Load
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1294014860
@@ -37863,7 +37907,7 @@ MonoBehaviour:
   player: {fileID: 1890999514}
   teleportPoint: {fileID: 1394451328}
   fight: {fileID: 0}
-  proTipPanel: {fileID: 1898198976}
+  proTipPanel: {fileID: 0}
 --- !u!65 &1406832586
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -60319,7 +60363,7 @@ MonoBehaviour:
   questPanelDescription: {fileID: 863464316}
   questPanelReward: {fileID: 2091529244}
   questPanelProgress: {fileID: 2110387708}
-  portalActivationPanel: {fileID: 1520975983}
+  portalActivationPanel: {fileID: 1406832584}
 --- !u!114 &1890999574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63852,7 +63896,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2113956908}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1bedec068a3a7a24fb4096ec67fa0dff, type: 3}
   m_Name: 
@@ -63975,6 +64019,16 @@ MonoBehaviour:
   - {fileID: 462460162}
   - {fileID: 100812596}
   - {fileID: 1942836122}
+  - {fileID: 934060410}
+  - {fileID: 1358865536}
+  - {fileID: 1746838063}
+  - {fileID: 69721540}
+  - {fileID: 1049795315}
+  - {fileID: 1504616818}
+  - {fileID: 1204036864}
+  - {fileID: 1573436296}
+  - {fileID: 1253313265}
+  - {fileID: 1988565290}
   playerScore: {fileID: 1890999553}
   playerHealth: {fileID: 1890999551}
   gameSavePanel: {fileID: 1097303196}
@@ -64179,7 +64233,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2130250500}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 725858660}
+        m_MethodName: doContinue
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &2130250500
