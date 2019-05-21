@@ -24320,7 +24320,7 @@ MonoBehaviour:
         y: 1407
         width: 150
         height: 125
-      Text: Won't the farmer be mad?
+      Text: Farmer's gonna be OK with me just taking his apples?
       Type: 2
       NodeType: 1
       Parent: 56
@@ -24334,7 +24334,8 @@ MonoBehaviour:
         y: 1544
         width: 150
         height: 125
-      Text: Tell him Arqo The Wizard has sent you. He won't mind to help me.
+      Text: Sure! He's always a friendly chum. Shouldn't a problem. If he is even
+        around, that is. Just tell Arqo the Wizard sent you.
       Type: 0
       NodeType: 1
       Parent: 59
@@ -24632,7 +24633,7 @@ MonoBehaviour:
       Trigger: 0
       TriggerText: 
       Connections: 12000000
-  - CurrentId: 8
+  - CurrentId: 12
     NewWindowOpen: 0
     FirstWindow: 0
     Windows:
@@ -24653,8 +24654,8 @@ MonoBehaviour:
     - ID: 1
       Size:
         serializedVersion: 2
-        x: 1237
-        y: 136
+        x: 1561
+        y: 277
         width: 150
         height: 125
       Text: 
@@ -24671,7 +24672,7 @@ MonoBehaviour:
         y: 137
         width: 150
         height: 125
-      Text: I've got the apples
+      Text: I've got the apples. He didn't seem so friendly with all the traps though.
       Type: 2
       NodeType: 1
       Parent: 0
@@ -24685,7 +24686,8 @@ MonoBehaviour:
         y: 138
         width: 150
         height: 125
-      Text: Excellent! Soon I will be able to restore my powers.
+      Text: Perhaps he's already set them up for those monsters! Either way, excellent
+        work! I will brew myself a potion soon.
       Type: 0
       NodeType: 1
       Parent: 2
@@ -24742,10 +24744,69 @@ MonoBehaviour:
         y: 138
         width: 150
         height: 125
-      Text: But first, you have to find the key to the chest. Rumour has it, it is....
-      Type: 0
+      Text: But first, you have to find the key to the chest. Rumour has it, monsters
+        have already set up an encampment nearby, and they've stolen the key. You
+        must retrieve it.
+      Type: 1
       NodeType: 1
       Parent: 6
+      Trigger: 0
+      TriggerText: 
+      Connections: 080000000a000000
+    - ID: 8
+      Size:
+        serializedVersion: 2
+        x: 1068
+        y: 275
+        width: 150
+        height: 125
+      Text: How can I defeat the monsters?
+      Type: 2
+      NodeType: 1
+      Parent: 7
+      Trigger: 0
+      TriggerText: 
+      Connections: 09000000
+    - ID: 9
+      Size:
+        serializedVersion: 2
+        x: 1069
+        y: 425
+        width: 150
+        height: 125
+      Text: They have feeble heads. And I do not mean that figuratively. Jump on their
+        heads. Classic.
+      Type: 1
+      NodeType: 1
+      Parent: 8
+      Trigger: 0
+      TriggerText: 
+      Connections: 0a000000
+    - ID: 10
+      Size:
+        serializedVersion: 2
+        x: 1238
+        y: 275
+        width: 150
+        height: 125
+      Text: I'm on it
+      Type: 2
+      NodeType: 1
+      Parent: 9
+      Trigger: 0
+      TriggerText: 
+      Connections: 0b000000
+    - ID: 11
+      Size:
+        serializedVersion: 2
+        x: 1402
+        y: 276
+        width: 150
+        height: 125
+      Text: Good luck!
+      Type: 0
+      NodeType: 1
+      Parent: 10
       Trigger: 0
       TriggerText: 
       Connections: 01000000
