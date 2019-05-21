@@ -11,6 +11,11 @@ public class QuestGiver : MonoBehaviour
     //public Quest quest;
     public GameObject player;
 
+    // The NPC that is giving the quest
+    public GameObject questGiver;
+    // Locations the NPC will spawn to after a certain quest
+    public GameObject spawns;
+
     public Text questPanelTitle;
     public Text questPanelDescription;
     public Text questPanelReward;
@@ -18,9 +23,9 @@ public class QuestGiver : MonoBehaviour
 
     public GameObject portalActivationPanel;
 
-
     int score;
     int keys;
+
     Color black = new Color(0.196F, 0.196F, 0.196F);
     Color green = new Color(0F, 0.6F, 0F, 1F);
     Color red = new Color(0.63F, 0.09F, 0.04F);
@@ -29,6 +34,7 @@ public class QuestGiver : MonoBehaviour
     {
         if (player.GetComponent<CurrentQuest>().friendlyChat == true)
         {
+            
             questPanelReward.gameObject.SetActive(true);
             questPanelTitle.text = "Friendly Chat";
             questPanelDescription.text = "Find an old wizard and have a friendly chat with him";

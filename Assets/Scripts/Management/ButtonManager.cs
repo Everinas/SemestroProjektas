@@ -5,10 +5,10 @@ public class ButtonManager : MonoBehaviour
 {
     public EscMenuManager escMenu;
     public LevelRestart levelRestart;
+    public Saving2 save;
 
     public void doRestartCurrentLevel()
     {
-        escMenu.Continue();
         levelRestart.doRestartCurrentLevel();
     }
 
@@ -19,8 +19,19 @@ public class ButtonManager : MonoBehaviour
 
     public void doContinue()
     {
-        MainMenuLoading.loading = true;
-        SceneManager.LoadScene("HomeForest");
+        escMenu.Continue();
+    }
+
+    public void doLoad()
+    {
+        save.Load();
+        escMenu.Continue();
+    }
+
+    public void doSave()
+    {
+        save.Save();
+        escMenu.Continue();
     }
 
     public void doStartNewGame()
