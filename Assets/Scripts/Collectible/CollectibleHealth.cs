@@ -27,7 +27,7 @@ public class CollectibleHealth : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == player)
+        if (other.gameObject == player && playerHealth.currentHealth != playerHealth.startingHealth)
         {
             Instantiate(effect, transform.position, transform.rotation);
             gameObject.SetActive(false);
