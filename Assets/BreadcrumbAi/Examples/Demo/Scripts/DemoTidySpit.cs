@@ -10,7 +10,7 @@ public class DemoTidySpit : MonoBehaviour {
 		if(_destroy){
 			Explode();
 		} else {
-			Invoke("Explode", 2);
+			//Invoke("Explode", 2);
 		}
 	}
 	

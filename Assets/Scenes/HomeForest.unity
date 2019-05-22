@@ -12128,6 +12128,8 @@ GameObject:
   - component: {fileID: 275390553}
   - component: {fileID: 275390555}
   - component: {fileID: 275390554}
+  - component: {fileID: 275390557}
+  - component: {fileID: 275390556}
   m_Layer: 0
   m_Name: modelBarrel
   m_TagString: Untagged
@@ -12193,6 +12195,36 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 275390552}
+  m_Mesh: {fileID: 4300000, guid: 9b6ad04ffe2454240bbc19d0ef8c3a0c, type: 3}
+--- !u!54 &275390556
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275390552}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!64 &275390557
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275390552}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 9b6ad04ffe2454240bbc19d0ef8c3a0c, type: 3}
 --- !u!1001 &280247178
 PrefabInstance:
@@ -24944,6 +24976,7 @@ GameObject:
   - component: {fileID: 609760211}
   - component: {fileID: 609760210}
   - component: {fileID: 609760212}
+  - component: {fileID: 609760213}
   m_Layer: 0
   m_Name: modelBox
   m_TagString: Untagged
@@ -25023,6 +25056,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0441055, y: 1.0441059, z: 1.0441059}
   m_Center: {x: 0, y: -0.0000014305115, z: -0.000061035156}
+--- !u!54 &609760213
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 609760208}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &614920865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25141,6 +25190,7 @@ GameObject:
   - component: {fileID: 616200044}
   - component: {fileID: 616200043}
   - component: {fileID: 616200045}
+  - component: {fileID: 616200046}
   m_Layer: 0
   m_Name: modelBox
   m_TagString: Untagged
@@ -25220,6 +25270,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0441058, y: 1.0441059, z: 1.0441054}
   m_Center: {x: -0.000061035156, y: 0.000002861023, z: 0}
+--- !u!54 &616200046
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616200041}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &616677353
 GameObject:
   m_ObjectHideFlags: 0
@@ -30273,6 +30339,7 @@ GameObject:
   - component: {fileID: 853269545}
   - component: {fileID: 853269544}
   - component: {fileID: 853269546}
+  - component: {fileID: 853269547}
   m_Layer: 0
   m_Name: modelTorch
   m_TagString: Untagged
@@ -30352,6 +30419,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.498578, y: 1.5140791, z: 1.4520981}
   m_Center: {x: 0.00000008020725, y: 0.7493405, z: -0.000060984516}
+--- !u!54 &853269547
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 853269542}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &857046709
 GameObject:
   m_ObjectHideFlags: 0
@@ -30442,6 +30525,8 @@ GameObject:
   - component: {fileID: 858733109}
   - component: {fileID: 858733111}
   - component: {fileID: 858733110}
+  - component: {fileID: 858733113}
+  - component: {fileID: 858733112}
   m_Layer: 0
   m_Name: modelBarrel
   m_TagString: Untagged
@@ -30508,6 +30593,36 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858733108}
   m_Mesh: {fileID: 4300000, guid: 9b6ad04ffe2454240bbc19d0ef8c3a0c, type: 3}
+--- !u!64 &858733112
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858733108}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Convex: 1
+  m_CookingOptions: 14
+  m_Mesh: {fileID: 4300000, guid: 9b6ad04ffe2454240bbc19d0ef8c3a0c, type: 3}
+--- !u!54 &858733113
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858733108}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &862413784
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31367,6 +31482,7 @@ GameObject:
   - component: {fileID: 924072949}
   - component: {fileID: 924072948}
   - component: {fileID: 924072950}
+  - component: {fileID: 924072951}
   m_Layer: 0
   m_Name: modelBox
   m_TagString: Untagged
@@ -31446,6 +31562,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0441055, y: 1.0441059, z: 1.0441059}
   m_Center: {x: 0, y: 0.0000014305115, z: 0.000061035156}
+--- !u!54 &924072951
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 924072946}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &927106385
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38861,6 +38993,7 @@ GameObject:
   - component: {fileID: 1346358831}
   - component: {fileID: 1346358830}
   - component: {fileID: 1346358832}
+  - component: {fileID: 1346358833}
   m_Layer: 0
   m_Name: modelTorch
   m_TagString: Untagged
@@ -38940,6 +39073,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.498578, y: 1.5140791, z: 1.4520981}
   m_Center: {x: 0.00000008020725, y: 0.7493419, z: 0.000000050640484}
+--- !u!54 &1346358833
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346358828}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1349529173 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 57b1c6e5e6fd80c4f8ee1d5ccba246c8,
@@ -50821,6 +50970,7 @@ GameObject:
   - component: {fileID: 1683777064}
   - component: {fileID: 1683777063}
   - component: {fileID: 1683777065}
+  - component: {fileID: 1683777066}
   m_Layer: 0
   m_Name: modelLog
   m_TagString: Untagged
@@ -50898,9 +51048,25 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: f76d5663e3855bc449771b98f3c18f68, type: 3}
+--- !u!54 &1683777066
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683777061}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1695997347 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 176b2704b742b4e13a95b47b307c3266,
@@ -65549,6 +65715,7 @@ GameObject:
   - component: {fileID: 1972489907}
   - component: {fileID: 1972489906}
   - component: {fileID: 1972489908}
+  - component: {fileID: 1972489909}
   m_Layer: 0
   m_Name: modelBarrel
   m_TagString: Untagged
@@ -65626,9 +65793,25 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: 9b6ad04ffe2454240bbc19d0ef8c3a0c, type: 3}
+--- !u!54 &1972489909
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972489904}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!4 &1977663301 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4908765312130676, guid: 47356d574ebc3a545bfaef26eb02a2ea,
@@ -65647,6 +65830,7 @@ GameObject:
   - component: {fileID: 1986321735}
   - component: {fileID: 1986321734}
   - component: {fileID: 1986321736}
+  - component: {fileID: 1986321737}
   m_Layer: 0
   m_Name: modelBox
   m_TagString: Untagged
@@ -65726,6 +65910,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.0441064, y: 1.0441059, z: 1.0441059}
   m_Center: {x: 0.000030517578, y: -0.0000023841858, z: 0.000061035156}
+--- !u!54 &1986321737
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1986321732}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &1988565290 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 167730, guid: 7769a5ff77d804234bfa1b1a22904922,
