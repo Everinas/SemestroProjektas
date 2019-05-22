@@ -6,7 +6,7 @@ public class CollectibleHealth : MonoBehaviour
 {
     GameObject player;
     PlayerHealth playerHealth;
-
+    public GameObject effect;
     public float degreesPerSecond = 60.0f;
     public float amplitude = 0.1f;
     public float frequency = 1f;
@@ -29,6 +29,7 @@ public class CollectibleHealth : MonoBehaviour
     {
         if (other.gameObject == player)
         {
+            Instantiate(effect, transform.position, transform.rotation);
             gameObject.SetActive(false);
             if (playerHealth.currentHealth != playerHealth.startingHealth)
             {

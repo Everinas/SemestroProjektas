@@ -6,7 +6,7 @@ public class Collectible_key : MonoBehaviour
 {
     GameObject player;
     PlayerScore playerScore;
-
+    public GameObject effect;
     public float degreesPerSecond = 90.0f;
     public float amplitude = 0.1f;
     public float frequency = 0.1f;
@@ -29,6 +29,7 @@ public class Collectible_key : MonoBehaviour
     {
         if (other.gameObject == player)
         {
+            Instantiate(effect, transform.position, transform.rotation);
             gameObject.SetActive(false);
             playerScore.currentKeys++;
             print("Veikia");

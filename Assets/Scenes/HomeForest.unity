@@ -1457,6 +1457,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7778ca6577e22a4b9c02e9923d6fcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effect: {fileID: 6575146737943643400, guid: a4ca11426933d9f48860f0898ffab5dd, type: 3}
   degreesPerSecond: 15
   amplitude: 0.1
   frequency: 1
@@ -19197,6 +19198,8 @@ Transform:
   - {fileID: 1253313266}
   - {fileID: 1988565291}
   - {fileID: 1840562541}
+  - {fileID: 732066072}
+  - {fileID: 1532861927}
   m_Father: {fileID: 1174709690}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -27277,7 +27280,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1174709690}
+    m_TransformParent: {fileID: 397478201}
     m_Modifications:
     - target: {fileID: 167730, guid: 7769a5ff77d804234bfa1b1a22904922, type: 3}
       propertyPath: m_Name
@@ -27293,15 +27296,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 436912, guid: 7769a5ff77d804234bfa1b1a22904922, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 346.73
+      value: 437.954
       objectReference: {fileID: 0}
     - target: {fileID: 436912, guid: 7769a5ff77d804234bfa1b1a22904922, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.228
+      value: -43.890404
       objectReference: {fileID: 0}
     - target: {fileID: 436912, guid: 7769a5ff77d804234bfa1b1a22904922, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 80.335
+      value: -50.712486
       objectReference: {fileID: 0}
     - target: {fileID: 436912, guid: 7769a5ff77d804234bfa1b1a22904922, type: 3}
       propertyPath: m_LocalRotation.x
@@ -27321,7 +27324,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 436912, guid: 7769a5ff77d804234bfa1b1a22904922, type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 436912, guid: 7769a5ff77d804234bfa1b1a22904922, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -27381,6 +27384,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7778ca6577e22a4b9c02e9923d6fcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effect: {fileID: 6575146737943643400, guid: a4ca11426933d9f48860f0898ffab5dd, type: 3}
   degreesPerSecond: 15
   amplitude: 0.1
   frequency: 1
@@ -33989,6 +33993,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7778ca6577e22a4b9c02e9923d6fcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effect: {fileID: 6575146737943643400, guid: a4ca11426933d9f48860f0898ffab5dd, type: 3}
   degreesPerSecond: 15
   amplitude: 0.1
   frequency: 1
@@ -36053,8 +36058,6 @@ Transform:
   - {fileID: 2020661563}
   - {fileID: 616677354}
   - {fileID: 42099636}
-  - {fileID: 1532861927}
-  - {fileID: 732066072}
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -36689,6 +36692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7778ca6577e22a4b9c02e9923d6fcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effect: {fileID: 6575146737943643400, guid: a4ca11426933d9f48860f0898ffab5dd, type: 3}
   degreesPerSecond: 15
   amplitude: 0.1
   frequency: 1
@@ -37541,6 +37545,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7778ca6577e22a4b9c02e9923d6fcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effect: {fileID: 6575146737943643400, guid: a4ca11426933d9f48860f0898ffab5dd, type: 3}
   degreesPerSecond: 15
   amplitude: 0.1
   frequency: 1
@@ -39098,15 +39103,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 176b2704b742b4e13a95b47b307c3266, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 323.825
+      value: 323.847
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 176b2704b742b4e13a95b47b307c3266, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -43.146
+      value: -43.143
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 176b2704b742b4e13a95b47b307c3266, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 66.392
+      value: 66.42
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 176b2704b742b4e13a95b47b307c3266, type: 3}
       propertyPath: m_LocalRotation.x
@@ -39177,8 +39182,8 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.9384279
-  m_Center: {x: 0.00012204051, y: -0.26051012, z: 0.05157095}
+  m_Radius: 1.5446643
+  m_Center: {x: 0.00012236343, y: -0.60111576, z: 0.31720302}
 --- !u!114 &1358865538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -39191,6 +39196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 269eb36ea22ed0a4788a2f81b2d08c63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effect: {fileID: 6575146737943643400, guid: 7262d7b06324273409dff07cea66ddae, type: 3}
   degreesPerSecond: 45
   amplitude: 0.1
   frequency: 0.5
@@ -42870,6 +42876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7778ca6577e22a4b9c02e9923d6fcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effect: {fileID: 6575146737943643400, guid: a4ca11426933d9f48860f0898ffab5dd, type: 3}
   degreesPerSecond: 15
   amplitude: 0.1
   frequency: 1
@@ -43335,7 +43342,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 1174709690}
+    m_TransformParent: {fileID: 397478201}
     m_Modifications:
     - target: {fileID: 167730, guid: 7769a5ff77d804234bfa1b1a22904922, type: 3}
       propertyPath: m_Name
@@ -43351,15 +43358,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 436912, guid: 7769a5ff77d804234bfa1b1a22904922, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 339.79
+      value: 431.014
       objectReference: {fileID: 0}
     - target: {fileID: 436912, guid: 7769a5ff77d804234bfa1b1a22904922, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.62
+      value: -41.498405
       objectReference: {fileID: 0}
     - target: {fileID: 436912, guid: 7769a5ff77d804234bfa1b1a22904922, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 70.57
+      value: -60.477486
       objectReference: {fileID: 0}
     - target: {fileID: 436912, guid: 7769a5ff77d804234bfa1b1a22904922, type: 3}
       propertyPath: m_LocalRotation.x
@@ -43379,7 +43386,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 436912, guid: 7769a5ff77d804234bfa1b1a22904922, type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 436912, guid: 7769a5ff77d804234bfa1b1a22904922, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -43439,6 +43446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7778ca6577e22a4b9c02e9923d6fcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effect: {fileID: 6575146737943643400, guid: a4ca11426933d9f48860f0898ffab5dd, type: 3}
   degreesPerSecond: 15
   amplitude: 0.1
   frequency: 1
@@ -44585,6 +44593,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7778ca6577e22a4b9c02e9923d6fcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effect: {fileID: 6575146737943643400, guid: a4ca11426933d9f48860f0898ffab5dd, type: 3}
   degreesPerSecond: 15
   amplitude: 0.1
   frequency: 1
@@ -51658,6 +51667,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7778ca6577e22a4b9c02e9923d6fcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effect: {fileID: 6575146737943643400, guid: a4ca11426933d9f48860f0898ffab5dd, type: 3}
   degreesPerSecond: 15
   amplitude: 0.1
   frequency: 1
@@ -62880,7 +62890,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4549428611729446, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 250.5
+      value: 258.5
       objectReference: {fileID: 0}
     - target: {fileID: 4549428611729446, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}
       propertyPath: m_LocalPosition.y
@@ -62888,7 +62898,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4549428611729446, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 184.3
+      value: 78.2
       objectReference: {fileID: 0}
     - target: {fileID: 4549428611729446, guid: 0e74cf81e6fd82546b4797f71ceffb81, type: 3}
       propertyPath: m_LocalRotation.x
@@ -63347,7 +63357,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.031549558, y: -0.00071002386, z: -0.00000074848896}
+  m_ConnectedAnchor: {x: -0.031549565, y: -0.0007099663, z: 0.000000011470672}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -63421,7 +63431,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: -1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.0053296336, y: -0.000010702421, z: 0.0000002300367}
+  m_ConnectedAnchor: {x: -0.0053296755, y: -0.000009181477, z: 0.00000011455269}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -63525,7 +63535,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.010840933, y: -0.00000021899905, z: -0.00000060908496}
+  m_ConnectedAnchor: {x: -0.010840487, y: 0.0000012436722, z: 0.00000014621764}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -63600,7 +63610,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.02110556, y: -0.0032325194, z: -0.010447045}
+  m_ConnectedAnchor: {x: -0.021105504, y: -0.003234097, z: -0.010447691}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: -1, z: 0}
   m_TwistLimitSpring:
@@ -63675,7 +63685,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.012845719, y: 0.00000026274756, z: -0.0000002363231}
+  m_ConnectedAnchor: {x: -0.012845773, y: -0.0000012570121, z: -0.00000035454286}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -63825,7 +63835,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: -1, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.010840921, y: -0.00000021002046, z: 0.000000588945}
+  m_ConnectedAnchor: {x: -0.0108404895, y: -0.00000015208202, z: -0.000000034342513}
   serializedVersion: 2
   m_SwingAxis: {x: 1, y: 0, z: 0}
   m_TwistLimitSpring:
@@ -63900,7 +63910,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.021105522, y: -0.003233096, z: 0.010446855}
+  m_ConnectedAnchor: {x: -0.021105522, y: -0.0032330393, z: 0.010447619}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: -1, z: 0}
   m_TwistLimitSpring:
@@ -63975,7 +63985,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: -0.012845791, y: -0.00000046430884, z: -0.0000007127528}
+  m_ConnectedAnchor: {x: -0.012845725, y: 0.0000010004728, z: 0.00000015815021}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -64050,7 +64060,7 @@ CharacterJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 0, y: 0, z: 1}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0.000000017880899, y: 0.00000044284394, z: 0.0065814545}
+  m_ConnectedAnchor: {x: 0.000000014900582, y: 0.00000050058594, z: 0.0065822154}
   serializedVersion: 2
   m_SwingAxis: {x: 0, y: 1, z: 0}
   m_TwistLimitSpring:
@@ -65033,6 +65043,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1584c7b6f7d194469e94cf69dc4f331, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effect: {fileID: 6575146737943643400, guid: 563b0fb4518081a4ead1d26d541b07ba, type: 3}
   degreesPerSecond: 90
   amplitude: 0.1
   frequency: 0.1
@@ -65739,6 +65750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7778ca6577e22a4b9c02e9923d6fcaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  effect: {fileID: 6575146737943643400, guid: a4ca11426933d9f48860f0898ffab5dd, type: 3}
   degreesPerSecond: 15
   amplitude: 0.1
   frequency: 1

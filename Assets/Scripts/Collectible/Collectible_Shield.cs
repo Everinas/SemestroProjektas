@@ -6,7 +6,7 @@ public class Collectible_Shield : MonoBehaviour
 {
     GameObject player;
     PlayerScore playerScore;
-
+    public GameObject effect;
     public float degreesPerSecond = 45.0f;
     public float amplitude = 0.1f;
     public float frequency = 0.5f;
@@ -29,6 +29,7 @@ public class Collectible_Shield : MonoBehaviour
     {
         if (other.gameObject == player)
         {
+            Instantiate(effect, transform.position, transform.rotation);
             gameObject.SetActive(false);
             PlayerScore.PlayerShield.SetActive(true);
             PlayerScore.Shield = true;
