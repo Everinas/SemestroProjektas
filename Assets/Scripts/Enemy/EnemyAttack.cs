@@ -30,29 +30,29 @@ public class EnemyAttack : MonoBehaviour
         //                                     transform.position.z);
         if (isTouching)
         {
+            Debug.Log(this.transform.name + " is touching");
+            isTouching = false;
             player.GetComponent<Rigidbody>().velocity = Vector3.zero;
             player.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
+            
             funk();
             //player.transform.LookAt(transform.localPosition);
-            isTouching = false;
+            
             
         }
     }
     void funk()
     {
         Vector3 toTarget = (transform.position - player.transform.position).normalized;
-
+        Debug.Log("suveikia funkas");
         if (Vector3.Dot(toTarget, player.transform.forward) > 0)
         {
+            Debug.Log("Priekis");
             playerHealth.TakeDamage(1);
+            player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, -7, ForceMode.VelocityChange);
             if (this.gameObject.tag == "Spit" && playerHealth.invincibility == false)
             {
-                player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, 0, ForceMode.VelocityChange);
                 this.GetComponent<DemoTidySpit>().Explode();
-            }
-            else
-            {
-                player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, -7, ForceMode.VelocityChange);
             }
         }
         else
@@ -63,6 +63,7 @@ public class EnemyAttack : MonoBehaviour
             }
             else
             {
+                Debug.Log("Galas");
                 playerHealth.TakeDamage(1);
                 player.GetComponent<Rigidbody>().AddRelativeForce(0, 3, 7, ForceMode.VelocityChange);
             }
@@ -72,10 +73,8 @@ public class EnemyAttack : MonoBehaviour
     {
         if (playerHealth.invincibility == true)
         {
-            print(Time.time);
             m_Material.color = Color.red;
             yield return new WaitForSeconds(2);
-            print(Time.time);
             m_Material.color = Color.white;
             playerHealth.invincibility = false;
         }
@@ -85,23 +84,40 @@ public class EnemyAttack : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player" && playerHealth.invincibility == false)
         {
-            
+            Debug.Log(this.transform.name + " Is still colliding with player");
             hitDirection = collision.transform.position - transform.position;
             hitDirection = hitDirection.normalized;
-            isTouching = true;
             playerHealth.invincibility = true;
+            
+            isTouching = true;
+           
             m_Material = GameObject.FindGameObjectWithTag("Manas").GetComponent<Renderer>().material;
             StartCoroutine(Example());
         }
     }
-    private void OnTriggerEnter(Collider collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Player" && playerHealth.invincibility == false)
         {
+            Debug.Log(this.transform.name + " Collided with player");
             hitDirection = collision.transform.position - transform.position;
             hitDirection = hitDirection.normalized;
+            playerHealth.invincibility = true;
+            Debug.Log("player is now invincible");
             isTouching = true;
+            m_Material = GameObject.FindGameObjectWithTag("Manas").GetComponent<Renderer>().material;
+            StartCoroutine(Example());
+
         }
+    }
+    private void OnTriggerEnter(Collider collision)
+    {
+        //if (collision.gameObject.tag == "Player" && playerHealth.invincibility == false)
+        //{
+        //    hitDirection = collision.transform.position - transform.position;
+        //    hitDirection = hitDirection.normalized;
+        //    isTouching = true;
+        //}
         //if (this.gameObject.tag == "Spit")
         //{
         //    if (collider.gameObject.tag == "Enemy")
