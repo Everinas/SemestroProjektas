@@ -36,6 +36,8 @@ public class QuestGiver : MonoBehaviour
         {
             
             questPanelReward.gameObject.SetActive(true);
+            questPanelProgress.gameObject.SetActive(false);
+            questPanelProgress.color = black;
             questPanelTitle.text = "Friendly Chat";
             questPanelDescription.text = "Find an old wizard and have a friendly chat with him";
             questPanelReward.text = "Reward: Possibly a new friendship";
@@ -46,6 +48,7 @@ public class QuestGiver : MonoBehaviour
             
                 questPanelReward.gameObject.SetActive(true);
                 questPanelProgress.gameObject.SetActive(true);
+                questPanelProgress.color = black;
                 score = player.GetComponent<PlayerScore>().currentScore;
                 questPanelTitle.text = "Looking For Apples";
                 questPanelDescription.text = "Venture out into the wild and collect 10 apples";

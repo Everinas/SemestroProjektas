@@ -377,6 +377,7 @@ namespace BreadcrumbAi{
                     GetComponent<SphereCollider>().enabled = false;
                     Physics.IgnoreCollision(player.GetComponent<BoxCollider>(), this.GetComponent<CapsuleCollider>(), true);
                     GetComponent<Ai>().enabled = false;
+                    this.GetComponent<DestroyOverTime>().enabled = true;
                 }
 			}
 		}
