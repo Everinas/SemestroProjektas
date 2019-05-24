@@ -28,7 +28,7 @@ public class QuestGiver : MonoBehaviour
 
     int score;
     int keys;
-    float bossHP;
+    public float bossHP = 3;
 
     Color black = new Color(0.196F, 0.196F, 0.196F);
     Color green = new Color(0F, 0.6F, 0F, 1F);
@@ -130,9 +130,10 @@ public class QuestGiver : MonoBehaviour
             questPanelReward.text = "Reward: Honor and Glory";
             questPanelProgress.gameObject.SetActive(true);
             questPanelProgress.color = black;
-            questPanelProgress.text = "Progress: Boss Health - (" + bossHP.ToString() + "/3)";
+            questPanelProgress.text = "Progress: Boss Health - (" + bossHP.ToString() + "/3 HP)";
             if (bossHP <= 0)
             {
+                bossHP = 0;
                 questPanelProgress.color = green;
                 npc.transform.position = arenaSpawn.transform.position;
             }

@@ -66,6 +66,14 @@ public class DialogueInteraction : MonoBehaviour {
         {
             npc.SetTree("ArenaTalk"); //This sets the current tree to be used. Resets to the first node when called.
         }
+        if (npc.GetCurrentTree() == "BossDefeated")
+        {
+            npc.SetTree("BossDefeated"); //This sets the current tree to be used. Resets to the first node when called.
+        }
+        if (player.GetComponent<CurrentQuest>().theFinale == true && player.GetComponent<QuestGiver>().bossHP == 0)
+        {
+            npc.SetTree("BossDefeated"); //This sets the current tree to be used. Resets to the first node when called.
+        }
         nextEnd = false;
         Cursor.visible = true;
         cameraMovement.enabled = false;

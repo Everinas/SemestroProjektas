@@ -17,6 +17,7 @@ public class Saving2 : MonoBehaviour
     public GameObject gameSavePanel;
     public GameObject gameLoadPanel;
     GameObject playeris;
+    GameObject bossHealthBar;
 
     // Start is called before the first frame update
     void Start()
@@ -104,6 +105,12 @@ public class Saving2 : MonoBehaviour
         if (playeris.GetComponent<CurrentQuest>().setForBattle == true)
         {
             GameObject.FindGameObjectWithTag("Dialogue").GetComponent<DialogueInteraction>().npc.SetTree("ArenaTalk");
+        }
+        if (playeris.GetComponent<CurrentQuest>().theFinale == true)
+        {
+            bossHealthBar = GameObject.FindGameObjectWithTag("BossHealthBar");
+            bossHealthBar.gameObject.SetActive(true);
+            GameObject.FindGameObjectWithTag("Dialogue").GetComponent<DialogueInteraction>().npc.SetTree("BossDefeated");
         }
     }
     public void Load()

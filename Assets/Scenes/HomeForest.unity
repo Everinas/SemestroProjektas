@@ -25295,12 +25295,74 @@ MonoBehaviour:
       Trigger: 0
       TriggerText: 
       Connections: 05000000
-  CurrentSet: 3
+  - CurrentId: 4
+    NewWindowOpen: 0
+    FirstWindow: 0
+    Windows:
+    - ID: 0
+      Size:
+        serializedVersion: 2
+        x: 71
+        y: 112
+        width: 150
+        height: 125
+      Text: WOAH!!! What a battle!
+      Type: 0
+      NodeType: 0
+      Parent: -1
+      Trigger: 0
+      TriggerText: 
+      Connections: 02000000
+    - ID: 1
+      Size:
+        serializedVersion: 2
+        x: 621
+        y: 112
+        width: 150
+        height: 125
+      Text: 
+      Type: 0
+      NodeType: 2
+      Parent: 0
+      Trigger: 0
+      TriggerText: 
+      Connections: 
+    - ID: 2
+      Size:
+        serializedVersion: 2
+        x: 231
+        y: 112
+        width: 150
+        height: 125
+      Text: You truly are a great warrior!
+      Type: 0
+      NodeType: 1
+      Parent: 0
+      Trigger: 0
+      TriggerText: 
+      Connections: 03000000
+    - ID: 3
+      Size:
+        serializedVersion: 2
+        x: 391
+        y: 112
+        width: 150
+        height: 125
+      Text: Thank you for all the help throughout this journey. Finally we can live
+        in peace!
+      Type: 0
+      NodeType: 1
+      Parent: 2
+      Trigger: 0
+      TriggerText: 
+      Connections: 01000000
+  CurrentSet: 0
   TabList:
   - FirstMeeting
   - SecondTalk
   - 1QuestDone
   - ArenaTalk
+  - BossDefeated
 --- !u!1001 &608815678
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32748,7 +32810,7 @@ GameObject:
   - component: {fileID: 939639036}
   m_Layer: 5
   m_Name: BossHealthBar
-  m_TagString: Untagged
+  m_TagString: BossHealthBar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -65420,6 +65482,7 @@ MonoBehaviour:
   boss: {fileID: 30684395}
   npc: {fileID: 604519502}
   arenaSpawn: {fileID: 1869491087}
+  bossHP: 0
 --- !u!114 &1890999574
 MonoBehaviour:
   m_ObjectHideFlags: 0

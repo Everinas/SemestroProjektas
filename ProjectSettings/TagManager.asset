@@ -24,6 +24,7 @@ TagManager:
   - RagdollShield
   - Targetas
   - Manas
+  - BossHealthBar
   layers:
   - Default
   - TransparentFX
