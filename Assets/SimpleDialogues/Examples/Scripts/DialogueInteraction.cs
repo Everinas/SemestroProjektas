@@ -25,7 +25,7 @@ public class DialogueInteraction : MonoBehaviour {
 
     public GameObject portalActivationPanel;
 
-
+    public GameObject key;
 
     bool nextEnd = false;
 
@@ -57,6 +57,14 @@ public class DialogueInteraction : MonoBehaviour {
         if (playerScore.currentScore >= 10)
         {
             npc.SetTree("1QuestDone"); //This sets the current tree to be used. Resets to the first node when called.
+        }
+        if (npc.GetCurrentTree() == "ArenaTalk")
+        {
+            npc.SetTree("ArenaTalk"); //This sets the current tree to be used. Resets to the first node when called.
+        }
+        if (PlayerScore.Shield == true)
+        {
+            npc.SetTree("ArenaTalk"); //This sets the current tree to be used. Resets to the first node when called.
         }
         nextEnd = false;
         Cursor.visible = true;
@@ -169,6 +177,18 @@ public class DialogueInteraction : MonoBehaviour {
             {
                 player.GetComponent<CurrentQuest>().lookingForApples = false;
                 player.GetComponent<CurrentQuest>().keyToSuccess = true;
+                key.gameObject.SetActive(true);
+            }
+            if (npc.GetCurrentTree() == "ArenaTalk")
+            {
+                player.GetComponent<CurrentQuest>().setForBattle = false;
+                player.GetComponent<CurrentQuest>().arqosMagic = true;
+                NPC_Dialogue.levelchange = true;
+                Animator animator = portalActivationPanel.GetComponent<Animator>();
+                if (animator != null)
+                {
+                    animator.SetBool("PortalIsActive", true);
+                }
             }
             Hide();
         }

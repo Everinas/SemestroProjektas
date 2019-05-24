@@ -77,10 +77,10 @@ public class Saving2 : MonoBehaviour
         SaveGame.Save<bool>("KS", playeris.GetComponent<CurrentQuest>().keyToSuccess);
         SaveGame.Save<bool>("WB", playeris.GetComponent<CurrentQuest>().whatsInTheBox);
         SaveGame.Save<bool>("AM", playeris.GetComponent<CurrentQuest>().arqosMagic);
-        /*SaveGame.Save<bool>("SH", playeris.GetComponent<CurrentQuest>().shoeHunt);
-        SaveGame.Save<bool>("FP", playeris.GetComponent<CurrentQuest>().findThePortal);
-        SaveGame.Save<bool>("ICF", playeris.GetComponent<CurrentQuest>().iceCreamFlavor);
-        SaveGame.Save<bool>("TF", playeris.GetComponent<CurrentQuest>().theFinale);*/
+        SaveGame.Save<bool>("SH", playeris.GetComponent<CurrentQuest>().setForBattle);
+        //SaveGame.Save<bool>("FP", playeris.GetComponent<CurrentQuest>().findThePortal);
+        //SaveGame.Save<bool>("ICF", playeris.GetComponent<CurrentQuest>().iceCreamFlavor);
+        SaveGame.Save<bool>("TF", playeris.GetComponent<CurrentQuest>().theFinale);
     }
     void questload()
     {
@@ -89,10 +89,10 @@ public class Saving2 : MonoBehaviour
         playeris.GetComponent<CurrentQuest>().keyToSuccess = SaveGame.Load<bool>("KS");
         playeris.GetComponent<CurrentQuest>().whatsInTheBox = SaveGame.Load<bool>("WB");
         playeris.GetComponent<CurrentQuest>().arqosMagic = SaveGame.Load<bool>("AM");
-       /* playeris.GetComponent<CurrentQuest>().shoeHunt = SaveGame.Load<bool>("SH");
-        playeris.GetComponent<CurrentQuest>().findThePortal = SaveGame.Load<bool>("FP");
-        playeris.GetComponent<CurrentQuest>().iceCreamFlavor = SaveGame.Load<bool>("ICF");
-        playeris.GetComponent<CurrentQuest>().theFinale = SaveGame.Load<bool>("TF");*/
+        playeris.GetComponent<CurrentQuest>().setForBattle = SaveGame.Load<bool>("SH");
+        //playeris.GetComponent<CurrentQuest>().findThePortal = SaveGame.Load<bool>("FP");
+        //playeris.GetComponent<CurrentQuest>().iceCreamFlavor = SaveGame.Load<bool>("ICF");*/
+        playeris.GetComponent<CurrentQuest>().theFinale = SaveGame.Load<bool>("TF");
         if (playeris.GetComponent<CurrentQuest>().friendlyChat == true)
         {
             GameObject.FindGameObjectWithTag("Dialogue").GetComponent<DialogueInteraction>().npc.SetTree("FirstMeeting");
@@ -100,6 +100,10 @@ public class Saving2 : MonoBehaviour
         if (playeris.GetComponent<CurrentQuest>().lookingForApples == true)
         {
             GameObject.FindGameObjectWithTag("Dialogue").GetComponent<DialogueInteraction>().npc.SetTree("SecondTalk");
+        }
+        if (playeris.GetComponent<CurrentQuest>().setForBattle == true)
+        {
+            GameObject.FindGameObjectWithTag("Dialogue").GetComponent<DialogueInteraction>().npc.SetTree("ArenaTalk");
         }
     }
     public void Load()

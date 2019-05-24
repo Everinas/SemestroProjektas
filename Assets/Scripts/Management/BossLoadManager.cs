@@ -29,6 +29,8 @@ public class BossLoadManager : MonoBehaviour
                 cameraMovement.enabled = false;
                 cameraMovement.enabled = true;
                 bossHealthBar.gameObject.SetActive(true);
+                player.GetComponent<CurrentQuest>().arqosMagic = false;
+                player.GetComponent<CurrentQuest>().theFinale = true;
                 //fight.StartBossFight();
                 // Change the lighting and enable the boss
             }

@@ -22,9 +22,13 @@ public class QuestGiver : MonoBehaviour
     public Text questPanelProgress;
 
     public GameObject portalActivationPanel;
+    public GameObject boss;
+    public GameObject npc;
+    public GameObject arenaSpawn;
 
     int score;
     int keys;
+    float bossHP;
 
     Color black = new Color(0.196F, 0.196F, 0.196F);
     Color green = new Color(0F, 0.6F, 0F, 1F);
@@ -97,10 +101,42 @@ public class QuestGiver : MonoBehaviour
                 animator.SetBool("PortalIsActive", true);
             }
             questPanelTitle.text = "Arqo's Magic";
-            questPanelDescription.text = "Find a portal, step on it and see what happens";
+            questPanelDescription.text = "Find a portal, step on it and see what happens.";
             questPanelReward.gameObject.SetActive(false);
             questPanelProgress.gameObject.SetActive(false);
+        }
 
+        if (player.GetComponent<CurrentQuest>().setForBattle == true)
+        {
+            questPanelTitle.text = "Set For Battle";
+            questPanelDescription.text = "Looks like you're prepared! Find a way to the arena, big spooky monster is waiting for you.";
+            questPanelReward.gameObject.SetActive(false);
+            questPanelProgress.gameObject.SetActive(false);
+        }
+
+        if (player.GetComponent<CurrentQuest>().theFinale == true)
+        {
+            if (boss == null)
+            {
+                bossHP = 0;
+            }
+            else
+            {
+                bossHP = boss.GetComponent<BreadcrumbAi.Ai>().Health;
+            }
+            questPanelTitle.text = "The Finale";
+            questPanelDescription.text = "Defeat the final boss and save the realm!";
+            questPanelReward.gameObject.SetActive(true);
+            questPanelReward.text = "Reward: Honor and Glory";
+            questPanelProgress.gameObject.SetActive(true);
+            questPanelProgress.color = black;
+            questPanelProgress.text = "Progress: Boss Health - (" + bossHP.ToString() + "/3)";
+            if (bossHP <= 0)
+            {
+                questPanelProgress.color = green;
+                npc.transform.position = arenaSpawn.transform.position;
+            }
+            
         }
     }
 }

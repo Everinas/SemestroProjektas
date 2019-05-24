@@ -51,10 +51,10 @@ public class NPC_Dialogue : MonoBehaviour
                 buttonPress = true;
                 if (score.currentScore >= 5)
                 {
-                    if (score.currentScore >= 10)
+                    if (levelchange == true)
                     {
                         dialogue.text = thirdStage;
-                        levelchange = true;
+                        //levelchange = true;
                         GameObject spit = Instantiate(effect, (pedestal.transform.position), transform.rotation) as GameObject;
                     }
                     else
@@ -82,7 +82,11 @@ public class NPC_Dialogue : MonoBehaviour
             }
             wave = false;
         }
-        
+        if (levelchange == true)
+        {
+            GameObject spit = Instantiate(effect, (pedestal.transform.position), transform.rotation) as GameObject;
+        }
+
     }
     void start()
     {

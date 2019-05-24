@@ -9,7 +9,9 @@ public class CurrentQuest : MonoBehaviour
     public bool lookingForApples;
     public bool keyToSuccess;
     public bool whatsInTheBox;
-    public bool arqosMagic; 
+    public bool arqosMagic;
+    public bool setForBattle;
+    public bool theFinale;
 
     //public bool shoeHunt;
     //public bool findThePortal;

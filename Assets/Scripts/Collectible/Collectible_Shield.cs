@@ -10,6 +10,8 @@ public class Collectible_Shield : MonoBehaviour
     public float degreesPerSecond = 45.0f;
     public float amplitude = 0.1f;
     public float frequency = 0.5f;
+    public GameObject npc;
+    public GameObject gateSpawn;
 
     // Position Storage Variables
     Vector3 posOffset = new Vector3();
@@ -33,6 +35,9 @@ public class Collectible_Shield : MonoBehaviour
             gameObject.SetActive(false);
             PlayerScore.PlayerShield.SetActive(true);
             PlayerScore.Shield = true;
+            npc.transform.position = gateSpawn.transform.position;
+            player.GetComponent<CurrentQuest>().whatsInTheBox = false;
+            player.GetComponent<CurrentQuest>().setForBattle = true;
             print("Veikia");
         }
     }
