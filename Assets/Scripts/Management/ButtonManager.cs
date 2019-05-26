@@ -48,8 +48,13 @@ public class ButtonManager : MonoBehaviour
 
     public void doStartNewGame()
     {
-        gameCompleteMenu.SetActive(false);
-        SceneManager.LoadScene("HomeForest");
+        if (SceneManager.GetActiveScene().name == "MainMenu"){
+            SceneManager.LoadScene("HomeForest");
+        }
+        else{
+            gameCompleteMenu.SetActive(false);
+            SceneManager.LoadScene("HomeForest");
+        }       
     }
 
     public void doGoToMainMenu()

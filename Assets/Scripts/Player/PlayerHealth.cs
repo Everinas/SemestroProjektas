@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public PlayerSounds sounds;
     public int startingHealth = 5;
     public int currentHealth;
     public static int health; //Needed for saving state
@@ -22,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
         numberOfHearts = startingHealth;
         health = startingHealth;
         invincibility = false;
+        sounds = gameObject.GetComponent<PlayerSounds>();
     }
 
     // Update is called once per frame
@@ -59,5 +61,6 @@ public class PlayerHealth : MonoBehaviour
     {
         currentHealth = currentHealth - damage;
         health = currentHealth;
+        sounds.PlayPlayerHurtSound();
     }
 }

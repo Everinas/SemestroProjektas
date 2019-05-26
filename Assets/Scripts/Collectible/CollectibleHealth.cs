@@ -35,6 +35,7 @@ public class CollectibleHealth : MonoBehaviour
             {
                 playerHealth.currentHealth++;
             }
+            player.GetComponent<PlayerSounds>().PlayPickUpHealthSound();
         }
     }
     void Update()

@@ -16,6 +16,9 @@ public class BossHealthBar : MonoBehaviour
     public GameObject orange;
     public GameObject red;
 
+    public AudioClip death;
+    public AudioClip damage;
+
     void Start()
     {
         border1.gameObject.SetActive(true);
@@ -26,28 +29,28 @@ public class BossHealthBar : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void OnTriggerEnter()
     {
         float hp = enemy.GetComponent<BreadcrumbAi.Ai>().Health;
 
         if (hp <= 0)
         {
             healthBar.gameObject.SetActive(false);
+            enemy.GetComponent<AudioSource>().PlayOneShot(death);
         }
         if (hp >= 2 && hp < 3)
         {
             green.gameObject.SetActive(false);
             orange.gameObject.SetActive(true);
+            enemy.GetComponent<AudioSource>().PlayOneShot(damage);
         }
         if (hp >= 1 && hp < 2)
         {
             orange.gameObject.SetActive(false);
             red.gameObject.SetActive(true);
             enemy.GetComponent<BreadcrumbAi.Ai>().followSpeed = 4;
-            enemy.GetComponent<BreadcrumbAi.Ai>().wanderSpeed = 1f;
-            
+            enemy.GetComponent<BreadcrumbAi.Ai>().wanderSpeed = 3f; 
+            enemy.GetComponent<AudioSource>().PlayOneShot(damage);         
         }
-        
-
     }
 }

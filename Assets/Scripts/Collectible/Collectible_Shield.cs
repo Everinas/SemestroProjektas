@@ -38,6 +38,7 @@ public class Collectible_Shield : MonoBehaviour
             npc.transform.position = gateSpawn.transform.position;
             player.GetComponent<CurrentQuest>().whatsInTheBox = false;
             player.GetComponent<CurrentQuest>().setForBattle = true;
+            player.GetComponent<PlayerSounds>().PlayPickUpShieldSound();
             print("Veikia");
         }
     }

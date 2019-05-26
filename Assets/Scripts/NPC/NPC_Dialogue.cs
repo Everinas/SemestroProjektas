@@ -31,6 +31,7 @@ public class NPC_Dialogue : MonoBehaviour
             if (Input.GetButtonDown("E") && buttonPress == false && talking == true)
             {
                 player = other;
+                player.GetComponent<PlayerSounds>().NPCTalk();
                 //Vector3 targetPostition = new Vector3(other.transform.position.x,
                 //                           this.transform.position.y,
                 //                           other.transform.position.z);

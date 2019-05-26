@@ -32,7 +32,8 @@ public class Collectible_key : MonoBehaviour
             Instantiate(effect, transform.position, transform.rotation);
             gameObject.SetActive(false);
             playerScore.currentKeys++;
-            print("Veikia");
+            player.GetComponent<PlayerSounds>().PlayPickUpKeySound();
+            print("Veikia");          
         }
     }
     void Update()

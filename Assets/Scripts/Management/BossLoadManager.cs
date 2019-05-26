@@ -18,6 +18,7 @@ public class BossLoadManager : MonoBehaviour
         {
             if (NPC_Dialogue.levelchange == true)
             {
+                player.GetComponent<PlayerSounds>().PlayTeleportSound();
                 // Teleport the player to the boss zone
                 Animator animator = proTipPanel.GetComponent<Animator>();
                 if (animator != null)

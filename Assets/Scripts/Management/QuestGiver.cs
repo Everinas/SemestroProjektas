@@ -33,6 +33,10 @@ public class QuestGiver : MonoBehaviour
     Color green = new Color(0F, 0.6F, 0F, 1F);
     Color red = new Color(0.63F, 0.09F, 0.04F);
 
+    void Start(){
+        portalActivationPanel.SetActive(false);
+    }
+
     void Update()
     {
         if (player.GetComponent<CurrentQuest>().friendlyChat == true)
@@ -94,6 +98,7 @@ public class QuestGiver : MonoBehaviour
 
         if (player.GetComponent<CurrentQuest>().arqosMagic == true)
         {
+            portalActivationPanel.SetActive(true);
             Animator animator = portalActivationPanel.GetComponent<Animator>();
             if (animator != null)
             {
