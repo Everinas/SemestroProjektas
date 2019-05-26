@@ -12,6 +12,7 @@ public class CurrentQuest : MonoBehaviour
     public bool arqosMagic;
     public bool setForBattle;
     public bool theFinale;
+    public bool gameComplete;
 
     //public bool shoeHunt;
     //public bool findThePortal;

@@ -11,7 +11,8 @@ public class GameOverManager : MonoBehaviour
     public GameObject ragdollas;
     public CameraFollow cameraMovement;
     bool dead;
-    Animator anim;
+    public GameObject overMenu;
+    
 
 
     private void Start()
@@ -23,7 +24,7 @@ public class GameOverManager : MonoBehaviour
         cameraMovement = GameObject.FindGameObjectWithTag("CameraFolder").GetComponent<CameraFollow>();
 
         // Init animator for endgame buttons
-        anim = GetComponent<Animator>();
+        overMenu.gameObject.SetActive(false);
 
         player = GameObject.FindGameObjectWithTag("Player");
         ragdollas = GameObject.FindGameObjectWithTag("PlayerRagdoll");
@@ -54,7 +55,8 @@ public class GameOverManager : MonoBehaviour
             Cursor.visible = true;
 
             // Show the endgame buttons
-            anim.SetTrigger("GameOver");
+            overMenu.gameObject.SetActive(true);
+
             player.GetComponent<Rigidbody>().isKinematic = true;
             player.GetComponent<BoxCollider>().enabled = false;
             player.GetComponent<SimpleCharacterControl>().enabled = false;

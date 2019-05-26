@@ -4,12 +4,16 @@ using UnityEngine.SceneManagement;
 public class ButtonManager : MonoBehaviour
 {
     public EscMenuManager escMenu;
+    public GameObject gameOverMenu;
+    public GameObject gameCompleteMenu;
     public LevelRestart levelRestart;
     public Saving2 save;
 
     public void doRestartCurrentLevel()
     {
-        levelRestart.doRestartCurrentLevel();
+        gameOverMenu.SetActive(false);
+        gameCompleteMenu.SetActive(false);
+        levelRestart.doRestartCurrentLevel();       
     }
 
     public void doExitGame()
@@ -24,8 +28,10 @@ public class ButtonManager : MonoBehaviour
 
     public void doLoad()
     {
-        save.Load();
-        escMenu.Continue();
+        gameOverMenu.SetActive(false);
+        gameCompleteMenu.SetActive(false);
+        save.Load();       
+        escMenu.Continue();      
     }
 
     public void doSave()
@@ -34,8 +40,15 @@ public class ButtonManager : MonoBehaviour
         escMenu.Continue();
     }
 
+    public void doLoadContinue()
+    {
+        SceneManager.LoadScene("HomeForest");
+        save.Load();
+    }
+
     public void doStartNewGame()
     {
+        gameCompleteMenu.SetActive(false);
         SceneManager.LoadScene("HomeForest");
     }
 

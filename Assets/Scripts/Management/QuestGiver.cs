@@ -6,10 +6,9 @@ using UnityEngine.UI;
 
 public class QuestGiver : MonoBehaviour
 {
-
-    
     //public Quest quest;
     public GameObject player;
+    public GameCompleteManager complete;
 
     // The NPC that is giving the quest
     public GameObject questGiver;
@@ -139,5 +138,11 @@ public class QuestGiver : MonoBehaviour
             }
             
         }
+
+        if (player.GetComponent<CurrentQuest>().gameComplete == true)
+        {
+            complete.SetWin();
+        }
+
     }
 }

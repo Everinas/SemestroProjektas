@@ -198,6 +198,11 @@ public class DialogueInteraction : MonoBehaviour {
                     animator.SetBool("PortalIsActive", true);
                 }
             }
+            if (npc.GetCurrentTree() == "BossDefeated")
+            {
+                player.GetComponent<CurrentQuest>().theFinale = false;
+                player.GetComponent<CurrentQuest>().gameComplete = true;
+            }
             Hide();
         }
 

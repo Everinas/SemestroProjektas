@@ -44,7 +44,7 @@ public class BossHealthBar : MonoBehaviour
             orange.gameObject.SetActive(false);
             red.gameObject.SetActive(true);
             enemy.GetComponent<BreadcrumbAi.Ai>().followSpeed = 4;
-            enemy.GetComponent<BreadcrumbAi.Ai>().wanderSpeed = 5f;
+            enemy.GetComponent<BreadcrumbAi.Ai>().wanderSpeed = 1f;
             
         }
         

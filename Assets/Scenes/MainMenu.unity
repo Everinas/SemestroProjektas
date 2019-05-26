@@ -803,7 +803,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1927817036}
-        m_MethodName: doContinue
+        m_MethodName: doLoadContinue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3109,6 +3109,7 @@ MonoBehaviour:
   teleportPoint: {fileID: 0}
   fight: {fileID: 0}
   proTipPanel: {fileID: 0}
+  bossHealthBar: {fileID: 0}
 --- !u!65 &931336224
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3743,7 +3744,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1927817036}
-        m_MethodName: doLoad
+        m_MethodName: doLoadContinue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5347,6 +5348,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   escMenu: {fileID: 0}
+  gameOverMenu: {fileID: 0}
   levelRestart: {fileID: 1927817037}
   save: {fileID: 0}
 --- !u!114 &1927817037
