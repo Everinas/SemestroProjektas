@@ -1,9 +1,7 @@
-# BoxBox - Semestro projektas - platforminis žaidimas
+# BoxBox - Semester project - platformer / adventure game
 
-## Aprašymas
-3D platforminis žaidimas ­fantasy tematika, Jūsų tikslas yra atlikti minimalių misijų kiekį per lygį, kad atsirakintumėte kitą lygį ir pereitumėte žaidimo istoriją.
-Lygis - tai pradine zona, iš kurios pasirenkamos to lygio misijos.
-Realus žaidimas prasideda pradinėje lygio zonoje, iš kurios galite pasiekti visus kitus lygius pakalbėjus su tam tikru NPC.
+## Summary
+This is a 3D platformer / adventure game on a fantasy theme. The goal of this game is to beat the quests given to unlock other new quests and beat the final boss.
 
 # Development log:
 ## Sprint 6
