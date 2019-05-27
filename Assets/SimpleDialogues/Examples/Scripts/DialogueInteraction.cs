@@ -25,8 +25,7 @@ public class DialogueInteraction : MonoBehaviour {
 
     public GameObject portalActivationPanel;
 
-    public GameObject key;
-
+    
     bool nextEnd = false;
 
     // Simple Dialogues //
@@ -185,7 +184,7 @@ public class DialogueInteraction : MonoBehaviour {
             {
                 player.GetComponent<CurrentQuest>().lookingForApples = false;
                 player.GetComponent<CurrentQuest>().keyToSuccess = true;
-                key.gameObject.SetActive(true);
+                
             }
             if (npc.GetCurrentTree() == "ArenaTalk")
             {

@@ -24,6 +24,8 @@ public class QuestGiver : MonoBehaviour
     public GameObject boss;
     public GameObject npc;
     public GameObject arenaSpawn;
+    public GameObject bossHealthBar;
+    public GameObject key;
 
     int score;
     int keys;
@@ -73,6 +75,7 @@ public class QuestGiver : MonoBehaviour
 
         if (player.GetComponent<CurrentQuest>().keyToSuccess == true)
         {
+            key.gameObject.SetActive(true);
             questPanelReward.gameObject.SetActive(true);
             questPanelProgress.gameObject.SetActive(true);
             keys = player.GetComponent<PlayerScore>().currentKeys;
@@ -120,6 +123,7 @@ public class QuestGiver : MonoBehaviour
 
         if (player.GetComponent<CurrentQuest>().theFinale == true)
         {
+            bossHealthBar.gameObject.SetActive(true);
             if (boss == null)
             {
                 bossHP = 0;

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2003931976}
-  m_IndirectSpecularColor: {r: 0.6138624, g: 0.64931875, b: 0.58910763, a: 1}
+  m_IndirectSpecularColor: {r: 0.613694, g: 0.6492894, b: 0.58910877, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -67403,6 +67403,8 @@ MonoBehaviour:
   boss: {fileID: 30684395}
   npc: {fileID: 604519502}
   arenaSpawn: {fileID: 1869491087}
+  bossHealthBar: {fileID: 939639032}
+  key: {fileID: 1942836122}
   bossHP: 0
 --- !u!114 &1890999574
 MonoBehaviour:
@@ -68119,7 +68121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 170560, guid: cc5de5e674870ca479a40105f80555ad, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 462124, guid: cc5de5e674870ca479a40105f80555ad, type: 3}
       propertyPath: m_LocalPosition.x

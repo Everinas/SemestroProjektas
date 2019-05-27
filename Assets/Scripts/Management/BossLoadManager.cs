@@ -29,7 +29,6 @@ public class BossLoadManager : MonoBehaviour
                 cameraMovement = GameObject.FindGameObjectWithTag("CameraFolder").GetComponent<CameraFollow>();
                 cameraMovement.enabled = false;
                 cameraMovement.enabled = true;
-                bossHealthBar.gameObject.SetActive(true);
                 player.GetComponent<CurrentQuest>().arqosMagic = false;
                 player.GetComponent<CurrentQuest>().theFinale = true;
                 //fight.StartBossFight();
