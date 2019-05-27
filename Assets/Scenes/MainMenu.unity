@@ -4733,6 +4733,7 @@ MonoBehaviour:
   hoverSound: {fileID: 8300000, guid: 984d26a4600ee6e4abebb13b277e9e17, type: 3}
   clickSound: {fileID: 8300000, guid: 33b6cd7837c7642958dac012307e9086, type: 3}
   dialogueSound: {fileID: 8300000, guid: ca056d4afe5e74498a0798f16e0e866d, type: 3}
+  source: {fileID: 0}
 --- !u!82 &1538786935
 AudioSource:
   m_ObjectHideFlags: 0
