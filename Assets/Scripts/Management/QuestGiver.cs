@@ -144,6 +144,7 @@ public class QuestGiver : MonoBehaviour
                 bossHP = 0;
                 questPanelProgress.color = green;
                 npc.transform.position = arenaSpawn.transform.position;
+                bossHealthBar.gameObject.SetActive(false);
             }
             
         }

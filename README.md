@@ -1,63 +1,84 @@
-# BoxBox - Semestro projektas - platforminis žaidimas
+# BoxBox - Semester project - platformer / adventure game
 
-## Aprašymas
-3D platforminis žaidimas ­fantasy tematika, Jūsų tikslas yra atlikti minimalių misijų kiekį per lygį, kad atsirakintumėte kitą lygį ir pereitumėte žaidimo istoriją.
-Lygis - tai pradine zona, iš kurios pasirenkamos to lygio misijos.
-Realus žaidimas prasideda pradinėje lygio zonoje, iš kurios galite pasiekti visus kitus lygius pakalbėjus su tam tikru NPC.
+## Summary
+This is a 3D platformer / adventure game on a fantasy theme. The goal of this game is to beat the quests given to unlock other new quests and beat the final boss.
 
-## 5 sprintas
-### Naujas funkcionalumas
-- Pridėta dialogo sistema;
-- Pridėtas užduočių UI;
-- Nekalbant su juo, NPC sėdi;
-- Pridėta primityvi žaidimo būsenos išsaugojimo mechanika - ties ja dar bus dirbama;
-- Spąstai dabar daro žalą priešams;
-- Priešų šoviniai atmuša kitus priešus;
-- Pridėtas pagrindinis meniu;
-- Pridėtas gameplay scenarijus nuo pradžios (pagrindinio meniu) iki 2 lygio.
-### Ištaisytos klaidos
-- Kursorius esant pauzei išsicentruoja;
-- Dabar continue mygtukas veikia;
-- Dabar žaidimas paspaudus esc sustoja visiškai;
-- Ištaisytos klaidos su kamera:
-  - Kamera nebeįeina į žaidėją;
-  - Paleidus lygį kamera "nevaikšto";
-  - Zoom in/out dabar švelnesnis.
+# Development log:
+## Sprint 6
+### New features
+- Added a bossfight 
+- Added managers for the bossfight
+- Added sounds and music
+- Added an area for apple collection (Farmer)
+- Added UI animation pop-ups for informing the player of certain things such as saving, new places to visit, etc.
+- Invincibility frames implemented
+- Added more quests 
+- Added UI for interacting with the NPC
+- Game save implemented fully.
+### Bugfixes
+- Infinite player jump bug fixed
+- Double kill doesn't launch the player higher anymore 
+- Player model doesn't deal damage to enemies after death anymore 
+- Fixed panel art
+- Collisions fixed
+- Quest menu shows properly now
+- NPC shows the idle animation
+- Camera bugs fixed
+- Shield bugs fixed
+- Boss now takes 3 hits to die
+- Fixed the escape, death and win menus
+- Misc. bugs fixed
 
-## 4 sprintas
-### Naujas funkcionalumas
-- Pridėta "Bunny Hop" mechanika
-- Pridėtas naujas priešo tipas (skraidantis)
-- Pridėta galimybė paimti skydą
-- Užšokus ant priešo, žaidėjas nuo jo atsimuša į viršų
-### Ištaisytos klaidos
-- Einant įstrižai, veikėjas nebepagreitėja
-- Mirus, priešai nebekliūna už veikėjo
-- Kamera nebeįeina į objektus ir nebeužkliūna už priešų
-- Sutvarkytas žaidėjo atmušimas (stiprumas nebesiskiria)
+## Sprint 6
+### New features
+- New dialogue system;
+- Quest UI added;
+- NPC sits when idle now;
+- Primitive game save state added;
+- Traps now deal damage to enemies;
+- Enemy projectiles now hurt other enemies;
+- Main menu added;
+- Added a proper gameplay scenario
+### Bugfixes
+- Cursor now centers properly on pause;
+- Continue button works now;
+- Pressing escape stops the game;
+- Camera bugfixes:
+  - Camera doesn't enter the player model anymore;
+  - Camera doesn't fly around anymore on level load;
+  - Zoom in/out smoother now.
 
-## 3 sprintas
-### Naujas funkcionalumas
-- Pridėtas naujas lygis (miestelis)
-- Pridėtas naujas lygis (laukai)
-- Galima pasikalbėti su NPC ir persikelti į kitą zoną
-### Ištaisytos klaidos
+## Sprint 4
+### New features
+- Added"Bunny Hop" mechanic
+- Flying enemy added
+- Player can pick up a shield now 
+- Player gets launched in the air after an enemy kill
+### Bugfixes
+- Player now moves at the same speed when moving diagonally
+- Enemies don't hit the player after death anymore 
+- Camera doesn't enter objects anymore 
+- Player knock back is static now
 
-## 2 sprintas
-### Naujas funkcionalumas
-- Pridėtas escape menu
-- Galima žaidimą pradėti iš naujo (continue)
-- Pridėtas žaidėjo modelis
-- Pridėta žaidėjo sveikata
-- Pridėtas žaidėjo modelis
-- Pridėti priešai 
-### Ištaisytos klaidos
+## Sprint 3
+### New features
+- New level added (Village)
+- New level added (House)
+- Can now speak to an NPC and teleport to a new zone
 
+## Sprint 2
+### New features
+- Escape menu added
+- Possibility of continuing the game added
+- Player model added
+- Player health added
+- Player score system added
+- Enemies added
 
-## 1 sprintas
-### Naujas funkcionalumas
-- Sukurtas pradinis lygis
-- Sukurtas žaidėjo objektas
-- Sukurtas pirmas priešo objektas
-- Galima žaidimą laimėti arba pralaimėti
-- Galima rinkti taškus
+## Sprint 1
+### New features
+- First level added
+- Player object created
+- Enemy object created
+- Win / lose state added
+- Player can now score points
