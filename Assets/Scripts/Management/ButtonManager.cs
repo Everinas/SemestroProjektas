@@ -33,7 +33,12 @@ public class ButtonManager : MonoBehaviour
         save.Load();       
         escMenu.Continue();      
     }
+    public void deathLoad()
+    {
+        MainMenuLoading.loading = true;
+        SceneManager.LoadScene("HomeForest");
 
+    }
     public void doSave()
     {
         save.Save();
@@ -43,9 +48,13 @@ public class ButtonManager : MonoBehaviour
     public void doLoadContinue()
     {
         SceneManager.LoadScene("HomeForest");
-        save.Load();
+        
     }
-
+    public void mainMenuContinue()
+    {
+        MainMenuLoading.loading = true;
+        SceneManager.LoadScene("HomeForest");
+    }
     public void doStartNewGame()
     {
         if (SceneManager.GetActiveScene().name == "MainMenu"){
@@ -59,6 +68,7 @@ public class ButtonManager : MonoBehaviour
 
     public void doGoToMainMenu()
     {
+        MainMenuLoading.loading = false;
         SceneManager.LoadScene("MainMenu");
     }
 }

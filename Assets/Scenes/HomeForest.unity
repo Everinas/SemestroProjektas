@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2003931976}
-  m_IndirectSpecularColor: {r: 0.613694, g: 0.6492894, b: 0.58910877, a: 1}
+  m_IndirectSpecularColor: {r: 0.6136467, g: 0.6492838, b: 0.5891091, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -23991,7 +23991,6 @@ MonoBehaviour:
   nextTreeButton: {fileID: 737757542}
   score: {fileID: 0}
   portalActivationPanel: {fileID: 1520975983}
-  key: {fileID: 1942836122}
 --- !u!114 &594148442
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -76312,7 +76311,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2113956908}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 485623f6e017ae444a31e5c80d545477, type: 3}
   m_Name: 

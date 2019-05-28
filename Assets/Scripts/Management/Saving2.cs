@@ -39,7 +39,7 @@ public class Saving2 : MonoBehaviour
         enemySave();
         foreach(GameObject collectible in colectibles)
         {
-            SaveGame.Save<bool>(collectible.GetInstanceID().ToString(), collectible.activeInHierarchy);
+            SaveGame.Save<bool>(collectible.name, collectible.activeInHierarchy);
         }
         Animator animator = gameSavePanel.GetComponent<Animator>();
         if (animator != null)
@@ -126,7 +126,7 @@ public class Saving2 : MonoBehaviour
 
         foreach (GameObject collectible in colectibles)
         {
-            collectible.SetActive(SaveGame.Load<bool>(collectible.GetInstanceID().ToString()));
+            collectible.SetActive(SaveGame.Load<bool>(collectible.name.ToString()));
         }
         Animator animator = gameLoadPanel.GetComponent<Animator>();
         if (animator != null)

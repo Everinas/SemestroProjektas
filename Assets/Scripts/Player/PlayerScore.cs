@@ -23,8 +23,11 @@ public class PlayerScore : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
         PlayerShield = GameObject.FindGameObjectWithTag("PlayerShield");
-        currentScore = startScore;
-        currentKeys = startKeys;
+        if (MainMenuLoading.loading != true)
+        {
+            currentScore = startScore;
+            currentKeys = startKeys;
+        }
         counter.text = "Score: 0";
         Keys.text = "Keys: 0";
         kazkas = 1;

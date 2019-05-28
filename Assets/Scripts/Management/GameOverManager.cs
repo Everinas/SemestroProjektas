@@ -61,8 +61,6 @@ public class GameOverManager : MonoBehaviour
             player.GetComponent<BoxCollider>().enabled = false;
             player.GetComponent<SimpleCharacterControl>().enabled = false;
             player.GetComponent<Animator>().enabled = false;
-            SaveGame.Save<int>("Score", 0);
-            SaveGame.Save<int>("Health", 5);
             dead = true;
         }
     }

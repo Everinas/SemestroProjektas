@@ -19,7 +19,10 @@ public class PlayerHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = startingHealth;
+        if (MainMenuLoading.loading != true)
+        {
+            currentHealth = startingHealth;
+        }
         numberOfHearts = startingHealth;
         health = startingHealth;
         invincibility = false;
