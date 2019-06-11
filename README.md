@@ -1,4 +1,5 @@
 # BoxBox - Semester project - platformer / adventure game
+Download at https://domrau.itch.io/the-ever-inn
 
 ## Summary
 This is a 3D platformer / adventure game on a fantasy theme. The goal of this game is to beat the quests given to unlock other new quests and beat the final boss.
